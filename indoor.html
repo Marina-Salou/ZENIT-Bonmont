@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth scroll-pt-20">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indoor - ZENIT Bonmont</title>
+    <!-- Meta Description in English -->
+    <meta name="description"
+        content="Explore the exquisite interiors of ZENIT Bonmont. Luxury and comfort in every detail.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <link href="./output.css" rel="stylesheet">
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body
+    class="font-sans text-text dark:text-gray-200 bg-white dark:bg-[#1a1a1a] antialiased selection:bg-secondary selection:text-white">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/70 dark:bg-[#1a1a1a]/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-6 group transition-opacity hover:opacity-90"
+                aria-label="ZENIT Bonmont Home">
+                <!-- Symbol Placeholder -->
+                <img src="images/logo_zenit_bonmont.png" alt="" class="h-9 md:h-11 w-auto">
+                <div class="flex items-baseline font-bodoni leading-none select-none">
+                    <span
+                        class="text-[1.4rem] md:text-[1.6rem] font-semibold uppercase tracking-tight text-[#1a1a1a] dark:text-white">ZENIT</span>
+                    <span
+                        class="text-[1.2rem] md:text-[1.4rem] font-normal tracking-wider ml-8 text-[#1a1a1a] dark:text-white/90">Bonmont</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
+                <a href="index.html#home"
+                    class="group flex items-center gap-1.5 text-[0.7rem] uppercase tracking-[2px] font-medium text-[#1a1a1a] dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">
+                    INICIO
+                </a>
+                <a href="#home"
+                    class="group flex items-center gap-1.5 text-[0.7rem] uppercase tracking-[2px] font-semibold text-secondary relative transition-colors">
+                    <span class="border-b border-secondary pb-0.5">INTERIOR</span>
+                </a>
+                <a href="index.html#exteriores"
+                    class="text-[0.7rem] uppercase tracking-[2px] font-medium text-[#1a1a1a] dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EXTERIORES</a>
+                <a href="index.html#equipamiento"
+                    class="text-[0.7rem] uppercase tracking-[2px] font-medium text-[#1a1a1a] dark:text-gray-300 hover:text-secondary transition-all text-center leading-[1.2] pb-0.5 border-b border-transparent hover:border-secondary/30">
+                    EQUIPAMIENTO Y<br>BIENESTAR
+                </a>
+                <a href="index.html#lifestyle"
+                    class="text-[0.7rem] uppercase tracking-[2px] font-medium text-[#1a1a1a] dark:text-gray-300 hover:text-secondary transition-all text-center leading-[1.2] pb-0.5 border-b border-transparent hover:border-secondary/30">
+                    ESTILO DE<br>VIDA
+                </a>
+                <a href="index.html#host"
+                    class="text-[0.7rem] uppercase tracking-[2px] font-medium text-[#1a1a1a] dark:text-gray-300 hover:text-secondary transition-all text-center leading-[1.2] pb-0.5 border-b border-transparent hover:border-secondary/30">
+                    LA<br>ANFITRIONA
+                </a>
+            </nav>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4 md:gap-6">
+                <!-- Theme Toggle -->
+                <button id="themeToggle"
+                    class="group/theme flex items-center justify-center p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                    aria-label="Toggle dark mode">
+                    <svg id="sunIcon" class="w-5 h-5 text-[#e6b32e] animate-spin-slow block dark:hidden"
+                        fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5 text-[#c9a866] hidden dark:block" fill="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M9.507 3.118a7.5 7.5 0 1011.374 11.374.75.75 0 00-.803-1.216 5.25 5.25 0 01-6.757-6.756.75.75 0 00-1.214-.802z" />
+                    </svg>
+                </button>
+
+                <a href="#"
+                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
+                    Reservar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="min-h-screen bg-white dark:bg-[#1a1a1a] py-16 md:py-24 px-6">
+        <div class="max-w-[1400px] mx-auto">
+            <!-- Back Button -->
+            <a href="index.html"
+                class="inline-flex items-center gap-2 text-[#c9a866] hover:text-[#b08e4b] transition-colors mb-12 text-sm font-medium">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Volver
+            </a>
+
+            <!-- SEO H1 (Hidden visually, accessible to screen readers) -->
+            <h1 id="gallery-title" class="sr-only"></h1>
+
+            <!-- Category Switcher (Tabs) -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
+                <button onclick="changeCategory('salones')" id="tab-salones"
+                    class="gallery-tab active text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-[#c9a866] text-[#1a1a1a] dark:text-white transition-all">Salones</button>
+                <button onclick="changeCategory('cocina')" id="tab-cocina"
+                    class="gallery-tab text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-[#1a1a1a] dark:hover:text-white transition-all">Cocina</button>
+                <button onclick="changeCategory('dormitorios')" id="tab-dormitorios"
+                    class="gallery-tab text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-[#1a1a1a] dark:hover:text-white transition-all">Dormitorios</button>
+                <button onclick="changeCategory('banos')" id="tab-banos"
+                    class="gallery-tab text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-[#1a1a1a] dark:hover:text-white transition-all">Baños</button>
+                <button onclick="changeCategory('despacho')" id="tab-despacho"
+                    class="gallery-tab text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-[#1a1a1a] dark:hover:text-white transition-all">Despacho</button>
+            </div>
+
+            <!-- Gallery Description (visible, below tabs) -->
+            <p id="gallery-description"
+                class="text-center font-sans text-[1rem] text-[#666] dark:text-gray-400 max-w-[700px] mx-auto leading-relaxed mb-16">
+            </p>
+
+            <!-- Dynamic Gallery Grid Container -->
+            <div id="gallery-grid-container" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 min-h-[400px]">
+                <!-- Injected by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex flex-col items-center justify-center p-4 md:p-8"
+        role="dialog" aria-modal="true">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()"
+            class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-[110]"
+            aria-label="Cerrar galería">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Navigation Arrows -->
+        <button onclick="prevImage()"
+            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-[110]"
+            aria-label="Imagen anterior">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button onclick="nextImage()"
+            class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-[110]"
+            aria-label="Siguiente imagen">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Image Container -->
+        <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+            <img id="lightbox-img" src="" alt=""
+                class="max-w-full max-h-full object-contain shadow-2xl transition-all duration-500 transform scale-95 pointer-events-auto">
+        </div>
+
+        <!-- Counter & Info -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+            <p id="lightbox-counter" class="text-white/60 text-sm tracking-widest font-sans uppercase mb-2">1 / 15</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 px-6">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <span class="font-serif text-2xl font-light text-secondary block mb-6">ZENIT Bonmont</span>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Where luxury meets Mediterranean serenity.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm uppercase tracking-widest text-secondary mb-4">Explora</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="index.html#home" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="indoor.html" class="hover:text-white transition-colors">Interiores</a></li>
+                    <li><a href="outdoor.html" class="hover:text-white transition-colors">Exteriores</a></li>
+                    <li><a href="index.html#location" class="hover:text-white transition-colors">Ubicación</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm uppercase tracking-widest text-secondary mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="legal.html#legal-notice" class="hover:text-white transition-colors">Legal Notice</a></li>
+                    <li><a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="legal.html#cookies" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm uppercase tracking-widest text-secondary mb-4">Contacto</h4>
+                <p class="text-sm text-gray-300">info@zenitbonmont.com</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                        class="w-5 h-5 text-white/80 hover:text-[#c9a866] transition-colors duration-150">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                        class="w-5 h-5 text-white/80 hover:text-[#c9a866] transition-colors duration-150">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-[1400px] mx-auto border-t border-white/10 mt-12 pt-8 text-center text-xs text-gray-500">
+            &copy; 2026 Sama Design. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let galleries = {};
+        let currentGalleryKey = 'salones';
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        const gridContainer = document.getElementById('gallery-grid-container');
+        const galleryTitle = document.getElementById('gallery-title');
+        const galleryDescription = document.getElementById('gallery-description');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        // Load gallery data from JSON
+        // Load gallery data from JSON
+        async function loadGalleryData() {
+            try {
+                const response = await fetch('gallery-data.json');
+                if (!response.ok) throw new Error('Failed to load gallery data');
+                galleries = await response.json();
+
+                // Check for URL parameter
+                const urlParams = new URLSearchParams(window.location.search);
+                const categoryParam = urlParams.get('category');
+
+                // Determine initial category (default to 'salones' if param is missing or invalid)
+                const initialCategory = (categoryParam && galleries[categoryParam]) ? categoryParam : 'salones';
+
+                // Initialize gallery and tabs
+                changeCategory(initialCategory);
+
+            } catch (error) {
+                console.error('Error loading gallery:', error);
+                gridContainer.innerHTML = '<p class="text-center text-red-500 col-span-full">Error al cargar la galería. Por favor, recarga la página.</p>';
+            }
+        }
+
+        // Dynamic Gallery Rendering
+        function renderGallery(category) {
+            const galleryData = galleries[category];
+            if (!galleryData) return;
+
+            // Update header (English for SEO H1, Spanish for visible description)
+            if (galleryTitle) galleryTitle.textContent = galleryData.titleEN;
+            if (galleryDescription) galleryDescription.textContent = galleryData.description;
+
+            // Render images
+            gridContainer.innerHTML = '';
+            galleryData.images.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-black/5 dark:border-white/5 cursor-pointer opacity-0 translate-y-4 transition-all duration-500';
+                itemDiv.onclick = () => openLightbox(category, index);
+
+                itemDiv.innerHTML = `
+                    <img src="${item.src}" 
+                         alt="${item.alt}" 
+                         loading="lazy"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-[#c9a866]/90 border border-white rounded-full shadow-2xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </div>
+                    </div>
+                `;
+
+                gridContainer.appendChild(itemDiv);
+
+                // Staggered animation
+                setTimeout(() => {
+                    itemDiv.style.opacity = '1';
+                    itemDiv.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+
+            // Update current gallery reference
+            currentGalleryKey = category;
+            currentGallery = galleryData.images;
+        }
+
+        // Category Change Handler
+        function changeCategory(category) {
+            // Update tab states
+            document.querySelectorAll('.gallery-tab').forEach(tab => {
+                tab.classList.remove('active', 'border-[#c9a866]', 'text-[#1a1a1a]', 'dark:text-white');
+                tab.classList.add('border-transparent', 'text-gray-400');
+            });
+
+            const activeTab = document.getElementById(`tab-${category}`);
+            if (activeTab) {
+                activeTab.classList.add('active', 'border-[#c9a866]', 'text-[#1a1a1a]', 'dark:text-white');
+                activeTab.classList.remove('border-transparent', 'text-gray-400');
+            }
+
+            // Render new gallery
+            renderGallery(category);
+        }
+
+        // Lightbox Functions
+        function openLightbox(galleryKey, index) {
+            currentGalleryKey = galleryKey;
+            currentGallery = galleries[galleryKey].images;
+            currentIndex = index;
+            updateLightbox();
+
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+
+            // Force reflow
+            void lightbox.offsetWidth;
+
+            // Visual + Interaction
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            lightbox.classList.add('opacity-100', 'pointer-events-auto');
+
+            lightboxImg.classList.remove('scale-95');
+            lightboxImg.classList.add('scale-100');
+
+            document.body.style.overflow = 'hidden';
+
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        function closeLightbox() {
+            // Visual + Interaction
+            lightbox.classList.remove('opacity-100', 'pointer-events-auto');
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+
+            document.removeEventListener('keydown', handleKeyPress);
+        }
+
+        function updateLightbox() {
+            if (!currentGallery || currentGallery.length === 0) return;
+
+            const currentImage = currentGallery[currentIndex];
+            // Simple fade out/in effect for image transition
+            lightboxImg.style.opacity = '0';
+
+            setTimeout(() => {
+                lightboxImg.src = currentImage.src;
+                lightboxImg.alt = currentImage.alt;
+                lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+                lightboxImg.style.opacity = '1';
+            }, 200);
+        }
+
+        function nextImage() {
+            if (!currentGallery) return;
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateLightbox();
+        }
+
+        function prevImage() {
+            if (!currentGallery) return;
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateLightbox();
+        }
+
+        function handleKeyPress(e) {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') closeLightbox();
+        }
+
+        // Make functions global so HTML onclick attributes work
+        window.openLightbox = openLightbox;
+        window.closeLightbox = closeLightbox;
+        window.nextImage = nextImage;
+        window.prevImage = prevImage;
+        window.changeCategory = changeCategory;
+
+        // Lightbox click outside
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                // Close if clicking the background (lightbox div itself)
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
+
+        // Prevent closing when clicking navigation buttons (stop propagation)
+        document.querySelectorAll('#lightbox button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+
+        // Theme Toggle Logic
+        // Checks if themeToggle exists to prevent errors if header is loaded differently
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isDark = html.classList.contains('dark');
+                if (isDark) {
+                    html.classList.remove('dark');
+                    localStorage.theme = 'light';
+                } else {
+                    html.classList.add('dark');
+                    localStorage.theme = 'dark';
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load dark mode preference if not handled by head script
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            // Load gallery data
+            loadGalleryData();
+        });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-primary/95 backdrop-blur-md border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-1">
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    We use essential cookies to ensure the website functions properly and to remember your preferences. 
+                    By continuing to browse, you accept our 
+                    <a href="legal.html#cookies" class="text-secondary hover:underline">Cookie Policy</a>.
+                </p>
+            </div>
+            <div class="flex gap-3">
+                <button id="cookieReject" class="px-6 py-2 text-sm border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors rounded">
+                    Decline
+                </button>
+                <button id="cookieAccept" class="px-6 py-2 text-sm bg-secondary text-white hover:bg-secondary/90 transition-colors rounded">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Logic
+        const cookieConsent = document.getElementById('cookieConsent');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieReject = document.getElementById('cookieReject');
+
+        // Check if user has already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieConsent.classList.remove('hidden');
+        }
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.add('hidden');
+        });
+
+        cookieReject.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'rejected');
+            cookieConsent.classList.add('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

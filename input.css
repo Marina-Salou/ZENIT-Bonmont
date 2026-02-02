@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #1a1a1a;
+    --color-secondary: #c9a866;
+    --color-text: #2c2c2c;
+    --color-hero-text: #f8f8f7;
+    --color-muted: #666666;
+
+    --font-sans: "Poppins", ui-sans-serif, system-ui;
+    --font-serif: "Crimson Text", ui-serif, Georgia;
+    --font-bodoni: "Libre Bodoni", serif;
+
+    /* Animation */
+    --animate-spin-slow: spin 3s linear infinite;
+}
+
+@variant dark (&:where(.dark, .dark *));

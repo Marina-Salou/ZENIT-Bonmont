@@ -1,0 +1,356 @@
+{
+    "salones": {
+        "titleEN": "Living Rooms: Versatile Spaces",
+        "description": "Tres amplios y luminosos salones, cada uno con su propio carácter y atmósfera.",
+        "images": [
+            {
+                "src": "images/salon1/salon-1-1.webp",
+                "alt": "ZENIT Bonmont - Main Living Room - View 1"
+            },
+            {
+                "src": "images/salon1/salon-1-2.webp",
+                "alt": "ZENIT Bonmont - Main Living Room - Dining Area"
+            },
+            {
+                "src": "images/salon1/salon-1-3.webp",
+                "alt": "ZENIT Bonmont - Main Living Room - Lounge Space"
+            },
+            {
+                "src": "images/salon1/salon-1-4.webp",
+                "alt": "ZENIT Bonmont - Interior Design Details"
+            },
+            {
+                "src": "images/salon1/salon-1-5.webp",
+                "alt": "ZENIT Bonmont - Living Area Garden View"
+            },
+            {
+                "src": "images/salon1/salon-1-6.webp",
+                "alt": "ZENIT Bonmont - Natural Lighting and Space"
+            },
+            {
+                "src": "images/salon1/salon-1-7.webp",
+                "alt": "ZENIT Bonmont - Reading Corner"
+            },
+            {
+                "src": "images/salon1/salon-1-8.webp",
+                "alt": "ZENIT Bonmont - Architecture and Ceiling Details"
+            },
+            {
+                "src": "images/salon1/salon-1-9.webp",
+                "alt": "ZENIT Bonmont - Cozy Living Space at Night"
+            },
+            {
+                "src": "images/salon2/salon-2-1.webp",
+                "alt": "ZENIT Bonmont - Secondary Living Room - Versatile Space"
+            },
+            {
+                "src": "images/salon2/salon-2-2.webp",
+                "alt": "ZENIT Bonmont - Secondary Lounge Views"
+            },
+            {
+                "src": "images/salon2/salon-2-3.webp",
+                "alt": "ZENIT Bonmont - Comfort and Seating Area"
+            },
+            {
+                "src": "images/salon3/salon-3-1.webp",
+                "alt": "ZENIT Bonmont - Third Living Room - Games Area"
+            },
+            {
+                "src": "images/salon3/salon-3-2.webp",
+                "alt": "ZENIT Bonmont - Modern Furniture Details"
+            },
+            {
+                "src": "images/salon3/salon-3-3.webp",
+                "alt": "ZENIT Bonmont - Connectivity and Modern Living"
+            }
+        ]
+    },
+    "cocina": {
+        "titleEN": "Kitchen: Capacity and Functionality",
+        "description": "Amplia y luminosa, con electrodomésticos de calidad y generoso espacio de almacenamiento con todo lo necesario para los huéspedes.",
+        "images": [
+            {
+                "src": "images/cocina/cocina-1.webp",
+                "alt": "ZENIT Bonmont - Main Kitchen - View 1"
+            },
+            {
+                "src": "images/cocina/cocina-2.webp",
+                "alt": "ZENIT Bonmont - Kitchen Details"
+            },
+            {
+                "src": "images/cocina/cocina-3.webp",
+                "alt": "ZENIT Bonmont - Kitchen Appliances"
+            },
+            {
+                "src": "images/cocina/cocina-4.webp",
+                "alt": "ZENIT Bonmont - Kitchen Lighting"
+            },
+            {
+                "src": "images/cocina/cocina-5.webp",
+                "alt": "ZENIT Bonmont - Kitchen Storage"
+            },
+            {
+                "src": "images/cocina/cocina-6.webp",
+                "alt": "ZENIT Bonmont - Kitchen Countertop"
+            },
+            {
+                "src": "images/cocina/cocina-7.webp",
+                "alt": "ZENIT Bonmont - Kitchen Island"
+            }
+        ]
+    },
+    "dormitorios": {
+        "titleEN": "Bedrooms: Sanctuaries of Rest",
+        "description": "Seis habitaciones amplias y luminosas donde la calma y el confort se unen para garantizar un descanso reparador.",
+        "images": [
+            {
+                "src": "images/dormitorio1/dormitorio-1-1.webp",
+                "alt": "ZENIT Bonmont - Master Bedroom 1 - Main View"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-2.webp",
+                "alt": "ZENIT Bonmont - Master Bedroom 1 - Interior"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-3.webp",
+                "alt": "ZENIT Bonmont - Master Bedroom 1 - Details"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-4.webp",
+                "alt": "ZENIT Bonmont - Master Bedroom 1 - Comfort"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-5.webp",
+                "alt": "ZENIT Bonmont - Master Bedroom 1 - Lighting"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-6.webp",
+                "alt": "ZENIT Bonmont - Master Bedroom 1 - Space"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-7.webp",
+                "alt": "ZENIT Bonmont - Master Bedroom 1 - Ambiance"
+            },
+            {
+                "src": "images/dormitorio2/dormitorio-2-1.webp",
+                "alt": "ZENIT Bonmont - Bedroom 2 - Comfort"
+            },
+            {
+                "src": "images/dormitorio2/dormitorio-2-2.webp",
+                "alt": "ZENIT Bonmont - Bedroom 2 - View"
+            },
+            {
+                "src": "images/dormitorio2/dormitorio-2-3.webp",
+                "alt": "ZENIT Bonmont - Bedroom 2 - Details"
+            },
+            {
+                "src": "images/dormitorio2/dormitorio-2-4.webp",
+                "alt": "ZENIT Bonmont - Bedroom 2 - Interior"
+            },
+            {
+                "src": "images/dormitorio2/dormitorio-2-5.webp",
+                "alt": "ZENIT Bonmont - Bedroom 2 - Lighting"
+            },
+            {
+                "src": "images/dormitorio2/dormitorio-2-6.webp",
+                "alt": "ZENIT Bonmont - Bedroom 2 - Space"
+            },
+            {
+                "src": "images/dormitorio2/Dormitorio-2-7.webp",
+                "alt": "ZENIT Bonmont - Bedroom 2 - Ambiance"
+            },
+            {
+                "src": "images/dormitorio3/dormitorio-3-1.webp",
+                "alt": "ZENIT Bonmont - Bedroom 3 - Space"
+            },
+            {
+                "src": "images/dormitorio3/dormitorio-3-2.webp",
+                "alt": "ZENIT Bonmont - Bedroom 3 - Comfort"
+            },
+            {
+                "src": "images/dormitorio3/dormitorio-3-3.webp",
+                "alt": "ZENIT Bonmont - Bedroom 3 - Details"
+            },
+            {
+                "src": "images/dormitorio3/dormitorio-3-4.webp",
+                "alt": "ZENIT Bonmont - Bedroom 3 - View"
+            },
+            {
+                "src": "images/dormitorio3/dormitorio-3-5.webp",
+                "alt": "ZENIT Bonmont - Bedroom 3 - Interior"
+            },
+            {
+                "src": "images/dormitorio3/dormitorio-3-6.webp",
+                "alt": "ZENIT Bonmont - Bedroom 3 - Lighting"
+            },
+            {
+                "src": "images/dormitorio4/dormitorio-4-1.webp",
+                "alt": "ZENIT Bonmont - Bedroom 4 - Light"
+            },
+            {
+                "src": "images/dormitorio4/dormitorio-4-2.webp",
+                "alt": "ZENIT Bonmont - Bedroom 4 - Comfort"
+            },
+            {
+                "src": "images/dormitorio4/dormitorio-4-3.webp",
+                "alt": "ZENIT Bonmont - Bedroom 4 - Details"
+            },
+            {
+                "src": "images/dormitorio4/dormitorio-4-4.webp",
+                "alt": "ZENIT Bonmont - Bedroom 4 - Space"
+            },
+            {
+                "src": "images/dormitorio4/dormitorio-4-5.webp",
+                "alt": "ZENIT Bonmont - Bedroom 4 - View"
+            },
+            {
+                "src": "images/dormitorio5/dormitorio-5-1.webp",
+                "alt": "ZENIT Bonmont - Bedroom 5 - Comfort"
+            },
+            {
+                "src": "images/dormitorio5/dormitorio-5-2.webp",
+                "alt": "ZENIT Bonmont - Bedroom 5 - Interior"
+            },
+            {
+                "src": "images/dormitorio5/dormitorio-5-3.webp",
+                "alt": "ZENIT Bonmont - Bedroom 5 - Details"
+            },
+            {
+                "src": "images/dormitorio5/dormitorio-5-4.webp",
+                "alt": "ZENIT Bonmont - Bedroom 5 - Space"
+            },
+            {
+                "src": "images/dormitorio6/dormitorio-6-1.webp",
+                "alt": "ZENIT Bonmont - Bedroom 6 - View"
+            },
+            {
+                "src": "images/dormitorio6/dormitorio-6-2.webp",
+                "alt": "ZENIT Bonmont - Bedroom 6 - Comfort"
+            },
+            {
+                "src": "images/dormitorio6/dormitorio-6-3.webp",
+                "alt": "ZENIT Bonmont - Bedroom 6 - Interior"
+            },
+            {
+                "src": "images/dormitorio6/dormitorio-6-4.webp",
+                "alt": "ZENIT Bonmont - Bedroom 6 - Details"
+            },
+            {
+                "src": "images/dormitorio6/dormitorio-6-5.webp",
+                "alt": "ZENIT Bonmont - Bedroom 6 - Lighting"
+            },
+            {
+                "src": "images/dormitorio6/dormitorio-6-6.webp",
+                "alt": "ZENIT Bonmont - Bedroom 6 - Space"
+            }
+        ]
+    },
+    "banos": {
+        "titleEN": "Bathrooms: Wellness Rituals",
+        "description": "Cinco baños y un aseo con acabados de calidad, diseñados para convertir cada momento en un ritual de cuidado personal.",
+        "images": [
+            {
+                "src": "images/bano1/bano-1-1.webp",
+                "alt": "ZENIT Bonmont - Bathroom 1 - Design"
+            },
+            {
+                "src": "images/bano1/bano-1-2.webp",
+                "alt": "ZENIT Bonmont - Bathroom 1 - Details"
+            },
+            {
+                "src": "images/bano1/bano-1-3.webp",
+                "alt": "ZENIT Bonmont - Bathroom 1 - Luxury"
+            },
+            {
+                "src": "images/bano1/bano-1-4.webp",
+                "alt": "ZENIT Bonmont - Bathroom 1 - Fixtures"
+            },
+            {
+                "src": "images/bano1/bano-1-5.webp",
+                "alt": "ZENIT Bonmont - Bathroom 1 - Space"
+            },
+            {
+                "src": "images/bano1/bano-1-6.webp",
+                "alt": "ZENIT Bonmont - Bathroom 1 - Lighting"
+            },
+            {
+                "src": "images/bano1/bano-1-7.webp",
+                "alt": "ZENIT Bonmont - Bathroom 1 - Ambiance"
+            },
+            {
+                "src": "images/bano2/bano-2-1.webp",
+                "alt": "ZENIT Bonmont - Bathroom 2 - Design"
+            },
+            {
+                "src": "images/bano2/bano-2-2.webp",
+                "alt": "ZENIT Bonmont - Bathroom 2 - Details"
+            },
+            {
+                "src": "images/bano3/bano-3-1.webp",
+                "alt": "ZENIT Bonmont - Bathroom 3 - Modern"
+            },
+            {
+                "src": "images/bano3/bano-3-2.webp",
+                "alt": "ZENIT Bonmont - Bathroom 3 - Elegance"
+            },
+            {
+                "src": "images/bano4/bano-4-1.webp",
+                "alt": "ZENIT Bonmont - Bathroom 4 - Luxury"
+            },
+            {
+                "src": "images/bano4/bano-4-2.webp",
+                "alt": "ZENIT Bonmont - Bathroom 4 - Details"
+            },
+            {
+                "src": "images/bano4/bano-4-3.webp",
+                "alt": "ZENIT Bonmont - Bathroom 4 - Space"
+            },
+            {
+                "src": "images/bano5/bano-5-1.webp",
+                "alt": "ZENIT Bonmont - Bathroom 5 - Design"
+            },
+            {
+                "src": "images/bano5/bano-5-2.webp",
+                "alt": "ZENIT Bonmont - Bathroom 5 - Comfort"
+            },
+            {
+                "src": "images/bano5/bano-5-3.webp",
+                "alt": "ZENIT Bonmont - Bathroom 5 - Details"
+            },
+            {
+                "src": "images/bano5/bano-5-4.webp",
+                "alt": "ZENIT Bonmont - Bathroom 5 - Lighting"
+            },
+            {
+                "src": "images/bano6/bano-6-1.webp",
+                "alt": "ZENIT Bonmont - Bathroom 6 - Modern"
+            },
+            {
+                "src": "images/bano6/bano-6-2.webp",
+                "alt": "ZENIT Bonmont - Bathroom 6 - Elegance"
+            },
+            {
+                "src": "images/bano6/bano-6-3.webp",
+                "alt": "ZENIT Bonmont - Bathroom 6 - Details"
+            }
+        ]
+    },
+    "despacho": {
+        "titleEN": "Office: Productivity Space",
+        "description": "Un espacio tranquilo y luminoso, ideal para trabajar o disfrutar de momentos de concentración.",
+        "images": [
+            {
+                "src": "images/despacho/despacho-1.webp",
+                "alt": "ZENIT Bonmont - Office Space - Productivity"
+            },
+            {
+                "src": "images/despacho/despacho-2.webp",
+                "alt": "ZENIT Bonmont - Office Details"
+            },
+            {
+                "src": "images/despacho/despacho-3.webp",
+                "alt": "ZENIT Bonmont - Office Lighting"
+            }
+        ]
+    }
+}
