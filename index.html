@@ -1346,25 +1346,6 @@
             </div>
         </div>
 
-        <!-- Cookie Banner -->
-        <div id="cookieBanner"
-            class="fixed bottom-0 inset-x-0 bg-white/95 text-primary px-4 py-3 shadow-lg z-50 flex flex-col md:flex-row items-center justify-between gap-3 transform translate-y-0 transition-transform duration-300">
-            <p class="text-sm text-text">
-                Este sitio utiliza cookies para ofrecerle una mejor experiencia.
-                <a href="#" class="underline hover:text-secondary">Política de Privacidad</a>.
-            </p>
-            <div class="flex items-center gap-3">
-                <button id="cookieDecline"
-                    class="px-4 py-2 border border-black/10 text-xs uppercase tracking-wide rounded hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
-                    Configurar
-                </button>
-                <button id="cookieAccept"
-                    class="px-4 py-2 bg-primary text-white text-xs uppercase tracking-wide rounded hover:bg-[#333] focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
-                    Aceptar
-                </button>
-            </div>
-        </div>
-
         <script>
             // Mobile Menu Toggle
             const btn = document.getElementById('menuToggle');
@@ -1501,26 +1482,6 @@
                 commentsHideBtn.addEventListener('click', () => toggleComments(false));
             }
 
-            // Cookie functionality
-            const cookieBanner = document.getElementById('cookieBanner');
-            const acceptBtn = document.getElementById('cookieAccept');
-            const declineBtn = document.getElementById('cookieDecline');
-
-            if (acceptBtn && cookieBanner) {
-                if (localStorage.getItem('cookieConsent') === 'true') {
-                    cookieBanner.classList.add('translate-y-full'); // hide
-                }
-
-                acceptBtn.addEventListener('click', () => {
-                    localStorage.setItem('cookieConsent', 'true');
-                    cookieBanner.classList.add('translate-y-full');
-                });
-
-                declineBtn?.addEventListener('click', () => {
-                    cookieBanner.classList.add('translate-y-full');
-                });
-            }
-
             // Theme Toggle Logic
             const themeToggle = document.getElementById('themeToggle');
             const html = document.documentElement;
@@ -1538,20 +1499,19 @@
         </script>
 
         <!-- Cookie Consent Banner -->
-        <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-primary/95 backdrop-blur-md border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
+        <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
             <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex-1">
-                    <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                        We use essential cookies to ensure the website functions properly and to remember your preferences. 
-                        By continuing to browse, you accept our 
-                        <a href="legal.html#cookies" class="text-secondary hover:underline">Cookie Policy</a>.
+                    <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
+                        We use cookies to ensure you get the best experience on our website. 
+                        <a href="legal.html#cookies" class="text-secondary underline">More info</a>
                     </p>
                 </div>
                 <div class="flex gap-3">
-                    <button id="cookieReject" class="px-6 py-2 text-sm border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors rounded">
+                    <button id="cookieReject" class="px-6 py-2 text-sm border border-primary dark:border-white/20 text-text dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors rounded">
                         Decline
                     </button>
-                    <button id="cookieAccept" class="px-6 py-2 text-sm bg-secondary text-white hover:bg-secondary/90 transition-colors rounded">
+                    <button id="cookieAccept" class="px-6 py-2 text-sm bg-secondary text-white font-bold hover:bg-secondary/90 transition-colors rounded">
                         Accept
                     </button>
                 </div>
@@ -1560,24 +1520,27 @@
 
         <script>
             // Cookie Consent Logic
-            const cookieConsent = document.getElementById('cookieConsent');
-            const cookieAccept = document.getElementById('cookieAccept');
-            const cookieReject = document.getElementById('cookieReject');
+            (function() {
+                const cookieConsent = document.getElementById('cookieConsent');
+                const cookieAccept = document.getElementById('cookieAccept');
+                const cookieReject = document.getElementById('cookieReject');
 
-            // Check if user has already made a choice
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieConsent.classList.remove('hidden');
-            }
+                if (!cookieConsent || !cookieAccept || !cookieReject) return;
 
-            cookieAccept.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieConsent.classList.add('hidden');
-            });
+                if (!localStorage.getItem('cookieConsent')) {
+                    cookieConsent.classList.remove('hidden');
+                }
 
-            cookieReject.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'rejected');
-                cookieConsent.classList.add('hidden');
-            });
+                cookieAccept.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    cookieConsent.classList.add('hidden');
+                });
+
+                cookieReject.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'rejected');
+                    cookieConsent.classList.add('hidden');
+                });
+            })();
         </script>
 </body>
 
