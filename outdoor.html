@@ -136,10 +136,10 @@
 
             <!-- Category Switcher (Tabs) -->
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
-                <button onclick="changeCategory('moments')" id="tab-moments"
-                    class="gallery-tab active text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-secondary text-primary dark:text-white transition-all">Momentos</button>
                 <button onclick="changeCategory('pool')" id="tab-pool"
-                    class="gallery-tab text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-primary dark:hover:text-white transition-all">Piscina</button>
+                    class="gallery-tab active text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-secondary text-primary dark:text-white transition-all">Naturaleza y ocio</button>
+                <button onclick="changeCategory('moments')" id="tab-moments"
+                    class="gallery-tab text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-primary dark:hover:text-white transition-all">Momentos inolvidables</button>
             </div>
 
             <!-- Gallery Description (visible, below tabs) -->
@@ -303,8 +303,8 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const categoryParam = urlParams.get('category');
 
-                // Determine initial category (default to 'moments' if param is missing or invalid)
-                const initialCategory = (categoryParam && galleries[categoryParam]) ? categoryParam : 'moments';
+                // Determine initial category (default to 'pool' if param is missing or invalid)
+                const initialCategory = (categoryParam && galleries[categoryParam]) ? categoryParam : 'pool';
 
                 // Initialize gallery and tabs
                 changeCategory(initialCategory);

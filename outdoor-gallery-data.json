@@ -1,45 +1,7 @@
 {
-    "moments": {
-        "titleEN": "Mediterranean Moments",
-        "description": "Captures of unforgettable moments in the Costa Dorada sunshine.",
-        "images": [
-            {
-                "src": "images/exteriors/moments/moments-1.webp",
-                "alt": "ZENIT Bonmont - Outdoor Mediterranean Lifestyle"
-            },
-            {
-                "src": "images/exteriors/moments/moments-2.webp",
-                "alt": "ZENIT Bonmont - Terrace Dining Experience"
-            },
-            {
-                "src": "images/exteriors/moments/moments-3.webp",
-                "alt": "ZENIT Bonmont - Sunset Views"
-            },
-            {
-                "src": "images/exteriors/moments/moments-4.webp",
-                "alt": "ZENIT Bonmont - Outdoor Relaxation"
-            },
-            {
-                "src": "images/exteriors/moments/moments-5.webp",
-                "alt": "ZENIT Bonmont - Garden Atmosphere"
-            },
-            {
-                "src": "images/exteriors/moments/moments-6.webp",
-                "alt": "ZENIT Bonmont - Mediterranean Evenings"
-            },
-            {
-                "src": "images/exteriors/moments/moments-7.webp",
-                "alt": "ZENIT Bonmont - Outdoor Living Spaces"
-            },
-            {
-                "src": "images/exteriors/moments/moments-8.webp",
-                "alt": "ZENIT Bonmont - Costa Dorada Lifestyle"
-            }
-        ]
-    },
     "pool": {
-        "titleEN": "Pool & Wellness",
-        "description": "Private pool surrounded by nature and Mediterranean elegance.",
+        "titleEN": "Nature & Leisure",
+        "description": "Un oasis de tranquilidad con piscina de agua salina y zona de solárium.",
         "images": [
             {
                 "src": "images/exteriors/pool/pool-1.webp",
@@ -88,6 +50,44 @@
             {
                 "src": "images/exteriors/pool/pool-12.webp",
                 "alt": "ZENIT Bonmont - Pool at Night"
+            }
+        ]
+    },
+    "moments": {
+        "titleEN": "Unforgettable Moments",
+        "description": "Espacios diseñados para disfrutar de momentos mágicos y largas sobremesas.",
+        "images": [
+            {
+                "src": "images/exteriors/moments/moments-1.webp",
+                "alt": "ZENIT Bonmont - Outdoor Mediterranean Lifestyle"
+            },
+            {
+                "src": "images/exteriors/moments/moments-2.webp",
+                "alt": "ZENIT Bonmont - Terrace Dining Experience"
+            },
+            {
+                "src": "images/exteriors/moments/moments-3.webp",
+                "alt": "ZENIT Bonmont - Sunset Views"
+            },
+            {
+                "src": "images/exteriors/moments/moments-4.webp",
+                "alt": "ZENIT Bonmont - Outdoor Relaxation"
+            },
+            {
+                "src": "images/exteriors/moments/moments-5.webp",
+                "alt": "ZENIT Bonmont - Garden Atmosphere"
+            },
+            {
+                "src": "images/exteriors/moments/moments-6.webp",
+                "alt": "ZENIT Bonmont - Mediterranean Evenings"
+            },
+            {
+                "src": "images/exteriors/moments/moments-7.webp",
+                "alt": "ZENIT Bonmont - Outdoor Living Spaces"
+            },
+            {
+                "src": "images/exteriors/moments/moments-8.webp",
+                "alt": "ZENIT Bonmont - Costa Dorada Lifestyle"
             }
         ]
     }

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenit Bonmont Philosophy - The Art of Living</title>
+    <meta name="description"
+        content="Discover the essence of Zenit Bonmont. A space designed for the balance between silence, celebration, and shared life in an exclusive environment.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#c9a866',
+                        text: '#2c2c2c',
+                        muted: '#666666',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                        serif: ['Crimson Text', 'ui-serif', 'Georgia'],
+                        bodoni: ['Libre Bodoni', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body class="font-sans text-text dark:text-gray-200 bg-white dark:bg-primary antialiased">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-6 group transition-opacity hover:opacity-90">
+                <img src="images/logo_zenit_bonmont.png" alt="Logo Zenit Bonmont" class="h-9 md:h-11 w-auto">
+                <div class="flex items-baseline font-bodoni leading-none select-none">
+                    <span class="text-[1.4rem] md:text-[1.6rem] font-semibold uppercase tracking-tight text-primary dark:text-white">ZENIT</span>
+                    <span class="text-[1.2rem] md:text-[1.4rem] font-normal tracking-wider ml-8 text-primary dark:text-white/90">Bonmont</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+                <a href="index.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all">INICIO</a>
+                <a href="indoor.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all">INTERIOR</a>
+                <a href="outdoor.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all">EXTERIORES</a>
+                <a href="wellness.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all text-center leading-[1.2]">EQUIPAMIENTO Y<br>BIENESTAR</a>
+            </nav>
+
+            <!-- Theme & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                    <!-- Light Icon -->
+                    <svg class="hidden dark:block w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <!-- Dark Icon -->
+                    <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="menuToggle" class="lg:hidden p-2 text-primary dark:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 md:py-32 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image Side -->
+                <div class="w-full lg:w-1/2">
+                    <div class="relative group">
+                        <img src="images/idoia.webp" alt="Idoia - Zenit Bonmont Philosophy" 
+                            class="w-full aspect-[3/4] object-cover rounded shadow-2xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000">
+                        <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary/10 -z-10 rounded-full blur-3xl"></div>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <h1 class="font-serif text-[3rem] md:text-[4.5rem] leading-[1.1] text-primary dark:text-white">
+                        El Arte de la <br><span class="text-secondary italic">Polivalencia</span>
+                    </h1>
+                    <p class="font-sans text-[1.2rem] text-muted dark:text-gray-400 leading-relaxed italic border-l-2 border-secondary pl-6">
+                        "Zenit es un espacio diseñado para ser vivido en todas sus facetas. Mi visión fue crear un lugar donde el recogimiento y la paz absoluta convivan con la alegría de los encuentros."
+                    </p>
+                    <p class="text-[1.1rem] leading-relaxed">
+                        Como anfitriona con más de 11 años de trayectoria, he aprendido que una casa no es solo un conjunto de estancias, sino un contenedor de experiencias. Zenit Bonmont nació de esa premisa: ser el escenario perfecto tanto para quien busca el silencio como para quien celebra la vida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- States of Zenit -->
+    <section class="py-24 bg-gray-50 dark:bg-black/20">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                
+                <!-- El Silencio -->
+                <div class="space-y-6 group">
+                    <div class="overflow-hidden rounded">
+                        <img src="images/dormitorio1/dormitorio1-1.webp" alt="Silencio y descanso" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif text-2xl text-primary dark:text-white">El Silencio</h3>
+                    <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                        Rincones de lectura, la luz de la mañana filtrándose por las persianas, y el sonido sutil de la naturaleza de Bonmont. Espacios pensados para el recogimiento, el yoga o simplemente para desconectar del ruido exterior.
+                    </p>
+                </div>
+
+                <!-- La Celebración -->
+                <div class="space-y-6 group">
+                    <div class="overflow-hidden rounded">
+                        <img src="images/exteriors/pool/pool-1.webp" alt="Celebración y alegría" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif text-2xl text-primary dark:text-white">La Celebración</h3>
+                    <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                        La alegría de una barbacoa al atardecer, las risas en la piscina y las cenas que se alargan bajo las estrellas. Zenit es un lugar donde los amigos se reúnen y crean recuerdos que perduran.
+                    </p>
+                </div>
+
+                <!-- La Vida Compartida -->
+                <div class="space-y-6 group">
+                    <div class="overflow-hidden rounded">
+                        <img src="images/salon1/salon1-1.webp" alt="Vida compartida" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif text-2xl text-primary dark:text-white">Vida Compartida</h3>
+                    <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                        Desde equipos infantiles en stage deportivo hasta familias numerosas. La amplitud de Zenit permite que cada uno encuentre su lugar sin interferir en el del otro, facilitando la convivencia y la armonía.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Quote -->
+    <section class="py-32 bg-primary text-white text-center px-6">
+        <div class="max-w-[800px] mx-auto">
+            <svg class="w-12 h-12 text-secondary mx-auto mb-8 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.154c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+            <h2 class="font-serif text-3xl md:text-4xl italic leading-relaxed mb-12">
+                "Mi compromiso es que sientas este oasis no solo como un alojamiento, sino como un refugio de confort diseñado para tu plenitud."
+            </h2>
+            <p class="font-sans uppercase tracking-[3px] text-secondary font-bold text-sm">Idoia, Zenit Bonmont</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 px-6 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <span class="font-serif text-2xl font-light text-secondary block mb-6">ZENIT Bonmont</span>
+                <p class="text-sm text-gray-400 leading-relaxed">Where luxury meets Mediterranean serenity.</p>
+            </div>
+            <div>
+                <h4 class="text-sm uppercase tracking-widest text-secondary mb-4">Explora</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="indoor.html" class="hover:text-white transition-colors">Interiores</a></li>
+                    <li><a href="outdoor.html" class="hover:text-white transition-colors">Exteriores</a></li>
+                    <li><a href="wellness.html" class="hover:text-white transition-colors">Equipamiento</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm uppercase tracking-widest text-secondary mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="legal.html#legal-notice" class="hover:text-white transition-colors">Legal Notice</a></li>
+                    <li><a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm uppercase tracking-widest text-secondary mb-4">Contacto</h4>
+                <p class="text-sm text-gray-300">info@zenitbonmont.com</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" class="text-white/80 hover:text-secondary transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke-width="2"></path><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1400px] mx-auto border-t border-white/10 mt-12 pt-8 text-center text-xs text-gray-500">
+            &copy; 2026 Sama Design. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        themeToggle?.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark');
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menuToggle');
+        // Simple menu logic if needed, but keeping it minimal here
+    </script>
+</body>
+</html>
