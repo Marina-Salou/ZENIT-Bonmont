@@ -79,6 +79,27 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#c9a866',
+                        text: '#2c2c2c',
+                        'hero-text': '#f8f8f7',
+                        muted: '#666666',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                        serif: ['Crimson Text', 'ui-serif', 'Georgia'],
+                        bodoni: ['Libre Bodoni', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script>
         // Inline script to prevent FOUC (Flash of Unstyled Content)
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
