@@ -87,9 +87,9 @@
                     class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all text-center leading-[1.2] pb-0.5 border-b border-transparent hover:border-secondary/30">
                     ESTILO DE<br>VIDA
                 </a>
-                <a href="index.html#host"
+                <a href="philosophy.html"
                     class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all text-center leading-[1.2] pb-0.5 border-b border-transparent hover:border-secondary/30">
-                    LA<br>ANFITRIONA
+                    FILOSOFÍA
                 </a>
             </nav>
 
@@ -115,7 +115,41 @@
                     class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
                     Reservar
                 </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 z-50 group"
+                    aria-label="Open menu" aria-expanded="false">
+                    <span
+                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-[8px] group-aria-expanded:rotate-45"></span>
+                    <span
+                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                    <span
+                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-[8px] group-aria-expanded:-rotate-45"></span>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu"
+            class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 origin-top transition-all duration-300 lg:hidden">
+            <a href="index.html#home"
+                class="block py-3 text-primary dark:text-white font-semibold border-b border-gray-100 dark:border-white/5 text-lg uppercase tracking-widest">Inicio</a>
+            <a href="indoor.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Interior</a>
+            <a href="outdoor.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Exteriores</a>
+            <a href="wellness.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Equipamiento
+                y Bienestar</a>
+            <a href="philosophy.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Filosofía</a>
+            <a href="index.html#lifestyle"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Estilo de Vida</a>
+            <a href="index.html#location"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Ubicación</a>
+            <a href="#"
+                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-[3px] text-xs font-bold"
+                aria-label="Book your stay">Reservar</a>
         </div>
     </header>
 
@@ -462,6 +496,19 @@
                 e.stopPropagation();
             });
         });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('scale-y-0');
+                mobileMenu.classList.toggle('opacity-0');
+            });
+        }
 
         // Theme Toggle Logic
         // Checks if themeToggle exists to prevent errors if header is loaded differently

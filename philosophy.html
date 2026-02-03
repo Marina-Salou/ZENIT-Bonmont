@@ -51,7 +51,7 @@
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
         <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-6 group transition-opacity hover:opacity-90">
+            <a href="index.html#home" class="flex items-center gap-6 group transition-opacity hover:opacity-90">
                 <img src="images/logo_zenit_bonmont.png" alt="Logo Zenit Bonmont" class="h-9 md:h-11 w-auto">
                 <div class="flex items-baseline font-bodoni leading-none select-none">
                     <span class="text-[1.4rem] md:text-[1.6rem] font-semibold uppercase tracking-tight text-primary dark:text-white">ZENIT</span>
@@ -61,10 +61,14 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-                <a href="index.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all">INICIO</a>
+                <a href="index.html#home" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all">INICIO</a>
                 <a href="indoor.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all">INTERIOR</a>
                 <a href="outdoor.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all">EXTERIORES</a>
                 <a href="wellness.html" class="text-[0.7rem] uppercase tracking-[2px] font-medium text-primary dark:text-gray-300 hover:text-secondary transition-all text-center leading-[1.2]">EQUIPAMIENTO Y<br>BIENESTAR</a>
+                <a href="#"
+                    class="group flex items-center gap-1.5 text-[0.7rem] uppercase tracking-[2px] font-semibold text-secondary relative transition-colors">
+                    <span class="border-b border-secondary pb-0.5 text-center leading-[1.2]">FILOSOFÍA</span>
+                </a>
             </nav>
 
             <!-- Theme & Mobile Toggle -->
@@ -75,10 +79,40 @@
                     <!-- Dark Icon -->
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
-                <button id="menuToggle" class="lg:hidden p-2 text-primary dark:text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                <!-- Mobile Menu Button -->
+                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 z-50 group"
+                    aria-label="Open menu" aria-expanded="false">
+                    <span
+                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-[8px] group-aria-expanded:rotate-45"></span>
+                    <span
+                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                    <span
+                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-[8px] group-aria-expanded:-rotate-45"></span>
                 </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu"
+            class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 origin-top transition-all duration-300 lg:hidden">
+            <a href="index.html#home"
+                class="block py-3 text-primary dark:text-white font-semibold border-b border-gray-100 dark:border-white/5 text-lg uppercase tracking-widest">Inicio</a>
+            <a href="indoor.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Interior</a>
+            <a href="outdoor.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Exteriores</a>
+            <a href="wellness.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Equipamiento
+                y Bienestar</a>
+            <a href="philosophy.html"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Filosofía</a>
+            <a href="index.html#lifestyle"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Estilo de Vida</a>
+            <a href="index.html#location"
+                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Ubicación</a>
+            <a href="#"
+                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-[3px] text-xs font-bold"
+                aria-label="Book your stay">Reservar</a>
         </div>
     </header>
 
@@ -216,8 +250,16 @@
         });
 
         // Mobile Menu
-        const menuBtn = document.getElementById('menuToggle');
-        // Simple menu logic if needed, but keeping it minimal here
+        const btn = document.getElementById('menuToggle');
+        const menu = document.getElementById('mobileMenu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !expanded);
+                menu.classList.toggle('scale-y-0');
+                menu.classList.toggle('opacity-0');
+            });
+        }
     </script>
 </body>
 </html>
