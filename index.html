@@ -880,13 +880,14 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Fila 1: Zonas Comunes (Escritorio: 2 columnas, vertical) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
                     <!-- Card 1: Salones -->
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
                             <img src="images/salon.webp" alt="Salones espacios versátiles"
-                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
+                                class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
                             <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Salones</h4>
@@ -910,7 +911,7 @@
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
                             <img src="images/kitchen.webp" alt="Cocina capacidad y funcionalidad"
-                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
+                                class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
                             <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Cocina</h4>
@@ -929,7 +930,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <!-- Fila 2: Zonas Privadas (Escritorio: 3 columnas, vertical) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
                     <!-- Card 3: Dormitorios -->
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -966,6 +970,30 @@
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Rituales de Bienestar</p>
                             <div class="pt-2">
                                 <a href="indoor.html?category=banos"
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
+                                    EXPLORAR
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Ala Privada -->
+                    <div
+                        class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="overflow-hidden">
+                            <img src="images/despacho/despacho-1.webp" alt="Ala Privada a otro nivel"
+                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">A otro nivel</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Inspiración y retiro</p>
+                            <div class="pt-2">
+                                <a href="indoor.html?category=ala-privada"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"

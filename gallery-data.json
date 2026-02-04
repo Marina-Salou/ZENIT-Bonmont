@@ -335,21 +335,89 @@
             }
         ]
     },
-    "despacho": {
-        "titleEN": "Office: Productivity Space",
-        "description": "Un espacio tranquilo y luminoso, ideal para trabajar o disfrutar de momentos de concentración.",
+    "ala-privada": {
+        "titleEN": "A Otro Nivel",
+        "description": "Un universo independiente que desafía las alturas, diseñado para la exclusividad: desde el salón de lectura en la planta baja, una escalinata en curva eleva hacia un despacho luminoso con terraza y la Master Suite, con terraza privada, vestidor y baño.",
         "images": [
             {
+                "src": "images/salon2/salon-2-1.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Reading Lounge View 1"
+            },
+            {
+                "src": "images/salon2/salon-2-2.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Reading Lounge View 2"
+            },
+            {
+                "src": "images/salon2/salon-2-3.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Reading Lounge View 3"
+            },
+            {
                 "src": "images/despacho/despacho-1.webp",
-                "alt": "ZENIT Bonmont - Office Space - Productivity"
+                "alt": "ZENIT Bonmont - Private Wing - Workspace Suite 1"
             },
             {
                 "src": "images/despacho/despacho-2.webp",
-                "alt": "ZENIT Bonmont - Office Details"
+                "alt": "ZENIT Bonmont - Private Wing - Workspace Suite 2"
             },
             {
                 "src": "images/despacho/despacho-3.webp",
-                "alt": "ZENIT Bonmont - Office Lighting"
+                "alt": "ZENIT Bonmont - Private Wing - Workspace Suite 3"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-1.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Suite View 1"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-2.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Suite View 2"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-3.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Suite View 3"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-4.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Suite View 4"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-5.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Suite View 5"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-6.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Suite View 6"
+            },
+            {
+                "src": "images/dormitorio1/dormitorio-1-7.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Suite View 7"
+            },
+            {
+                "src": "images/bano1/bano-1-1.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Bathroom View 1"
+            },
+            {
+                "src": "images/bano1/bano-1-2.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Bathroom View 2"
+            },
+            {
+                "src": "images/bano1/bano-1-3.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Bathroom View 3"
+            },
+            {
+                "src": "images/bano1/bano-1-4.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Bathroom View 4"
+            },
+            {
+                "src": "images/bano1/bano-1-5.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Bathroom View 5"
+            },
+            {
+                "src": "images/bano1/bano-1-6.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Bathroom View 6"
+            },
+            {
+                "src": "images/bano1/bano-1-7.webp",
+                "alt": "ZENIT Bonmont - Private Wing - Master Bathroom View 7"
             }
         ]
     }
