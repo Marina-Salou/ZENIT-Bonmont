@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ & Booking - ZENIT Bonmont</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="images/favicon_dorado.png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="images/favicon_dorado.png">
+    <meta name="description"
+        content="Frequently asked questions and booking process for ZENIT Bonmont.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#c9a866',
+                        text: '#2c2c2c',
+                        muted: '#666666',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                        serif: ['Crimson Text', 'ui-serif', 'Georgia'],
+                        bodoni: ['Libre Bodoni', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body class="font-sans text-text dark:text-gray-200 bg-white dark:bg-primary antialiased selection:bg-secondary selection:text-white">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
+                aria-label="ZENIT Bonmont Home">
+                <img src="images/ZENIT.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 dark:hidden">
+                <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 hidden dark:block">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
+                <a href="index.html#home"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">INICIO</a>
+                <a href="index.html#indoor"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">INTERIOR</a>
+                <a href="index.html#outdoor"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EXTERIOR</a>
+                <a href="index.html#lifestyle"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EPICENTRO</a>
+                <a href="index.html#philosophy"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">ANFITRIONA</a>
+                <a href="faqs.html"
+                    class="group flex items-center gap-1.5 text-[0.85rem] uppercase tracking-[2px] font-bold text-secondary relative transition-colors">
+                    <span class="border-b-2 border-secondary pb-0.5">FAQS</span>
+                </a>
+                <a href="blog.html"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">BLOG</a>
+            </nav>
+
+            <!-- Theme & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                    <svg class="hidden dark:block w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 z-50 group" aria-label="Open menu">
+                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-[8px] group-aria-expanded:rotate-45"></span>
+                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-[8px] group-aria-expanded:-rotate-45"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu" class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 origin-top transition-all duration-300 lg:hidden">
+            <a href="index.html#home" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Inicio</a>
+            <a href="index.html#indoor" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Interior</a>
+            <a href="index.html#outdoor" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Exterior</a>
+            <a href="index.html#lifestyle" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Epicentro</a>
+            <a href="index.html#philosophy" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Anfitriona</a>
+            <a href="faqs.html" class="block py-3 text-secondary font-medium border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">FAQS</a>
+            <a href="blog.html" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 bg-gray-50 dark:bg-black/10">
+            <div class="max-w-[1400px] mx-auto px-6 text-center">
+                <h1 class="font-serif text-[3.5rem] md:text-[5rem] text-primary dark:text-white leading-tight mb-6">
+                    Mimo y <span class="text-secondary italic">Atención</span>
+                </h1>
+                <div class="w-16 h-[1px] bg-secondary mx-auto mb-8"></div>
+                <p class="font-sans text-[1.1rem] text-muted dark:text-gray-400 max-w-2xl mx-auto italic">
+                    Descubre todo lo que ZENIT Bonmont ofrece y resuelve tus dudas antes de tu llegada.
+                </p>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-16 md:py-24">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 items-start">
+                    
+                    <!-- Form Column -->
+                    <div class="bg-white dark:bg-primary border border-gray-100 dark:border-white/10 p-8 md:p-10 shadow-xl rounded-sm">
+                        <h2 class="font-serif text-3xl text-primary dark:text-white mb-2">Solicitud de Reserva</h2>
+                        <p class="text-secondary text-xs font-bold uppercase tracking-widest mb-8">Estancia mínima de 5 noches</p>
+                        
+                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="arrival" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Llegada</label>
+                                    <input type="date" id="arrival" name="arrival" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                </div>
+                                <div>
+                                    <label for="departure" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Salida</label>
+                                    <input type="date" id="departure" name="departure" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <label for="guests" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Adultos</label>
+                                    <select id="guests" name="guests" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                        <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+                                        <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="children" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Niños</label>
+                                    <select id="children" name="children" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="babies" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Bebés</label>
+                                    <select id="babies" name="babies" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="pets" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Mascotas (nº)</label>
+                                <input type="number" id="pets" name="pets" min="0" max="4" value="0" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Email de contacto</label>
+                                <input type="email" id="email" name="email" placeholder="tu@email.com" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                            </div>
+
+                            <button type="submit" class="w-full bg-secondary text-white font-bold py-4 uppercase tracking-[3px] text-xs hover:bg-opacity-90 transition-all shadow-md">
+                                Enviar Solicitud
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Calendar Column -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="font-serif text-2xl text-primary dark:text-white mb-4">Disponibilidad</h3>
+                            <p class="text-sm text-muted mb-6 leading-relaxed">
+                                Consulta nuestro calendario actualizado. Ten en cuenta que la estancia mínima es de 5 noches para garantizar la mejor experiencia.
+                            </p>
+                            
+                            <button id="showCalendar" class="inline-flex items-center gap-3 text-secondary font-bold uppercase tracking-widest text-[0.7rem] hover:opacity-80 transition-opacity">
+                                <span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                                </span>
+                                Ver Calendario Completo
+                            </button>
+
+                            <div id="calendarContainer" class="hidden mt-8 w-full aspect-[4/3] border border-gray-100 dark:border-white/10 rounded-sm overflow-hidden shadow-lg">
+                                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=ZXMuc3BhaW4jaG9saWRheUBncm91cC52LmcaG9vZ2xlLmNvbQ&color=%23C9A866"
+                                    class="w-full h-full border-0" frameborder="0" scrolling="no"></iframe>
+                            </div>
+                        </div>
+
+                        <!-- Wellness Link -->
+                        <div class="pt-8 border-t border-gray-100 dark:border-white/5">
+                            <h4 class="font-serif text-xl text-primary dark:text-white mb-4">¿Dudas sobre el equipamiento?</h4>
+                            <p class="text-sm text-muted mb-6 italic">Gimnasio, sauna, equipamiento para bebés, mascotas...</p>
+                            <a href="wellness.html" class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:underline transition-all">
+                                VER TODO EL EQUIPAMIENTO
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Placeholder) -->
+        <section class="py-16 md:py-24 bg-gray-50 dark:bg-black/10">
+            <div class="max-w-[1000px] mx-auto px-6">
+                <h2 class="font-serif text-[2.5rem] text-center text-primary dark:text-white mb-12">Preguntas Frecuentes</h2>
+                <div class="space-y-4">
+                    <!-- Placeholder FAQs -->
+                    <div class="bg-white dark:bg-[#1f1f1f] p-6 rounded-sm border border-black/5 dark:border-white/5">
+                        <h3 class="font-sans font-bold text-sm uppercase tracking-widest text-primary dark:text-white mb-2">¿Cuál es el horario de check-in?</h3>
+                        <p class="text-sm text-muted">A partir de las 16:00h para garantizar que la limpieza sea perfecta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-4 px-6">
+        <div class="max-w-[1400px] mx-auto">
+            <!-- Main Integrated Section -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-10 pb-3 border-b border-white/20">
+                <!-- Logo & Tagline -->
+                <div class="flex flex-col items-center lg:items-start gap-2 min-w-[200px]">
+                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 w-auto">
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
+                    <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
+                    <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
+                    <a href="index.html#outdoor" class="hover:text-white transition-colors">Exterior</a>
+                    <a href="index.html#lifestyle" class="hover:text-white transition-colors">Epicentro</a>
+                    <a href="index.html#philosophy" class="hover:text-white transition-colors">Anfitriona</a>
+                    <a href="faqs.html" class="text-secondary font-semibold">FAQS</a>
+                    <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
+                </nav>
+
+                <!-- Contacts & Social -->
+                <div class="flex flex-col items-center lg:items-end gap-3 min-w-[200px]">
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                    </div>
+                    <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Legal & Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
+                <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
+                    <a href="legal.html#legal" class="hover:text-white transition-colors">Legal notice</a>
+                    <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
+                    <a href="legal.html#cookies" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            this.setAttribute('aria-expanded', menu.classList.toggle('scale-y-0') ? 'false' : 'true');
+            menu.classList.toggle('opacity-0');
+        });
+
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+        });
+
+        // Calendar show/hide
+        document.getElementById('showCalendar').addEventListener('click', function() {
+            const container = document.getElementById('calendarContainer');
+            if (container.classList.toggle('hidden')) {
+                this.innerHTML = `<span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                                </span>Ver Calendario Completo`;
+            } else {
+                this.innerHTML = `<span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+                                </span>Cerrar Calendario`;
+            }
+        });
+    </script>
+</body>
+</html>

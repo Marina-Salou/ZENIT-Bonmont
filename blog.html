@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENIT Blog - Costa Dorada Experiences</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="images/favicon_dorado.png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="images/favicon_dorado.png">
+    <meta name="description"
+        content="Discover the best of Costa Dorada: gastronomy, BTT routes, modernist culture and more on the ZENIT Bonmont Blog.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#c9a866',
+                        text: '#2c2c2c',
+                        muted: '#666666',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                        serif: ['Crimson Text', 'ui-serif', 'Georgia'],
+                        bodoni: ['Libre Bodoni', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body class="font-sans text-text dark:text-gray-200 bg-white dark:bg-primary antialiased selection:bg-secondary selection:text-white">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
+                aria-label="ZENIT Bonmont Home">
+                <img src="images/ZENIT.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 dark:hidden">
+                <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 hidden dark:block">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
+                <a href="index.html#home"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">INICIO</a>
+                <a href="index.html#indoor"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">INTERIOR</a>
+                <a href="index.html#outdoor"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EXTERIOR</a>
+                <a href="index.html#lifestyle"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EPICENTRO</a>
+                <a href="index.html#philosophy"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">ANFITRIONA</a>
+                <a href="faqs.html"
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">FAQS</a>
+                <a href="blog.html"
+                    class="group flex items-center gap-1.5 text-[0.85rem] uppercase tracking-[2px] font-bold text-secondary relative transition-colors">
+                    <span class="border-b-2 border-secondary pb-0.5">BLOG</span>
+                </a>
+            </nav>
+
+            <!-- Theme & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                    <svg class="hidden dark:block w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 z-50 group" aria-label="Open menu">
+                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-[8px] group-aria-expanded:rotate-45"></span>
+                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-[8px] group-aria-expanded:-rotate-45"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu" class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 origin-top transition-all duration-300 lg:hidden">
+            <a href="index.html#home" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Inicio</a>
+            <a href="index.html#indoor" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Interior</a>
+            <a href="index.html#outdoor" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Exterior</a>
+            <a href="index.html#lifestyle" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Epicentro</a>
+            <a href="index.html#philosophy" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Anfitriona</a>
+            <a href="faqs.html" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm text-secondary font-medium">FAQS</a>
+            <a href="blog.html" class="block py-3 text-secondary font-medium border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Blog Hero -->
+        <section class="py-20 md:py-32 bg-gray-50 dark:bg-black/10 overflow-hidden relative">
+            <div class="max-w-[1400px] mx-auto px-6 text-center relative z-10">
+                <h1 class="font-serif text-[3.5rem] md:text-[5.5rem] text-primary dark:text-white leading-tight mb-6">
+                    El Blog de <span class="text-secondary italic">Zenit</span>
+                </h1>
+                <div class="w-20 h-[1px] bg-secondary mx-auto mb-8"></div>
+                <p class="font-sans text-[1.1rem] text-muted dark:text-gray-400 max-w-2xl mx-auto italic leading-relaxed">
+                    Siente la Costa Dorada como un local. Inspiración para tus días en nuestro refugio mediterráneo.
+                </p>
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/5 rounded-full blur-[120px] -z-0"></div>
+        </section>
+
+        <!-- Blog Feed -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-[1200px] mx-auto px-6 space-y-32">
+                
+                <!-- Post 1: Gastronomía -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    <div class="order-2 lg:order-1 space-y-6">
+                        <span class="text-secondary text-[0.7rem] font-bold uppercase tracking-[3px]">Gastronomía Local</span>
+                        <h2 class="font-serif text-3xl md:text-4xl text-primary dark:text-white leading-tight">La Tradición de la Calçotada</h2>
+                        <div class="w-12 h-[1px] bg-gray-200"></div>
+                        <p class="text-muted dark:text-gray-400 leading-relaxed font-sans">
+                            Vivir el invierno en Tarragona es sinónimo de calçotada. Una experiencia que va más allá de lo culinario para convertirse en un ritual de amistad y familia alrededor del fuego. Desde el origen en Valls hasta las mejores masías del Baix Camp.
+                        </p>
+                        <div class="pt-4">
+                            <a href="tradicion-calcotada-valls-tarragona.html" 
+                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-[0.7rem] group">
+                                <span class="w-8 h-8 flex items-center justify-center border border-secondary rounded-full group-hover:bg-secondary group-hover:text-white transition-all">
+                                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </span>
+                                Leer más
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+                            <img src="images/culture.webp" alt="Tradición de la Calçotada" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2: Deporte -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    <div>
+                        <div class="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+                            <img src="images/delta.webp" alt="Rutas BTT Mont-roig" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <span class="text-secondary text-[0.7rem] font-bold uppercase tracking-[3px]">Deporte & Naturaleza</span>
+                        <h2 class="font-serif text-3xl md:text-4xl text-primary dark:text-white leading-tight">Rutas BTT en Mont-roig del Camp</h2>
+                        <div class="w-12 h-[1px] bg-gray-200"></div>
+                        <p class="text-muted dark:text-gray-400 leading-relaxed font-sans">
+                            Desde Zenit Bonmont tienes acceso directo a una de las redes de rutas para bicicleta más completas de Cataluña. Mont-roig del Camp ofrece itinerarios que serpentean entre olivares, ermitas con vistas al mar y descensos técnicos que pondrán a prueba tu destreza.
+                        </p>
+                        <div class="pt-4">
+                            <a href="rutas-btt-mont-roig-del-camp.html" 
+                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-[0.7rem] group">
+                                <span class="w-8 h-8 flex items-center justify-center border border-secondary rounded-full group-hover:bg-secondary group-hover:text-white transition-all">
+                                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </span>
+                                Leer más
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3: Cultura -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    <div class="order-2 lg:order-1 space-y-6">
+                        <span class="text-secondary text-[0.7rem] font-bold uppercase tracking-[3px]">Cultura Modernista</span>
+                        <h2 class="font-serif text-3xl md:text-4xl text-primary dark:text-white leading-tight">El Esplendor del Modernismo en Reus</h2>
+                        <div class="w-12 h-[1px] bg-gray-200"></div>
+                        <p class="text-muted dark:text-gray-400 leading-relaxed font-sans">
+                            A tan solo 20 minutos de la villa, Reus se despliega como la ciudad natal de Gaudí y epicentro del modernismo. Pasear por su centro es admirar la Casa Navàs y el Institut Pere Mata de Lluís Domènech i Montaner. Belleza e historia en estado puro.
+                        </p>
+                        <div class="pt-4">
+                            <a href="guia-modernismo-reus.html" 
+                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-[0.7rem] group">
+                                <span class="w-8 h-8 flex items-center justify-center border border-secondary rounded-full group-hover:bg-secondary group-hover:text-white transition-all">
+                                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </span>
+                                Leer más
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+                            <img src="images/ferrariland.webp" alt="Modernismo en Reus" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="py-24 bg-primary text-white text-center">
+            <div class="max-w-[800px] mx-auto px-6">
+                <h3 class="font-serif text-3xl mb-6">Próximamente más experiencias</h3>
+                <p class="text-gray-400 italic mb-8">Novedades en la casa, eventos gastronómicos exclusivos y rincones secretos por descubrir.</p>
+                <a href="index.html#home" class="inline-block border border-white/20 px-8 py-3 text-[0.7rem] uppercase tracking-widest hover:bg-white hover:text-primary transition-all">Volver al refugio</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-4 px-6 border-t border-white/20">
+        <div class="max-w-[1400px] mx-auto">
+            <!-- Main Integrated Section -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-10 pb-3 border-b border-white/20">
+                <!-- Logo & Tagline -->
+                <div class="flex flex-col items-center lg:items-start gap-2 min-w-[200px]">
+                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 w-auto">
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
+                    <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
+                    <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
+                    <a href="index.html#outdoor" class="hover:text-white transition-colors">Exterior</a>
+                    <a href="index.html#lifestyle" class="hover:text-white transition-colors">Epicentro</a>
+                    <a href="index.html#philosophy" class="hover:text-white transition-colors">Anfitriona</a>
+                    <a href="faqs.html" class="hover:text-white transition-colors">FAQS</a>
+                    <a href="blog.html" class="text-secondary font-semibold">Blog</a>
+                </nav>
+
+                <!-- Contacts & Social -->
+                <div class="flex flex-col items-center lg:items-end gap-3 min-w-[200px]">
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                    </div>
+                    <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Legal & Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
+                <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
+                    <a href="legal.html#legal" class="hover:text-white transition-colors">Legal notice</a>
+                    <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
+                    <a href="legal.html#cookies" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            this.setAttribute('aria-expanded', menu.classList.toggle('scale-y-0') ? 'false' : 'true');
+            menu.classList.toggle('opacity-0');
+        });
+
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+        });
+    </script>
+</body>
+
+</html>
