@@ -2,6 +2,28 @@
 <html lang="es" class="scroll-smooth scroll-pt-20">
 
 <head>
+    <!-- Google tag (gtag.js) - Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        
+        // Default consent to denied
+        if (localStorage.getItem('cookieConsent') !== 'accepted') {
+            gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'personalization_storage': 'denied',
+                'functionality_storage': 'denied',
+                'security_storage': 'granted' // Essential
+            });
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZENIT Bonmont - Exclusive Refuge in Costa Dorada</title>
@@ -230,21 +252,21 @@
                 class="relative z-30 text-center text-white py-20 md:py-24 px-6 flex flex-col justify-between h-full max-w-[1400px] mx-auto w-full items-center">
                 <!-- Top: Title (Grande, but balanced) -->
                 <h1
-                    class="font-bodoni italic font-[400] text-[1.6rem] sm:text-[2.2rem] md:text-[3.2rem] lg:text-[4.2rem] tracking-[0.5px] leading-none text-hero-text drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)] md:whitespace-nowrap">
+                    class="font-bodoni italic font-[400] text-[1.9rem] sm:text-[2.6rem] md:text-[3.8rem] lg:text-[5rem] tracking-[0.5px] leading-none text-hero-text drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)] md:whitespace-nowrap">
                     An exclusive refuge designed to be lived
                 </h1>
 
                 <!-- Center: Smaller Transparent Button -->
                 <div class="flex flex-col items-center">
                     <a href="faqs.html#booking" aria-label="Check availability"
-                        class="inline-block uppercase tracking-[1.2px] text-[0.75rem] px-6 py-2.5 border border-white/50 rounded-md hover:bg-white hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-black">
+                        class="inline-block uppercase tracking-[1.2px] text-[0.75rem] px-4 py-2.5 border border-white/50 rounded-md hover:bg-white hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-black">
                         Crea recuerdos
                     </a>
                 </div>
 
                 <!-- Bottom: Smaller descriptive phrase -->
                 <p
-                    class="font-bodoni uppercase tracking-[4px] text-[0.8rem] md:text-[0.95rem] text-hero-text [text-shadow:0_1px_8px_rgba(0,0,0,0.25)]">
+                    class="font-bodoni uppercase tracking-[4px] text-[1rem] md:text-[1.3rem] text-hero-text [text-shadow:0_1px_8px_rgba(0,0,0,0.25)]">
                     Haz que tu visita a la Costa Dorada sea inolvidable
                 </p>
             </div>
@@ -255,7 +277,7 @@
             <!-- Central Title Section -->
             <div class="text-center mb-[4rem] relative">
                 <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-[1.5rem] leading-tight">
-                    Un entorno hecho a tu medida
+                    Una atmósfera a tu medida
                 </h2>
                 <div class="w-[60px] h-[1px] bg-secondary mx-auto"></div>
             </div>
@@ -294,9 +316,7 @@
                 <div class="flex items-baseline gap-4">
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-6-3V4l6 3m6-3l6 3v13l-6-3m-6 3V7m6 10V4" />
                     </svg>
                     <div>
                         <span
@@ -340,7 +360,7 @@
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            d="M12 21c-3.866 0-7-3.134-7-7 0-3.866 7-11 7-11s7 7.134 7 11c0 3.866-3.134 7-7 7z" />
                     </svg>
                     <div>
                         <span class="text-[2.8rem] md:text-[3.2rem] font-bold text-secondary leading-none block mb-1">5
@@ -596,27 +616,6 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     class="text-secondary shrink-0">
-                                    <path d="M12 2v10m0 0a5 5 0 0 1 5 5v3H7v-3a5 5 0 0 1 5-5z" />
-                                    <path d="M2 13h20" />
-                                </svg>
-                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Toldos eléctricos</span>
-                            </li>
-                            <li class="flex items-center gap-4">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="text-secondary shrink-0">
-                                    <path d="M6 13.87A4 4 0 0 1 7.41 6l2.12 2.12" />
-                                    <path d="M15 13.87A4 4 0 0 0 13.59 6l-2.12 2.12" />
-                                    <path d="M2 14h20v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4Z" />
-                                    <path d="M12 20v-6.13" />
-                                </svg>
-                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Cocina totalmente
-                                    equipada</span>
-                            </li>
-                            <li class="flex items-center gap-4">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="text-secondary shrink-0">
                                     <path
                                         d="M10 5.172C10 3.746 8.447 2 7 2c-3 0-5 2.25-5 4.625C2 10.375 10 16 10 16s8-5.625 8-9.375C18 4.25 16 2 13 2c-1.447 0-3 1.746-3 3.172Z" />
                                 </svg>
@@ -696,16 +695,6 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     class="text-secondary shrink-0">
-                                    <rect width="20" height="14" x="2" y="3" rx="2" />
-                                    <line x1="8" x2="16" y1="21" y2="21" />
-                                    <line x1="12" x2="12" y1="17" y2="21" />
-                                </svg>
-                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Gran despacho equipado</span>
-                            </li>
-                            <li class="flex items-center gap-4">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="text-secondary shrink-0">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
                                     <path d="m9 12 2 2 4-4" />
                                 </svg>
@@ -743,7 +732,8 @@
                                     <path d="M14 15h.01" />
                                     <path d="M9 15v-5h5" />
                                 </svg>
-                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Accesible</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Accesible sillas de
+                                    ruedas</span>
                             </li>
                         </ul>
                     </div>
@@ -805,7 +795,7 @@
 
                 </div>
                 <!-- Link outside the grid -->
-                <div class="mt-2 flex justify-end">
+                <div class="mt-6 flex justify-end">
                     <a href="wellness.html"
                         class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                         VER MÁS EQUIPAMIENTO Y BIENESTAR
@@ -1152,7 +1142,7 @@
                     <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
                         class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-[1.5rem] mb-[4rem] leading-[1.8]">
-                        En el exclusivo enclave Bonmont Terres Noves, Villa Bonmont ofrece el equilibrio perfecto entre
+                        El exclusivo enclave de ZENIT Bonmont ofrece el equilibrio perfecto entre
                         tranquilidad y proximidad a las mejores atracciones de la Costa Dorada.
                     </p>
                 </div>
@@ -1171,7 +1161,7 @@
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">playas y calas con encanto
                             </p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html"
+                                <a href="Lifestyle.html#mar"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1196,7 +1186,7 @@
                                 gastronomía</h4>
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Historia viva y sabores</p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html"
+                                <a href="Lifestyle.html#cultura"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1221,7 +1211,7 @@
                                 deporte</h4>
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Aire libre y rutas</p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html"
+                                <a href="Lifestyle.html#naturaleza"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1246,7 +1236,7 @@
                                 experiencias</h4>
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Propuestas para todos</p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html"
+                                <a href="Lifestyle.html#ocio"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1268,7 +1258,7 @@
                 <!-- Main Heading -->
                 <div class="text-center mb-[4rem] relative">
                     <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-[1.5rem] leading-tight">
-                        El punto del Zenit
+                        El punto del ZENIT
                     </h2>
                     <div class="w-[60px] h-[1px] bg-secondary mx-auto"></div>
                 </div>
@@ -1277,7 +1267,7 @@
                 <div class="mb-16">
                     <h3
                         class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
-                        EN EL CORAZÓN DE BONMONT TERRES NOVES
+                        BONMONT TERRES NOVES
                     </h3>
                     <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
@@ -1423,25 +1413,27 @@
 
             <div class="relative z-10 text-center text-white px-4">
                 <h2 class="text-3xl md:text-4xl font-serif font-light mb-8 shadow-sm">A Place to Be Together</h2>
-                <a href="#" aria-label="Reserve on Airbnb"
-                    class="inline-block px-8 py-4 bg-primary text-white uppercase tracking-widest text-sm rounded-md hover:bg-white hover:text-primary transition-colors duration-300 shadow-xl">
-                    Reservar en Airbnb
-                </a>
+                <div class="flex flex-col items-center gap-3">
+                    <a href="#" aria-label="Reserve"
+                        class="inline-block px-6 py-3 bg-primary text-white uppercase tracking-widest text-xs rounded-md hover:bg-white hover:text-primary transition-colors duration-300 shadow-xl">
+                        RESERVAR
+                    </a>
+                    <p class="text-[8px] uppercase tracking-[2px] opacity-70">Licencia turística: HUTB-248281</p>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white py-4 px-6">
-            <div class="max-w-[1400px] mx-auto">
-                <!-- Main Integrated Section -->
-                <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-10 pb-3 border-b border-white/20">
-                    <!-- Logo & Tagline -->
-                    <div class="flex flex-col items-center lg:items-start gap-2 min-w-[200px]">
-                        <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 w-auto">
-                        <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
-                    </div>
+    <footer class="bg-primary text-white py-3 px-6">
+        <div class="max-w-[1400px] mx-auto">
+            <!-- Main Integrated Section -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
+                <!-- Logo & Tagline -->
+                <div class="flex flex-col items-center gap-1 min-w-[200px]">
+                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
+                </div>
 
                     <!-- Navigation -->
                     <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
@@ -1470,7 +1462,11 @@
 
                 <!-- Bottom Section: Legal & Copyright -->
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
-                    <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                    <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+                        <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                        <p class="hidden md:block">|</p>
+                        <p>Tourist License: HUTB-248281</p>
+                    </div>
                     <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
                         <a href="legal.html#legal" class="hover:text-white transition-colors">Legal notice</a>
                         <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
@@ -1699,11 +1695,23 @@
                 cookieAccept.addEventListener('click', () => {
                     localStorage.setItem('cookieConsent', 'accepted');
                     cookieConsent.classList.add('hidden');
+                    // Update Google Analytics consent
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'analytics_storage': 'granted'
+                        });
+                    }
                 });
 
                 cookieReject.addEventListener('click', () => {
                     localStorage.setItem('cookieConsent', 'rejected');
                     cookieConsent.classList.add('hidden');
+                    // Ensure consent is denied if previously accepted
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'analytics_storage': 'denied'
+                        });
+                    }
                 });
             })();
         </script>

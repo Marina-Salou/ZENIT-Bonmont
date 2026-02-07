@@ -2,6 +2,28 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+    <!-- Google tag (gtag.js) - Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        
+        // Default consent to denied
+        if (localStorage.getItem('cookieConsent') !== 'accepted') {
+            gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'personalization_storage': 'denied',
+                'functionality_storage': 'denied',
+                'security_storage': 'granted' // Essential
+            });
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Notice - ZENIT Bonmont | Luxury Villa Costa Dorada</title>
@@ -71,164 +93,74 @@
             
             <!-- Page Title -->
             <div class="text-center mb-16">
-                <h1 class="font-serif text-4xl md:text-5xl font-light text-secondary mb-4">Legal Information</h1>
-                <p class="text-gray-600 dark:text-gray-400">Last updated: February 2026</p>
+                <h1 class="font-serif text-4xl md:text-5xl font-light text-secondary mb-4">Aviso Legal y Privacidad</h1>
+                <p class="text-gray-600 dark:text-gray-400">Última actualización: Febrero 2026</p>
             </div>
 
             <!-- Legal Notice -->
-            <section id="legal-notice" class="mb-16">
-                <h2 class="font-serif text-3xl font-light text-secondary mb-6 pb-3 border-b border-secondary/30">Legal Notice</h2>
+            <section id="legal" class="mb-16">
+                <h2 class="font-serif text-3xl font-light text-secondary mb-6 pb-3 border-b border-secondary/30">Aviso Legal</h2>
                 
                 <div class="prose dark:prose-invert max-w-none">
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. Identification</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. Identificación / Identification</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        In compliance with Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI-CE), 
-                        we inform you that this website is owned by:
+                        En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), le informamos que este sitio web es propiedad de:
                     </p>
                     <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 space-y-2">
-                        <li><strong>Business Name:</strong> ZENIT Bonmont S.L.</li>
-                        <li><strong>Tax ID (NIF):</strong> B-XXXXXXXX</li>
-                        <li><strong>Address:</strong> Costa Dorada, Tarragona, Spain</li>
+                        <li><strong>Razón Social:</strong> ZENIT Bonmont (Idoia)</li>
+                        <li><strong>NIF/CIF:</strong> [Completar con su NIF]</li>
+                        <li><strong>Dirección:</strong> Bonmont Terres Noves, Mont-roig del Camp, Tarragona, España</li>
                         <li><strong>Email:</strong> info@zenitbonmont.com</li>
+                        <li><strong>Licencia Turística:</strong> HUTB-248281</li>
                     </ul>
 
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Purpose</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Propiedad Intelectual / Intellectual Property</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        This website provides information about ZENIT Bonmont, an exclusive luxury villa available for rental 
-                        in Costa Dorada, Spain. The purpose is to showcase the property, its amenities, location, and facilitate 
-                        booking inquiries from interested parties.
+                        Todo el contenido de este sitio web (textos, imágenes, logotipos, etc.) es propiedad de ZENIT Bonmont o de sus respectivos autores y está protegido por las leyes de propiedad intelectual.
                     </p>
 
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Intellectual Property</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Veracidad de la Información / Accuracy of Information</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        All content on this website, including but not limited to texts, images, graphics, logos, icons, 
-                        photographs, and software, is the property of ZENIT Bonmont S.L. or its licensors and is protected 
-                        by Spanish and international intellectual property laws. Any unauthorized reproduction, distribution, 
-                        or modification is strictly prohibited.
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">4. Limitation of Liability</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        ZENIT Bonmont S.L. does not guarantee the continuous availability and proper functioning of the website. 
-                        We are not liable for any damages that may result from the use or inability to use the website, 
-                        except in cases of willful misconduct or gross negligence.
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">5. Applicable Law and Jurisdiction</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        These terms are governed by Spanish law. For any dispute arising from the use of this website, 
-                        the parties agree to submit to the courts of Tarragona, Spain, waiving any other jurisdiction 
-                        that may correspond to them.
+                        Las puntuaciones, valoraciones y conceptos destacados mostrados en este sitio web han sido extraídos de evaluaciones reales de huéspedes publicadas en plataformas de reserva externas. ZENIT Bonmont no modifica estas valoraciones para alterar su sentido original.
                     </p>
                 </div>
             </section>
 
             <!-- Privacy Policy -->
             <section id="privacy" class="mb-16">
-                <h2 class="font-serif text-3xl font-light text-secondary mb-6 pb-3 border-b border-secondary/30">Privacy Policy</h2>
+                <h2 class="font-serif text-3xl font-light text-secondary mb-6 pb-3 border-b border-secondary/30">Política de Privacidad</h2>
                 
                 <div class="prose dark:prose-invert max-w-none">
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. Data Controller</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        In compliance with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 
-                        on the protection of natural persons (GDPR) and Organic Law 3/2018 of 5 December on the Protection of 
-                        Personal Data and guarantee of digital rights (LOPDGDD), we inform you that:
-                    </p>
-                    <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 space-y-2">
-                        <li><strong>Data Controller:</strong> ZENIT Bonmont S.L.</li>
-                        <li><strong>Email:</strong> info@zenitbonmont.com</li>
-                    </ul>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Purpose of Data Processing</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        The personal data you provide through contact forms or email will be processed for the following purposes:
+                        De acuerdo con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), le informamos que sus datos serán tratados por ZENIT Bonmont con el fin de gestionar sus consultas y reservas.
                     </p>
                     <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 list-disc pl-6 space-y-2">
-                        <li>Respond to your inquiries about the property and availability</li>
-                        <li>Manage booking requests and reservations</li>
-                        <li>Send you information about ZENIT Bonmont (with your prior consent)</li>
-                        <li>Comply with legal obligations</li>
+                        <li><strong>Finalidad:</strong> Gestión de reservas y comunicación directa.</li>
+                        <li><strong>Legitimación:</strong> Consentimiento del interesado o ejecución de un contrato.</li>
+                        <li><strong>Derechos:</strong> Puede acceder, rectificar o suprimir sus datos escribiendo a info@zenitbonmont.com.</li>
                     </ul>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Legal Basis</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        The legal basis for processing your data is your consent when contacting us, the execution of a 
-                        contractual relationship (rental agreement), and compliance with legal obligations.
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">4. Data Retention</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        Your personal data will be retained for as long as necessary to fulfill the purposes outlined above, 
-                        or as required by applicable law. Afterward, data will be securely deleted or anonymized.
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">5. Your Rights</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        You have the right to:
-                    </p>
-                    <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 list-disc pl-6 space-y-2">
-                        <li>Access your personal data</li>
-                        <li>Request rectification or deletion</li>
-                        <li>Oppose or limit processing</li>
-                        <li>Request data portability</li>
-                        <li>Withdraw consent at any time</li>
-                        <li>File a complaint with the Spanish Data Protection Agency (AEPD)</li>
-                    </ul>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        To exercise your rights, please contact us at: <a href="mailto:info@zenitbonmont.com" class="text-secondary hover:underline">info@zenitbonmont.com</a>
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">6. Data Security</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        We have implemented appropriate technical and organizational measures to protect your personal data 
-                        against unauthorized access, loss, or alteration.
-                    </p>
                 </div>
             </section>
 
             <!-- Cookie Policy -->
             <section id="cookies" class="mb-16">
-                <h2 class="font-serif text-3xl font-light text-secondary mb-6 pb-3 border-b border-secondary/30">Cookie Policy</h2>
+                <h2 class="font-serif text-3xl font-light text-secondary mb-6 pb-3 border-b border-secondary/30">Política de Cookies</h2>
                 
                 <div class="prose dark:prose-invert max-w-none">
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. What are Cookies?</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        Cookies are small text files that are stored on your device when you visit a website. They help the 
-                        website remember your preferences and improve your browsing experience.
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Types of Cookies We Use</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        This website uses the following types of cookies:
+                        Este sitio web utiliza cookies técnicas (necesarias) y analíticas (Google Analytics) para mejorar su experiencia.
                     </p>
                     
                     <div class="mb-6">
-                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Technical Cookies (Necessary)</h4>
+                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Google Analytics</h4>
                         <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
-                            These cookies are essential for the website to function properly. They enable basic features 
-                            such as navigation and access to secure areas.
+                            Utilizamos Google Analytics para entender cómo los visitantes interactúan con la web. Estas cookies solo se activan si usted da su consentimiento expreso.
                         </p>
-                        <ul class="text-gray-700 dark:text-gray-300 text-sm space-y-1 pl-6 list-disc">
-                            <li><strong>theme:</strong> Stores your dark/light mode preference (localStorage)</li>
-                        </ul>
                     </div>
 
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Managing Cookies</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">Gestión de Cookies</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        You can configure your browser to refuse all cookies or to indicate when a cookie is being sent. 
-                        However, if you do not accept cookies, some parts of the website may not function properly.
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">4. Third-Party Cookies</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        Currently, this website does not use third-party cookies for analytics or advertising. If this 
-                        changes in the future, we will update this policy and request your consent where required.
-                    </p>
-
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">5. Updates to this Policy</h3>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        We may update this Cookie Policy from time to time to reflect changes in our practices or for other 
-                        operational, legal, or regulatory reasons. Please review this page periodically for the latest information.
+                        Usted puede cambiar su preferencia en cualquier momento a través del banner de configuración o ajustando los parámetros de su navegador.
                     </p>
                 </div>
             </section>
@@ -237,13 +169,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-4 px-6">
+    <footer class="bg-primary text-white py-3 px-6">
         <div class="max-w-[1400px] mx-auto">
             <!-- Main Integrated Section -->
-            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-10 pb-3 border-b border-white/20">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center lg:items-start gap-2 min-w-[200px]">
-                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 w-auto">
+                <div class="flex flex-col items-center gap-1 min-w-[200px]">
+                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
                     <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
@@ -274,7 +206,11 @@
 
             <!-- Bottom Section: Legal & Copyright -->
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
-                <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+                    <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                    <p class="hidden md:block">|</p>
+                    <p>Tourist License: HUTB-248281</p>
+                </div>
                 <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
                     <a href="legal.html#legal" class="text-secondary font-semibold">Legal notice</a>
                     <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
@@ -339,11 +275,17 @@
             cookieAccept.addEventListener('click', () => {
                 localStorage.setItem('cookieConsent', 'accepted');
                 cookieConsent.classList.add('hidden');
+                if (typeof gtag === 'function') {
+                    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+                }
             });
 
             cookieReject.addEventListener('click', () => {
                 localStorage.setItem('cookieConsent', 'rejected');
                 cookieConsent.classList.add('hidden');
+                if (typeof gtag === 'function') {
+                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+                }
             });
         })();
     </script>

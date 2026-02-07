@@ -2,6 +2,28 @@
 <html lang="es" class="scroll-smooth">
 
 <head>
+    <!-- Google tag (gtag.js) - Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        
+        // Default consent to denied
+        if (localStorage.getItem('cookieConsent') !== 'accepted') {
+            gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'personalization_storage': 'denied',
+                'functionality_storage': 'denied',
+                'security_storage': 'granted' // Essential
+            });
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modernism Guide in Reus: Gaudí and Domènech i Montaner - ZENIT Blog</title>
@@ -75,20 +97,23 @@
     </article>
 
     <!-- Footer CTA -->
-    <div class="py-20 text-center border-t border-black/5 dark:border-white/10 mt-20">
-        <a href="faqs.html#booking" class="inline-block bg-primary dark:bg-white text-white dark:text-primary px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
-            Reservar mi estancia
-        </a>
+    <div class="py-16 text-center border-t border-black/5 dark:border-white/10 mt-20">
+        <div class="flex flex-col items-center gap-3">
+            <a href="faqs.html#booking" class="inline-block bg-primary dark:bg-white text-white dark:text-primary px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all shadow-lg rounded-md">
+                RESERVAR
+            </a>
+            <p class="text-[8px] uppercase tracking-[2px] text-muted opacity-70">Licencia turística: HUTB-248281</p>
+        </div>
     </div>
 
     <!-- Unified Footer -->
-    <footer class="bg-primary text-white py-4 px-6">
+    <footer class="bg-primary text-white py-3 px-6">
         <div class="max-w-[1400px] mx-auto">
             <!-- Main Integrated Section -->
-            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-10 pb-3 border-b border-white/20">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center lg:items-start gap-2 min-w-[200px]">
-                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 w-auto">
+                <div class="flex flex-col items-center gap-1 min-w-[200px]">
+                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
                     <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
@@ -119,7 +144,11 @@
 
             <!-- Bottom Section: Legal & Copyright -->
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
-                <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+                    <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                    <p class="hidden md:block">|</p>
+                    <p>Tourist License: HUTB-248281</p>
+                </div>
                 <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
                     <a href="legal.html#legal" class="hover:text-white transition-colors">Legal notice</a>
                     <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
