@@ -67,7 +67,7 @@
     },
     "cocina": {
         "titleEN": "Kitchen: Capacity and Functionality",
-        "description": "Amplia y luminosa, con electrodomésticos de calidad y generoso espacio de almacenamiento con todo lo necesario para los huéspedes.",
+        "description": "Equipada con todo lo necesario para los huéspedes: electrodomésticos de calidad y generoso espacio de almacenamiento.",
         "images": [
             {
                 "src": "images/cocina/cocina-1.webp",
@@ -101,7 +101,7 @@
     },
     "dormitorios": {
         "titleEN": "Bedrooms: Sanctuaries of Rest",
-        "description": "Seis habitaciones amplias y luminosas donde la calma y el confort se unen para garantizar un descanso reparador.",
+        "description": "Seis acogedoras habitaciones donde la calma y el confort se unen para garantizar un descanso reparador.",
         "images": [
             {
                 "src": "images/dormitorio1/dormitorio-1-1.webp",
