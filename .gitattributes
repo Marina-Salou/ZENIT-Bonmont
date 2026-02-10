@@ -1,0 +1,6 @@
+# Normaliza los finales de línea para evitar advertencias y mantener consistencia entre sistemas
+# Forzar LF en archivos HTML, CSS y JSON; dejar el resto con comportamiento automático
+*.html text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+* text=auto
