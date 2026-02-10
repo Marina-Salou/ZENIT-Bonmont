@@ -1,8 +1,8 @@
 {
   "name": "bonmont",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "ZENIT Bonmont - Luxury vacation rental website",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx @tailwindcss/cli -i input.css -o output.css",
@@ -15,5 +15,8 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19"
   }
 }

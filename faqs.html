@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth scroll-pt-20">
 
 <head>
     <!-- Google tag (gtag.js) - Consent Mode -->
@@ -7,17 +7,24 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         
-        // Default consent to denied
-        if (localStorage.getItem('cookieConsent') !== 'accepted') {
-            gtag('consent', 'default', {
-                'analytics_storage': 'denied',
-                'ad_storage': 'denied',
-                'personalization_storage': 'denied',
-                'functionality_storage': 'denied',
-                'security_storage': 'granted' // Essential
-            });
-        }
+        // Default consent: denied unless accepted and not expired (6 months)
+        (function() {
+            var consent = localStorage.getItem('cookieConsent');
+            var consentDate = localStorage.getItem('cookieConsentDate');
+            var sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
+            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+            if (!isValid) {
+                gtag('consent', 'default', {
+                    'analytics_storage': 'denied',
+                    'ad_storage': 'denied',
+                    'personalization_storage': 'denied',
+                    'functionality_storage': 'denied',
+                    'security_storage': 'granted'
+                });
+            }
+        })();
     </script>
+    <!-- TODO: Reemplazar G-XXXXXXXXXX con el ID real de Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         gtag('js', new Date());
@@ -30,8 +37,26 @@
     <link rel="icon" type="image/png" href="images/favicon.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" href="images/favicon_dorado.png" media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" href="images/favicon_dorado.png">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="canonical" href="https://zenitbonmont.com/faqs.html">
+
+    <!-- Meta Description -->
     <meta name="description"
         content="Frequently asked questions and booking process for ZENIT Bonmont.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="FAQ & Booking - ZENIT Bonmont">
+    <meta property="og:description" content="Frequently asked questions and booking process for ZENIT Bonmont.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://zenitbonmont.com/images/beach.webp">
+    <meta property="og:url" content="https://zenitbonmont.com/faqs.html">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ & Booking - ZENIT Bonmont">
+    <meta name="twitter:description" content="Frequently asked questions and booking process for ZENIT Bonmont.">
+    <meta name="twitter:image" content="https://zenitbonmont.com/images/beach.webp">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,27 +65,7 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a1a1a',
-                        secondary: '#c9a866',
-                        text: '#2c2c2c',
-                        muted: '#666666',
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
-                        serif: ['Crimson Text', 'ui-serif', 'Georgia'],
-                        bodoni: ['Libre Bodoni', 'serif'],
-                    },
-                },
-            },
-        }
-    </script>
+    <link rel="stylesheet" href="output.css">
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -72,10 +77,16 @@
 
 <body class="font-sans text-text dark:text-gray-200 bg-white dark:bg-primary antialiased selection:bg-secondary selection:text-white">
 
+    <!-- Skip Link -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60 focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
+        Ir al contenido principal
+    </a>
+
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
+        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
@@ -86,33 +97,33 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
                 <a href="index.html#home"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">INICIO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
                 <a href="index.html#indoor"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">INTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="index.html#outdoor"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EXTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="index.html#lifestyle"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EPICENTRO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="index.html#philosophy"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">ANFITRIONA</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
                     class="group flex items-center gap-1.5 text-[0.85rem] uppercase tracking-[2px] font-bold text-secondary relative transition-colors">
                     <span class="border-b-2 border-secondary pb-0.5">FAQS</span>
                 </a>
                 <a href="blog.html"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">BLOG</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
             </nav>
 
             <!-- Theme & Mobile Toggle -->
             <div class="flex items-center gap-4">
                 <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                    <svg class="hidden dark:block w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
-                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 z-50 group" aria-label="Open menu">
-                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-[8px] group-aria-expanded:rotate-45"></span>
-                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
-                    <span class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-[8px] group-aria-expanded:-rotate-45"></span>
+                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group" aria-label="Open menu" aria-expanded="false">
+                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
+                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
                 </button>
             </div>
         </div>
@@ -132,11 +143,11 @@
     <main id="main-content">
         <!-- Hero Section -->
         <section class="py-20 md:py-32 bg-gray-50 dark:bg-black/10">
-            <div class="max-w-[1400px] mx-auto px-6 text-center">
+            <div class="max-w-350 mx-auto px-6 text-center">
                 <h1 class="font-serif text-[3.5rem] md:text-[5rem] text-primary dark:text-white leading-tight mb-6">
                     Mimo y <span class="text-secondary italic">Atención</span>
                 </h1>
-                <div class="w-16 h-[1px] bg-secondary mx-auto mb-8"></div>
+                <div class="w-16 h-px bg-secondary mx-auto mb-8"></div>
                 <p class="font-sans text-[1.1rem] text-muted dark:text-gray-400 max-w-2xl mx-auto italic">
                     Descubre todo lo que ZENIT Bonmont ofrece y resuelve tus dudas antes de tu llegada.
                 </p>
@@ -145,7 +156,7 @@
 
         <!-- Booking Section -->
         <section id="booking" class="py-16 md:py-24">
-            <div class="max-w-[1200px] mx-auto px-6">
+            <div class="max-w-300 mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 items-start">
                     
                     <!-- Form Column -->
@@ -225,7 +236,7 @@
                                 Ver Calendario Completo
                             </button>
 
-                            <div id="calendarContainer" class="hidden mt-8 w-full aspect-[4/3] border border-gray-100 dark:border-white/10 rounded-sm overflow-hidden shadow-lg">
+                            <div id="calendarContainer" class="hidden mt-8 w-full aspect-4/3 border border-gray-100 dark:border-white/10 rounded-sm overflow-hidden shadow-lg">
                                 <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=ZXMuc3BhaW4jaG9saWRheUBncm91cC52LmcaG9vZ2xlLmNvbQ&color=%23C9A866"
                                     class="w-full h-full border-0" frameborder="0" scrolling="no"></iframe>
                             </div>
@@ -247,7 +258,7 @@
 
         <!-- FAQ Section (Placeholder) -->
         <section class="py-16 md:py-24 bg-gray-50 dark:bg-black/10">
-            <div class="max-w-[1000px] mx-auto px-6">
+            <div class="max-w-250 mx-auto px-6">
                 <h2 class="font-serif text-[2.5rem] text-center text-primary dark:text-white mb-12">Preguntas Frecuentes</h2>
                 <div class="space-y-4">
                     <!-- Placeholder FAQs -->
@@ -261,23 +272,23 @@
 
         <!-- Testimonials Section: Nuestra comunidad -->
         <section class="py-16 md:py-24 bg-white dark:bg-primary border-t border-black/5 dark:border-white/5">
-            <div class="max-w-[1000px] mx-auto px-6">
+            <div class="max-w-250 mx-auto px-6">
                 <h2 class="font-serif text-[2.5rem] text-center text-primary dark:text-white mb-16">Nuestra comunidad</h2>
                 
                 <!-- Host Commentary: Solera ZENIT -->
                 <div class="relative bg-gray-50 dark:bg-black/20 p-8 md:p-12 rounded-sm border border-secondary/20">
                     <svg class="absolute top-6 left-6 w-10 h-10 text-secondary/20" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.154c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
                     
-                    <div class="relative z-10 text-center max-w-[800px] mx-auto">
+                    <div class="relative z-10 text-center max-w-200 mx-auto">
                         <h3 class="font-bodoni italic text-2xl text-secondary mb-6">Solera ZENIT</h3>
                         <p class="font-sans italic text-[1.1rem] text-primary dark:text-gray-300 leading-relaxed mb-8">
                             "Más de 80 familias han disfrutado de la experiencia Zenit Bonmont durante los últimos 11 años en los que he tenido el placer de acoger a viajeros de todo el mundo. Hoy, abro este espacio exclusivo para las historias de quienes eligen vivir ZENIT Bonmont reservando directamente conmigo."
                         </p>
                         <div class="flex flex-col items-center gap-3">
                             <div class="flex items-center justify-center gap-4">
-                                <div class="w-8 h-[1px] bg-secondary"></div>
+                                <div class="w-8 h-px bg-secondary"></div>
                                 <p class="font-sans uppercase tracking-[3px] text-xs font-bold text-primary dark:text-white">Idoia, Zenit Bonmont</p>
-                                <div class="w-8 h-[1px] bg-secondary"></div>
+                                <div class="w-8 h-px bg-secondary"></div>
                             </div>
                             <p class="text-[10px] text-secondary uppercase tracking-[2px] font-medium">Febrero 2026</p>
                         </div>
@@ -289,11 +300,11 @@
 
     <!-- Footer -->
     <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-[1400px] mx-auto">
+        <div class="max-w-350 mx-auto">
             <!-- Main Integrated Section -->
             <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center gap-1 min-w-[200px]">
+                <div class="flex flex-col items-center gap-1 min-w-50">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
                     <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
@@ -310,11 +321,13 @@
                 </nav>
 
                 <!-- Contacts & Social -->
-                <div class="flex flex-col items-center lg:items-end gap-3 min-w-[200px]">
+                <div class="flex flex-col items-center lg:items-end gap-3 min-w-50">
                     <div class="flex gap-4">
+                        <!-- TODO: Actualizar con URL del perfil real de Instagram -->
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         </a>
+                        <!-- TODO: Actualizar con URL del perfil real de Facebook -->
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Facebook">
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         </a>
@@ -326,7 +339,7 @@
             <!-- Bottom Section: Legal & Copyright -->
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
                 <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
-                    <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                    <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                     <p class="hidden md:block">|</p>
                     <p>Tourist License: HUTB-248281</p>
                 </div>
@@ -334,25 +347,19 @@
                     <a href="legal.html#legal" class="hover:text-white transition-colors">Legal notice</a>
                     <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
                     <a href="legal.html#cookies" class="hover:text-white transition-colors">Cookies</a>
+                    <a href="#" id="manageCookies" class="hover:text-white transition-colors">Gestionar cookies</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Menu toggle
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobileMenu');
-            this.setAttribute('aria-expanded', menu.classList.toggle('scale-y-0') ? 'false' : 'true');
-            menu.classList.toggle('opacity-0');
-        });
-
     <!-- Cookie Consent Banner -->
     <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
-        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex-1">
                 <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
-                    Utilizamos cookies para mejorar su experiencia. <a href="legal.html#cookies" class="text-secondary underline">Más info</a>
+                    Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.
+                    <a href="legal.html#cookies" class="text-secondary underline">Más información</a>
                 </p>
             </div>
             <div class="flex gap-3">
@@ -367,7 +374,7 @@
     </div>
 
     <script>
-        // Cookie Consent Logic
+        // Cookie Consent Logic — con expiración de 6 meses (GDPR/LOPD)
         (function() {
             const cookieConsent = document.getElementById('cookieConsent');
             const cookieAccept = document.getElementById('cookieAccept');
@@ -375,12 +382,26 @@
 
             if (!cookieConsent || !cookieAccept || !cookieReject) return;
 
-            if (!localStorage.getItem('cookieConsent')) {
+            function isConsentValid() {
+                const consentDate = localStorage.getItem('cookieConsentDate');
+                if (!consentDate) return false;
+                const sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
+                return (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+            }
+
+            function saveConsent(value) {
+                localStorage.setItem('cookieConsent', value);
+                localStorage.setItem('cookieConsentDate', Date.now().toString());
+            }
+
+            if (!localStorage.getItem('cookieConsent') || !isConsentValid()) {
+                localStorage.removeItem('cookieConsent');
+                localStorage.removeItem('cookieConsentDate');
                 cookieConsent.classList.remove('hidden');
             }
 
             cookieAccept.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
+                saveConsent('accepted');
                 cookieConsent.classList.add('hidden');
                 if (typeof gtag === 'function') {
                     gtag('consent', 'update', { 'analytics_storage': 'granted' });
@@ -388,20 +409,48 @@
             });
 
             cookieReject.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'rejected');
+                saveConsent('rejected');
                 cookieConsent.classList.add('hidden');
                 if (typeof gtag === 'function') {
                     gtag('consent', 'update', { 'analytics_storage': 'denied' });
                 }
             });
+
+            document.getElementById('manageCookies')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('cookieConsent');
+                localStorage.removeItem('cookieConsentDate');
+                cookieConsent.classList.remove('hidden');
+            });
         })();
 
-        // Theme toggle
-        document.getElementById('themeToggle').addEventListener('click', function() {
-            const html = document.documentElement;
-            const isDark = html.classList.toggle('dark');
-            localStorage.theme = isDark ? 'dark' : 'light';
-        });
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('scale-y-0');
+                mobileMenu.classList.toggle('opacity-0');
+            });
+        }
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const html = document.documentElement;
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.theme = 'light';
+                } else {
+                    html.classList.add('dark');
+                    localStorage.theme = 'dark';
+                }
+            });
+        }
 
         // Calendar show/hide
         document.getElementById('showCalendar').addEventListener('click', function() {

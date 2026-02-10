@@ -7,17 +7,24 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         
-        // Default consent to denied
-        if (localStorage.getItem('cookieConsent') !== 'accepted') {
-            gtag('consent', 'default', {
-                'analytics_storage': 'denied',
-                'ad_storage': 'denied',
-                'personalization_storage': 'denied',
-                'functionality_storage': 'denied',
-                'security_storage': 'granted' // Essential
-            });
-        }
+        // Default consent: denied unless accepted and not expired (6 months)
+        (function() {
+            var consent = localStorage.getItem('cookieConsent');
+            var consentDate = localStorage.getItem('cookieConsentDate');
+            var sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
+            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+            if (!isValid) {
+                gtag('consent', 'default', {
+                    'analytics_storage': 'denied',
+                    'ad_storage': 'denied',
+                    'personalization_storage': 'denied',
+                    'functionality_storage': 'denied',
+                    'security_storage': 'granted'
+                });
+            }
+        })();
     </script>
+    <!-- TODO: Reemplazar G-XXXXXXXXXX con el ID real de Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         gtag('js', new Date());
@@ -30,6 +37,9 @@
     <link rel="icon" type="image/png" href="images/favicon.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" href="images/favicon_dorado.png" media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" href="images/favicon_dorado.png">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="canonical" href="https://zenitbonmont.com/">
+
     <!-- Meta Description in English -->
     <meta name="description"
         content="An exclusive refuge designed to be lived. Luxury vacation rental in Costa Dorada. Experience absolute comfort, privacy, and the Mediterranean lifestyle.">
@@ -39,9 +49,15 @@
     <meta property="og:description"
         content="An exclusive refuge designed to be lived. Luxury vacation rental in Costa Dorada tailored for memories.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/hero-poster.jpg">
-    <meta property="og:url" content="https://bonmont-refuge.com">
+    <meta property="og:image" content="https://zenitbonmont.com/images/hero-poster.jpg">
+    <meta property="og:url" content="https://zenitbonmont.com/">
     <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZENIT Bonmont - Exclusive Refuge">
+    <meta name="twitter:description" content="An exclusive refuge designed to be lived. Luxury vacation rental in Costa Dorada tailored for memories.">
+    <meta name="twitter:image" content="https://zenitbonmont.com/images/hero-poster.jpg">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -49,17 +65,25 @@
       "@context": "https://schema.org",
       "@type": "VacationRental",
       "name": "ZENIT Bonmont Exclusive Refuge",
+      "url": "https://zenitbonmont.com/",
       "description": "An exclusive refuge designed to be lived. Luxury villa in Costa Dorada with 1600m2 of private land, pool, and premium amenities.",
       "image": [
-        "images/hero-poster.jpg",
-        "images/identity-villa.webp",
-        "images/pool-day.webp"
+        "https://zenitbonmont.com/images/hero-poster.jpg",
+        "https://zenitbonmont.com/images/identity-villa.webp",
+        "https://zenitbonmont.com/images/exteriors/pool/pool-11.webp"
       ],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Bonmont",
-        "addressRegion": "Costa Dorada",
+        "streetAddress": "Carrer d'en Pere Antoni Torres i Jordi, 7-9",
+        "addressLocality": "Mont-roig del Camp",
+        "addressRegion": "Tarragona",
+        "postalCode": "43300",
         "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.0430556,
+        "longitude": 0.9258333
       },
       "touristType": [
         "Luxury Travel",
@@ -67,6 +91,7 @@
         "Golf"
       ],
       "numberOfRooms": 6,
+      "numberOfBathroomsTotal": 6,
       "occupancy": {
         "@type": "QuantitativeValue",
         "value": 14
@@ -83,9 +108,14 @@
           "value": true
         },
         {
-            "@type": "LocationFeatureSpecification",
-            "name": "Air Conditioning",
-            "value": true
+          "@type": "LocationFeatureSpecification",
+          "name": "Air Conditioning",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Wi-Fi",
+          "value": true
         }
       ],
       "host": {
@@ -95,6 +125,10 @@
     }
     </script>
 
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="images/hero-poster.jpg">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,28 +136,7 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a1a1a',
-                        secondary: '#c9a866',
-                        text: '#2c2c2c',
-                        'hero-text': '#f8f8f7',
-                        muted: '#666666',
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
-                        serif: ['Crimson Text', 'ui-serif', 'Georgia'],
-                        bodoni: ['Libre Bodoni', 'serif'],
-                    },
-                },
-            },
-        }
-    </script>
+    <link rel="stylesheet" href="output.css">
     <script>
         // Inline script to prevent FOUC (Flash of Unstyled Content)
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -139,14 +152,14 @@
 
     <!-- Skip Link (Spanish text) -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60 focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
         Ir al contenido principal
     </a>
 
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
+        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
@@ -163,37 +176,25 @@
                     <span class="border-b border-secondary pb-0.5">INICIO</span>
                 </a>
                 <a href="#indoor"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">INTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="#outdoor"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EXTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="#lifestyle"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">EPICENTRO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="#philosophy"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">ANFITRIONA</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">FAQS</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
                 <a href="blog.html"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30">BLOG</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
             </nav>
 
             <!-- CTA & Mobile Toggle -->
             <div class="flex items-center gap-4 md:gap-6">
                 <!-- Theme Toggle -->
-                <button id="themeToggle"
-                    class="group/theme flex items-center justify-center p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-                    aria-label="Toggle dark mode">
-                    <!-- Sun Icon (shown in light mode) -->
-                    <svg id="sunIcon" class="w-5 h-5 text-[#e6b32e] animate-spin-slow block dark:hidden"
-                        fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                            d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-                    </svg>
-                    <!-- Moon Icon (shown in dark mode) -->
-                    <svg id="moonIcon" class="w-5 h-5 text-secondary hidden dark:block" fill="currentColor"
-                        viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                            d="M9.507 3.108a.75.75 0 01.877.857 7.501 7.501 0 1010.51 10.51.75.75 0 01.856.878 9 9 0 11-11.39-11.39.75.75 0 01.85-.855z" />
-                    </svg>
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
 
                 <a href="faqs.html#booking"
@@ -202,14 +203,14 @@
                 </a>
 
                 <!-- Mobile Menu Button -->
-                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 z-50 group"
+                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group"
                     aria-label="Open menu" aria-expanded="false">
                     <span
-                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-[8px] group-aria-expanded:rotate-45"></span>
+                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
                     <span
-                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
                     <span
-                        class="block w-[26px] h-[2px] bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-[8px] group-aria-expanded:-rotate-45"></span>
+                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
                 </button>
             </div>
         </div>
@@ -239,20 +240,20 @@
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section id="home" class="relative h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
+        <section id="home" class="relative h-screen min-h-150 overflow-hidden flex items-center justify-center">
             <div class="absolute inset-0 bg-black/40 z-20"></div>
             <!-- Video background (with filter for contrast) -->
             <video autoplay muted playsinline poster="images/hero-poster.jpg"
-                class="absolute inset-0 w-full h-full object-cover z-10 filter brightness-[0.95]"
+                class="absolute inset-0 w-full h-full object-cover z-10 brightness-[0.95]"
                 aria-label="Background video of the villa at night">
                 <source src="images/hero-night.webm" type="video/webm">
             </video>
 
             <div
-                class="relative z-30 text-center text-white py-20 md:py-24 px-6 flex flex-col justify-between h-full max-w-[1400px] mx-auto w-full items-center">
+                class="relative z-30 text-center text-white py-20 md:py-24 px-6 flex flex-col justify-between h-full max-w-350 mx-auto w-full items-center">
                 <!-- Top: Title (Grande, but balanced) -->
                 <h1
-                    class="font-bodoni italic font-[400] text-[1.9rem] sm:text-[2.6rem] md:text-[3.8rem] lg:text-[5rem] tracking-[0.5px] leading-none text-hero-text drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)] md:whitespace-nowrap">
+                    class="font-bodoni italic font-normal text-[1.9rem] sm:text-[2.6rem] md:text-[3.8rem] lg:text-[5rem] tracking-[0.5px] leading-none text-hero-text drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)] md:whitespace-nowrap">
                     An exclusive refuge designed to be lived
                 </h1>
 
@@ -273,24 +274,24 @@
         </section>
 
         <!-- Villa Identity & Stats -->
-        <section class="pt-16 md:pt-24 pb-0 max-w-[1400px] mx-auto px-6">
+        <section class="pt-16 md:pt-24 pb-0 max-w-350 mx-auto px-6">
             <!-- Central Title Section -->
-            <div class="text-center mb-[4rem] relative">
-                <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-[1.5rem] leading-tight">
+            <div class="text-center mb-16 relative">
+                <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                     Una atmósfera a tu medida
                 </h2>
-                <div class="w-[60px] h-[1px] bg-secondary mx-auto"></div>
+                <div class="w-15 h-px bg-secondary mx-auto"></div>
             </div>
 
             <!-- Left Aligned Subtitle & Description -->
             <div class="mb-0">
                 <h3
-                    class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
+                    class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                     EL ESCENARIO DE TU ESTANCIA
                 </h3>
-                <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
+                <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                 <p
-                    class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-[1.5rem] mb-[4rem] leading-[1.8] max-w-[800px]">
+                    class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8] max-w-200">
                     Cada detalle está pensado para ofrecerte una experiencia de absoluto confort.
                 </p>
             </div>
@@ -381,7 +382,7 @@
 
         <!-- Airbnb Snapshot -->
         <section class="bg-white dark:bg-primary border-b border-black/5 dark:border-white/5">
-            <div class="pt-6 pb-16 max-w-[1400px] mx-auto px-6">
+            <div class="pt-6 pb-16 max-w-350 mx-auto px-6">
                 <h3
                     class="font-sans text-[0.75rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white mb-6">
                     EVALUACIÓN EN AIRBNB
@@ -505,7 +506,7 @@
 
 
                 <!-- Hidden Comments Panel -->
-                <div id="comments-panel"
+                <div id="comments-panel" aria-hidden="true"
                     class="max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
                     <div class="pt-12 pb-8 flex flex-col items-start lg:items-end">
                         <div class="lg:w-fit">
@@ -568,7 +569,7 @@
         <!-- Equipment & Wellness Section -->
         <section id="wellness"
             class="py-16 md:py-24 bg-white dark:bg-primary border-b border-black/5 dark:border-white/5">
-            <div class="max-w-[1400px] mx-auto px-6">
+            <div class="max-w-350 mx-auto px-6">
                 <div
                     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_auto] gap-12 justify-between items-start">
 
@@ -744,7 +745,7 @@
                             class="font-sans text-[0.7rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white">
                             SERVICIOS DE CORTESÍA
                         </h3>
-                        <ul class="space-y-4 flex-grow">
+                        <ul class="space-y-4 grow">
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -810,22 +811,22 @@
 
         <!-- Interior Portal -->
         <section id="indoor" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-[1400px] mx-auto px-6">
+            <div class="max-w-350 mx-auto px-6">
                 <!-- Main Heading -->
-                <div class="text-center mb-[4rem] relative">
-                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-[1.5rem] leading-tight">
+                <div class="text-center mb-16 relative">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         La Experiencia Interior
                     </h2>
-                    <div class="w-[60px] h-[1px] bg-secondary mx-auto"></div>
+                    <div class="w-15 h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line -->
                 <div class="mb-12">
                     <h3
-                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         LA VISITA DE BIENVENIDA
                     </h3>
-                    <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-center">
@@ -839,7 +840,7 @@
 
                     <!-- Right: Video Preview -->
                     <figure class="relative rounded-sm overflow-hidden group shadow-2xl">
-                        <img src="images/interior-entry.webp" alt="Interior entrance hall of the villa"
+                        <img src="images/interior-entry.webp" alt="Interior entrance hall of the villa" loading="lazy" decoding="async"
                             class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
 
                         <div
@@ -859,16 +860,16 @@
 
         <!-- Interiors Preview Grid -->
         <section id="interiors-gallery" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-[1400px] mx-auto px-6">
+            <div class="max-w-350 mx-auto px-6">
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         EL CORAZÓN DE LA CASA
                     </h3>
-                    <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-[1.5rem] mb-[4rem] leading-[1.8]">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         Donde el diseño cobra vida y cada estancia late con un único propósito: tu comodidad y
                         bienestar.
                     </p>
@@ -880,7 +881,7 @@
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
-                            <img src="images/salon.webp" alt="Salones espacios versátiles"
+                            <img src="images/salon.webp" alt="Salones espacios versátiles" loading="lazy" decoding="async"
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -904,7 +905,7 @@
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
-                            <img src="images/kitchen.webp" alt="Cocina capacidad y funcionalidad"
+                            <img src="images/kitchen.webp" alt="Cocina capacidad y funcionalidad" loading="lazy" decoding="async"
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -932,8 +933,8 @@
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
-                            <img src="images/bedroom.webp" alt="Dormitorios santuarios de descanso"
-                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
+                            <img src="images/bedroom.webp" alt="Dormitorios santuarios de descanso" loading="lazy" decoding="async"
+                                class="w-full aspect-4/3 object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
                             <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Dormitorios</h4>
@@ -956,8 +957,8 @@
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
-                            <img src="images/bathroom.webp" alt="Baños rituales de bienestar"
-                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
+                            <img src="images/bathroom.webp" alt="Baños rituales de bienestar" loading="lazy" decoding="async"
+                                class="w-full aspect-4/3 object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
                             <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Baños</h4>
@@ -980,8 +981,8 @@
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
-                            <img src="images/despacho/despacho-1.webp" alt="Ala Privada a otro nivel"
-                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
+                            <img src="images/despacho/despacho-1.webp" alt="Ala Privada a otro nivel" loading="lazy" decoding="async"
+                                class="w-full aspect-4/3 object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
                             <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">A otro nivel</h4>
@@ -1005,28 +1006,28 @@
 
         <!-- Exteriores Section (El Oasis) -->
         <section id="outdoor" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-[1400px] mx-auto px-6">
+            <div class="max-w-350 mx-auto px-6">
                 <!-- Main Heading -->
-                <div class="text-center mb-[4rem] relative">
-                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-[1.5rem] leading-tight">
+                <div class="text-center mb-16 relative">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         El Oasis
                     </h2>
-                    <div class="w-[60px] h-[1px] bg-secondary mx-auto"></div>
+                    <div class="w-15 h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line -->
                 <div class="mb-12">
                     <h3
-                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         NATURALEZA PRIVADA
                     </h3>
-                    <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-16 items-center">
                     <!-- Left: Video Preview -->
                     <figure class="relative rounded-sm overflow-hidden group shadow-2xl">
-                        <img src="images/outdoor-tour.webp" alt="Outdoor garden and pool area view"
+                        <img src="images/outdoor-tour.webp" alt="Outdoor garden and pool area view" loading="lazy" decoding="async"
                             class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
 
                         <div
@@ -1053,16 +1054,16 @@
             </div>
 
             <!-- Espacios Vivos Gallery -->
-            <div class="max-w-[1400px] mx-auto px-6 mt-16 md:mt-24">
+            <div class="max-w-350 mx-auto px-6 mt-16 md:mt-24">
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         ESPACIOS VIVOS
                     </h3>
-                    <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-[1.5rem] mb-[4rem] leading-[1.8]">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         Siente el exterior a tu manera.
                     </p>
                 </div>
@@ -1072,7 +1073,7 @@
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
-                            <img src="images/exteriors/pool/pool-11.webp" alt="Naturaleza y ocio - Oasis íntimo"
+                            <img src="images/exteriors/pool/pool-11.webp" alt="Naturaleza y ocio - Oasis íntimo" loading="lazy" decoding="async"
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -1096,7 +1097,7 @@
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
-                            <img src="images/sobremesa.webp" alt="Momentos inolvidables - Zonas para compartir"
+                            <img src="images/sobremesa.webp" alt="Momentos inolvidables - Zonas para compartir" loading="lazy" decoding="async"
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -1124,24 +1125,24 @@
 
         <!-- Lifestyle Section (Privilegios del entorno) -->
         <section id="lifestyle" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-[1400px] mx-auto px-6">
+            <div class="max-w-350 mx-auto px-6">
                 <!-- Main Heading -->
-                <div class="text-center mb-[4rem] relative">
-                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-[1.5rem] leading-tight">
+                <div class="text-center mb-16 relative">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         Privilegios del entorno
                     </h2>
-                    <div class="w-[60px] h-[1px] bg-secondary mx-auto"></div>
+                    <div class="w-15 h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         EXPLORA LA COSTA DORADA
                     </h3>
-                    <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-[1.5rem] mb-[4rem] leading-[1.8]">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         El exclusivo enclave de ZENIT Bonmont ofrece el equilibrio perfecto entre
                         tranquilidad y proximidad a las mejores atracciones de la Costa Dorada.
                     </p>
@@ -1151,8 +1152,8 @@
                     <!-- Card 1: Mar Mediterráneo -->
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="images/beach.webp" alt="Mar Mediterráneo"
+                        <div class="aspect-4/3 overflow-hidden">
+                            <img src="images/beach.webp" alt="Mar Mediterráneo" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -1161,7 +1162,7 @@
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Playas y calas con encanto
                             </p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html#mar"
+                                <a href="lifestyle.html#mar"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1177,8 +1178,8 @@
                     <!-- Card 2: Cultura y gastronomía -->
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="images/culture.webp" alt="Cultura y gastronomía"
+                        <div class="aspect-4/3 overflow-hidden">
+                            <img src="images/culture.webp" alt="Cultura y gastronomía" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -1186,7 +1187,7 @@
                                 gastronomía</h4>
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Historia viva y sabores</p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html#cultura"
+                                <a href="lifestyle.html#cultura"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1202,8 +1203,8 @@
                     <!-- Card 3: Naturaleza y deporte -->
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="images/delta.webp" alt="Naturaleza y deporte - Delta del Ebro"
+                        <div class="aspect-4/3 overflow-hidden">
+                            <img src="images/delta.webp" alt="Naturaleza y deporte - Delta del Ebro" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -1211,7 +1212,7 @@
                                 deporte</h4>
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Aire libre y rutas</p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html#naturaleza"
+                                <a href="lifestyle.html#naturaleza"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1227,8 +1228,8 @@
                     <!-- Card 4: Ocio y experiencias -->
                     <div
                         class="group bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="images/ferrariland.webp" alt="Ocio y experiencias - Port Aventura"
+                        <div class="aspect-4/3 overflow-hidden">
+                            <img src="images/ferrariland.webp" alt="Ocio y experiencias - Port Aventura" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
@@ -1236,7 +1237,7 @@
                                 experiencias</h4>
                             <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Propuestas para todos</p>
                             <div class="pt-2">
-                                <a href="Lifestyle.html#ocio"
+                                <a href="lifestyle.html#ocio"
                                     class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-[#b08e4b] transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1254,24 +1255,24 @@
 
         <!-- Location Section (El punto del Zenit) -->
         <section id="location" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-[1400px] mx-auto px-6">
+            <div class="max-w-350 mx-auto px-6">
                 <!-- Main Heading -->
-                <div class="text-center mb-[4rem] relative">
-                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-[1.5rem] leading-tight">
+                <div class="text-center mb-16 relative">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         El punto del ZENIT
                     </h2>
-                    <div class="w-[60px] h-[1px] bg-secondary mx-auto"></div>
+                    <div class="w-15 h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-[1.5rem] mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         BONMONT TERRES NOVES
                     </h3>
-                    <div class="h-[1px] bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-[1.5rem] mb-[4rem] leading-[1.8]">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         Donde todo converge: mar, montaña y calma.
                     </p>
                 </div>
@@ -1340,9 +1341,9 @@
         </section>
 
         <!-- Host Section -->
-        <section id="philosophy" class="py-16 max-w-[1000px] mx-auto px-6">
+        <section id="philosophy" class="py-16 max-w-250 mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <img src="images/idoia.webp" alt="Retrato de Idoia, tu anfitriona"
+                <img src="images/idoia.webp" alt="Retrato de Idoia, tu anfitriona" loading="lazy" decoding="async"
                     class="w-48 h-64 rounded-sm object-cover shadow-xl border border-secondary/30">
 
                 <div class="text-center md:text-left flex-1">
@@ -1404,7 +1405,7 @@
         </section>
 
         <!-- Closing CTA -->
-        <section class="relative h-[480px] md:h-[560px] flex items-center justify-center overflow-hidden">
+        <section class="relative h-120 md:h-140 flex items-center justify-center overflow-hidden">
             <video autoplay muted playsinline poster="images/closing-poster.jpg"
                 class="absolute inset-0 w-full h-full object-cover brightness-[0.7]"
                 aria-label="Closing video of the villa">
@@ -1414,7 +1415,7 @@
             <div class="relative z-10 text-center text-white px-4">
                 <h2 class="text-3xl md:text-4xl font-serif font-light mb-8 shadow-sm">A Place to Be Together</h2>
                 <div class="flex flex-col items-center gap-3">
-                    <a href="#" aria-label="Reserve"
+                    <a href="faqs.html#booking" aria-label="Reserve"
                         class="inline-block px-6 py-3 bg-primary text-white uppercase tracking-widest text-xs rounded-md hover:bg-white hover:text-primary transition-colors duration-300 shadow-xl">
                         RESERVAR
                     </a>
@@ -1426,11 +1427,11 @@
     </main>
 
     <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-[1400px] mx-auto">
+        <div class="max-w-350 mx-auto">
             <!-- Main Integrated Section -->
             <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center gap-1 min-w-[200px]">
+                <div class="flex flex-col items-center gap-1 min-w-50">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
                     <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
@@ -1447,11 +1448,13 @@
                     </nav>
 
                     <!-- Contacts & Social -->
-                    <div class="flex flex-col items-center lg:items-end gap-3 min-w-[200px]">
+                    <div class="flex flex-col items-center lg:items-end gap-3 min-w-50">
                         <div class="flex gap-4">
+                            <!-- TODO: Actualizar con URL del perfil real de Instagram -->
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
                                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                             </a>
+                            <!-- TODO: Actualizar con URL del perfil real de Facebook -->
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Facebook">
                                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                             </a>
@@ -1463,7 +1466,7 @@
                 <!-- Bottom Section: Legal & Copyright -->
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
                     <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
-                        <p>&copy; 2026 Sama Design. All rights reserved.</p>
+                        <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                         <p class="hidden md:block">|</p>
                         <p>Tourist License: HUTB-248281</p>
                     </div>
@@ -1471,6 +1474,7 @@
                         <a href="legal.html#legal" class="hover:text-white transition-colors">Legal notice</a>
                         <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
                         <a href="legal.html#cookies" class="hover:text-white transition-colors">Cookies</a>
+                        <a href="#" id="manageCookies" class="hover:text-white transition-colors">Gestionar cookies</a>
                     </div>
                 </div>
             </div>
@@ -1624,11 +1628,13 @@
             function toggleComments(show) {
                 if (show) {
                     commentsBtn.setAttribute('aria-expanded', 'true');
-                    commentsPanel.classList.add('max-h-[1000px]');
+                    commentsPanel.setAttribute('aria-hidden', 'false');
+                    commentsPanel.classList.add('max-h-250');
                     commentsBtn.classList.add('opacity-0', 'pointer-events-none');
                 } else {
                     commentsBtn.setAttribute('aria-expanded', 'false');
-                    commentsPanel.classList.remove('max-h-[1000px]');
+                    commentsPanel.setAttribute('aria-hidden', 'true');
+                    commentsPanel.classList.remove('max-h-250');
                     commentsBtn.classList.remove('opacity-0', 'pointer-events-none');
                 }
             }
@@ -1659,28 +1665,28 @@
         <!-- Cookie Consent Banner -->
         <div id="cookieConsent"
             class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
-            <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex-1">
                     <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
-                        We use cookies to ensure you get the best experience on our website.
-                        <a href="legal.html#cookies" class="text-secondary underline">More info</a>
+                        Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.
+                        <a href="legal.html#cookies" class="text-secondary underline">Más información</a>
                     </p>
                 </div>
                 <div class="flex gap-3">
                     <button id="cookieReject"
                         class="px-6 py-2 text-sm border border-primary dark:border-white/20 text-text dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors rounded">
-                        Decline
+                        Rechazar
                     </button>
                     <button id="cookieAccept"
                         class="px-6 py-2 text-sm bg-secondary text-white font-bold hover:bg-secondary/90 transition-colors rounded">
-                        Accept
+                        Aceptar
                     </button>
                 </div>
             </div>
         </div>
 
         <script>
-            // Cookie Consent Logic
+            // Cookie Consent Logic — con expiración de 6 meses (GDPR/LOPD)
             (function () {
                 const cookieConsent = document.getElementById('cookieConsent');
                 const cookieAccept = document.getElementById('cookieAccept');
@@ -1688,14 +1694,29 @@
 
                 if (!cookieConsent || !cookieAccept || !cookieReject) return;
 
-                if (!localStorage.getItem('cookieConsent')) {
+                // Comprobar si el consentimiento ha expirado (6 meses)
+                function isConsentValid() {
+                    const consentDate = localStorage.getItem('cookieConsentDate');
+                    if (!consentDate) return false;
+                    const sixMonths = 6 * 30 * 24 * 60 * 60 * 1000; // ~180 días
+                    return (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+                }
+
+                function saveConsent(value) {
+                    localStorage.setItem('cookieConsent', value);
+                    localStorage.setItem('cookieConsentDate', Date.now().toString());
+                }
+
+                // Mostrar banner si no hay consentimiento o ha expirado
+                if (!localStorage.getItem('cookieConsent') || !isConsentValid()) {
+                    localStorage.removeItem('cookieConsent');
+                    localStorage.removeItem('cookieConsentDate');
                     cookieConsent.classList.remove('hidden');
                 }
 
                 cookieAccept.addEventListener('click', () => {
-                    localStorage.setItem('cookieConsent', 'accepted');
+                    saveConsent('accepted');
                     cookieConsent.classList.add('hidden');
-                    // Update Google Analytics consent
                     if (typeof gtag === 'function') {
                         gtag('consent', 'update', {
                             'analytics_storage': 'granted'
@@ -1704,14 +1725,21 @@
                 });
 
                 cookieReject.addEventListener('click', () => {
-                    localStorage.setItem('cookieConsent', 'rejected');
+                    saveConsent('rejected');
                     cookieConsent.classList.add('hidden');
-                    // Ensure consent is denied if previously accepted
                     if (typeof gtag === 'function') {
                         gtag('consent', 'update', {
                             'analytics_storage': 'denied'
                         });
                     }
+                });
+
+                // "Gestionar cookies" desde el footer: reabrir el banner
+                document.getElementById('manageCookies')?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('cookieConsent');
+                    localStorage.removeItem('cookieConsentDate');
+                    cookieConsent.classList.remove('hidden');
                 });
             })();
         </script>
