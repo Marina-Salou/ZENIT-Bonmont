@@ -142,129 +142,183 @@
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="py-20 md:py-32 bg-gray-50 dark:bg-black/10">
-            <div class="max-w-350 mx-auto px-6 text-center">
-                <h1 class="font-serif text-[3.5rem] md:text-[5rem] text-primary dark:text-white leading-tight mb-6">
-                    Mimo y <span class="text-secondary italic">Atención</span>
-                </h1>
-                <div class="w-16 h-px bg-secondary mx-auto mb-8"></div>
-                <p class="font-sans text-[1.1rem] text-muted dark:text-gray-400 max-w-2xl mx-auto italic">
-                    Descubre todo lo que ZENIT Bonmont ofrece y resuelve tus dudas antes de tu llegada.
-                </p>
+        <section class="pt-16 md:pt-24 pb-0 bg-white dark:bg-primary">
+            <div class="max-w-350 mx-auto px-6">
+                <div class="text-center mb-16 relative">
+                    <h1 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
+                        Planifica tu estancia
+                    </h1>
+                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                </div>
+
+                <div class="mb-0">
+                    <h2 class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
+                        Disponibilidad
+                    </h2>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <p class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8] max-w-200">
+                        Consulta nuestro calendario.
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- Booking Section -->
-        <section id="booking" class="py-16 md:py-24">
-            <div class="max-w-300 mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 items-start">
-                    
-                    <!-- Form Column -->
-                    <div class="bg-white dark:bg-primary border border-gray-100 dark:border-white/10 p-8 md:p-10 shadow-xl rounded-sm">
-                        <h2 class="font-serif text-3xl text-primary dark:text-white mb-2">Solicitud de Reserva</h2>
-                        <p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-8">Estancia mínima de 5 noches | Licencia: HUTB-248281</p>
-                        
-                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="arrival" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Llegada</label>
-                                    <input type="text" id="arrival" name="arrival" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
-                                </div>
-                                <div>
-                                    <label for="departure" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Salida</label>
-                                    <input type="text" id="departure" name="departure" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
-                                </div>
-                            </div>
+        <section id="booking" class="pt-0 pb-16 md:pb-24">
+            <div class="max-w-350 mx-auto px-6">
+                <div>
+                    <div>
+                        <button id="showCalendar" class="inline-flex items-center gap-3 text-secondary font-bold uppercase tracking-widest text-[0.7rem] hover:opacity-80 transition-opacity">
+                            <span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                            </span>
+                            Ver Calendario Completo
+                        </button>
 
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                                <div>
-                                    <label for="guests" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Adultos</label>
-                                    <select id="guests" name="guests" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
-                                        <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                                        <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
-                                        <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="children" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Niños</label>
-                                    <select id="children" name="children" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
-                                        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="babies" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Bebés</label>
-                                    <select id="babies" name="babies" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
-                                        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="pets" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Mascotas</label>
-                                    <select id="pets" name="pets" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
-                                        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="email" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Email de contacto</label>
-                                <input type="email" id="email" name="email" placeholder="tu@email.com" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
-                            </div>
-
-                            <div>
-                                <label for="comments" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Comentarios / Peticiones especiales</label>
-                                <textarea id="comments" name="comments" rows="3" placeholder="Cuéntanos más sobre tu estancia..." class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full bg-secondary text-white font-bold py-4 uppercase tracking-[3px] text-xs hover:bg-opacity-90 transition-all shadow-md">
-                                Enviar Solicitud
-                            </button>
-                        </form>
+                        <div id="calendarContainer" class="hidden mt-8 w-full max-w-200 mx-auto aspect-video border border-gray-100 dark:border-white/10 rounded-sm overflow-hidden shadow-lg">
+                            <iframe src="https://calendar.google.com/calendar/embed?height=320&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=ZXMuc3BhaW4jaG9saWRheUBncm91cC52LmNvbQ&color=%23C9A866"
+                                class="w-full h-full border-0" frameborder="0" scrolling="no"></iframe>
+                        </div>
                     </div>
 
-                    <!-- Calendar Column -->
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="font-serif text-2xl text-primary dark:text-white mb-4">Disponibilidad</h3>
-                            <p class="text-sm text-muted mb-6 leading-relaxed">
-                                Consulta nuestro calendario actualizado. Ten en cuenta que la estancia mínima es de 5 noches para garantizar la mejor experiencia.
+                    <div class="mt-16 md:mt-24">
+                        <div class="mb-8">
+                            <h3 class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
+                                Solicitud de reserva
+                            </h3>
+                            <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
+                            <p class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
+                                La estancia mínima es de 5 noches.
                             </p>
-                            
-                            <button id="showCalendar" class="inline-flex items-center gap-3 text-secondary font-bold uppercase tracking-widest text-[0.7rem] hover:opacity-80 transition-opacity">
-                                <span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
-                                </span>
-                                Ver Calendario Completo
-                            </button>
-
-                            <div id="calendarContainer" class="hidden mt-8 w-full aspect-4/3 border border-gray-100 dark:border-white/10 rounded-sm overflow-hidden shadow-lg">
-                                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=ZXMuc3BhaW4jaG9saWRheUBncm91cC52LmcaG9vZ2xlLmNvbQ&color=%23C9A866"
-                                    class="w-full h-full border-0" frameborder="0" scrolling="no"></iframe>
-                            </div>
                         </div>
+                        <div class="bg-white dark:bg-primary border border-gray-100 dark:border-white/10 p-8 md:p-10 shadow-xl rounded-sm">
+                            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                                    <div>
+                                        <label for="arrival" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Llegada</label>
+                                        <input type="text" id="arrival" name="arrival" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                    </div>
+                                    <div>
+                                        <label for="departure" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Salida</label>
+                                        <input type="text" id="departure" name="departure" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                    </div>
+                                    <div>
+                                        <label for="guests" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Adultos</label>
+                                        <select id="guests" name="guests" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                            <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+                                            <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="children" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Niños</label>
+                                        <select id="children" name="children" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="babies" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Bebés</label>
+                                        <select id="babies" name="babies" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="pets" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Mascotas</label>
+                                        <select id="pets" name="pets" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                        <!-- Wellness Link -->
-                        <div class="pt-8 border-t border-gray-100 dark:border-white/5">
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-4">¿Dudas sobre el equipamiento?</h4>
-                            <p class="text-sm text-muted mb-6 italic">Gimnasio, sauna, equipamiento para bebés, mascotas...</p>
-                            <a href="wellness.html" class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:underline transition-all">
-                                VER TODO EL EQUIPAMIENTO
-                            </a>
+                                <div>
+                                    <label for="email" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Email de contacto</label>
+                                    <input type="email" id="email" name="email" placeholder="tu@email.com" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                </div>
+
+                                <div>
+                                    <label for="comments" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Comentarios / Peticiones especiales</label>
+                                    <textarea id="comments" name="comments" rows="3" placeholder="Cuéntanos más sobre tu estancia..." class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-secondary text-white font-bold py-4 uppercase tracking-[3px] text-xs hover:bg-opacity-90 transition-all shadow-md">
+                                    Enviar Solicitud
+                                </button>
+                                <p class="text-[0.75rem] text-muted dark:text-gray-400 italic text-center">
+                                    La solicitud requiere de confirmación por parte de la anfitriona.
+                                </p>
+                            </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section (Placeholder) -->
-        <section class="py-16 md:py-24 bg-gray-50 dark:bg-black/10">
-            <div class="max-w-250 mx-auto px-6">
-                <h2 class="font-serif text-[2.5rem] text-center text-primary dark:text-white mb-12">Preguntas Frecuentes</h2>
-                <div class="space-y-4">
-                    <!-- Placeholder FAQs -->
-                    <div class="bg-white dark:bg-[#1f1f1f] p-6 rounded-sm border border-black/5 dark:border-white/5">
-                        <h3 class="font-sans font-bold text-sm uppercase tracking-widest text-primary dark:text-white mb-2">¿Cuál es el horario de check-in?</h3>
-                        <p class="text-sm text-muted">A partir de las 16:00h para garantizar que la limpieza sea perfecta.</p>
+        <section class="pt-16 md:pt-24 pb-0 bg-white dark:bg-primary">
+            <div class="max-w-350 mx-auto px-6">
+                <div class="text-center mb-16 relative">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
+                        Resuelve tus dudas
+                    </h2>
+                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                </div>
+
+                <div class="mb-0">
+                    <h3 class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
+                        Preguntas frecuentes
+                    </h3>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <p class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
+                        Todo lo que necesitas saber antes de enviar tu solicitud y preparar una estancia tranquila.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-8">
+                        <article class="flex items-start gap-4">
+                            <span class="text-secondary flex-shrink-0">•</span>
+                            <div>
+                                <h3 class="font-sans text-sm font-medium text-primary dark:text-white mb-2">¿Cuál es la estancia mínima?</h3>
+                                <p class="font-sans italic text-sm text-muted dark:text-gray-400 leading-relaxed">La estancia mínima es de 5 noches.</p>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-4">
+                            <span class="text-secondary flex-shrink-0">•</span>
+                            <div>
+                                <h3 class="font-sans text-sm font-medium text-primary dark:text-white mb-2">¿Se aceptan estancias largas?</h3>
+                                <p class="font-sans italic text-sm text-muted dark:text-gray-400 leading-relaxed">También es posible valorar estancias más largas. Si es tu caso, puedes contactar para comentarlo.</p>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-4">
+                            <span class="text-secondary flex-shrink-0">•</span>
+                            <div>
+                                <h3 class="font-sans text-sm font-medium text-primary dark:text-white mb-2">¿Cuáles son los horarios de check-in y check-out?</h3>
+                                <p class="font-sans italic text-sm text-muted dark:text-gray-400 leading-relaxed">El check-in se realiza a partir de las 17:00 h hasta medianoche y el check-out hasta las 11:00 h.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="space-y-8">
+                        <article class="flex items-start gap-4">
+                            <span class="text-secondary flex-shrink-0">•</span>
+                            <div>
+                                <h3 class="font-sans text-sm font-medium text-primary dark:text-white mb-2">¿Se pueden adaptar los horarios si el calendario lo permite?</h3>
+                                <p class="font-sans italic text-sm text-muted dark:text-gray-400 leading-relaxed">Siempre que la ocupación lo permita, se intentará ofrecer flexibilidad en los horarios. Esta posibilidad se valora caso por caso.</p>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-4">
+                            <span class="text-secondary flex-shrink-0">•</span>
+                            <div>
+                                <h3 class="font-sans text-sm font-medium text-primary dark:text-white mb-2">¿Es una zona tranquila incluso en temporada alta?</h3>
+                                <p class="font-sans italic text-sm text-muted dark:text-gray-400 leading-relaxed">Sí. Zenit Bonmont se encuentra en una zona residencial tranquila, alejada de las zonas más concurridas, lo que permite disfrutar de privacidad y descanso incluso en los meses de mayor afluencia.</p>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-4">
+                            <span class="text-secondary flex-shrink-0">•</span>
+                            <div>
+                                <h3 class="font-sans text-sm font-medium text-primary dark:text-white mb-2">¿Puedo contactar directamente antes de reservar para resolver dudas?</h3>
+                                <p class="font-sans italic text-sm text-muted dark:text-gray-400 leading-relaxed">Por supuesto. Puedes contactar directamente para resolver cualquier duda y asegurarte de que la estancia se adapta a lo que estás buscando.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -272,27 +326,43 @@
 
         <!-- Testimonials Section: Nuestra comunidad -->
         <section class="py-16 md:py-24 bg-white dark:bg-primary border-t border-black/5 dark:border-white/5">
-            <div class="max-w-250 mx-auto px-6">
-                <h2 class="font-serif text-[2.5rem] text-center text-primary dark:text-white mb-16">Nuestra comunidad</h2>
+            <div class="max-w-350 mx-auto px-6">
+                <div class="text-center mb-16 relative">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
+                        Nuestra comunidad
+                    </h2>
+                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                </div>
                 
-                <!-- Host Commentary: Solera ZENIT -->
-                <div class="relative bg-gray-50 dark:bg-black/20 p-8 md:p-12 rounded-sm border border-secondary/20">
-                    <svg class="absolute top-6 left-6 w-10 h-10 text-secondary/20" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.154c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
-                    
-                    <div class="relative z-10 text-center max-w-200 mx-auto">
-                        <h3 class="font-bodoni italic text-2xl text-secondary mb-6">Solera ZENIT</h3>
-                        <p class="font-sans italic text-[1.1rem] text-primary dark:text-gray-300 leading-relaxed mb-8">
-                            "Más de 80 familias han disfrutado de la experiencia Zenit Bonmont durante los últimos 11 años en los que he tenido el placer de acoger a viajeros de todo el mundo. Hoy, abro este espacio exclusivo para las historias de quienes eligen vivir ZENIT Bonmont reservando directamente conmigo."
-                        </p>
-                        <div class="flex flex-col items-center gap-3">
-                            <div class="flex items-center justify-center gap-4">
-                                <div class="w-8 h-px bg-secondary"></div>
-                                <p class="font-sans uppercase tracking-[3px] text-xs font-bold text-primary dark:text-white">Idoia, Zenit Bonmont</p>
-                                <div class="w-8 h-px bg-secondary"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                    <article class="group w-full bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative p-8 h-100 flex flex-col">
+                            <svg class="absolute top-8 left-8 w-10 h-10 text-secondary" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.154c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                            <div class="pt-12 text-center flex-1">
+                                <h3 class="font-bodoni italic text-lg md:text-xl text-secondary mb-4">Solera ZENIT</h3>
+                                <p class="font-sans italic text-sm text-primary dark:text-gray-300 leading-relaxed mb-8">
+                                Más de 80 familias han disfrutado de la experiencia Zenit Bonmont durante los últimos 11 años, en los que he tenido el placer de acoger a viajeros de todo el mundo.
+Este espacio nace para recoger las historias de quienes han elegido este lugar para crear recuerdos inolvidables.
+                                </p>
                             </div>
-                            <p class="text-[10px] text-secondary uppercase tracking-[2px] font-medium">Febrero 2026</p>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="flex items-center justify-center gap-4">
+                                    <div class="w-4 h-px bg-secondary"></div>
+                                    <p class="font-sans uppercase tracking-[2px] text-[10px] font-semibold text-primary dark:text-white">Idoia, Zenit Bonmont</p>
+                                    <div class="w-4 h-px bg-secondary"></div>
+                                </div>
+                                <p class="text-[8px] text-secondary uppercase tracking-[1px] font-medium">Febrero 2026</p>
+                            </div>
                         </div>
-                    </div>
+                    </article>
+
+                    <article class="group w-full bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative p-8 h-100"></div>
+                    </article>
+
+                    <article class="group w-full bg-white dark:bg-[#252525] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative p-8 h-100"></div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -453,18 +523,21 @@
         }
 
         // Calendar show/hide
-        document.getElementById('showCalendar').addEventListener('click', function() {
-            const container = document.getElementById('calendarContainer');
-            if (container.classList.toggle('hidden')) {
-                this.innerHTML = `<span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
-                                </span>Ver Calendario Completo`;
-            } else {
-                this.innerHTML = `<span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-                                </span>Cerrar Calendario`;
-            }
-        });
+        const showCalendarBtn = document.getElementById('showCalendar');
+        const calendarContainer = document.getElementById('calendarContainer');
+        if (showCalendarBtn && calendarContainer) {
+            showCalendarBtn.addEventListener('click', function() {
+                if (calendarContainer.classList.toggle('hidden')) {
+                    this.innerHTML = `<span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
+                                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                                    </span>Ver Calendario Completo`;
+                } else {
+                    this.innerHTML = `<span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
+                                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+                                    </span>Cerrar Calendario`;
+                }
+            });
+        }
     </script>
 </body>
 </html>

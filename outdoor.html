@@ -187,7 +187,7 @@
 
             <!-- Gallery Description (visible, below tabs) -->
             <p id="gallery-description"
-                class="text-center font-sans text-[1rem] text-muted dark:text-gray-400 max-w-[700px] mx-auto leading-relaxed mb-16">
+                class="text-center font-sans text-[1rem] text-muted dark:text-gray-400 max-w-175 mx-auto leading-relaxed mb-16">
             </p>
 
             <!-- Dynamic Gallery Grid Container -->
@@ -199,11 +199,11 @@
 
     <!-- Lightbox Modal -->
     <div id="lightbox"
-        class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex flex-col items-center justify-center p-4 md:p-8"
+        class="fixed inset-0 z-100 bg-black/95 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex flex-col items-center justify-center p-4 md:p-8"
         role="dialog" aria-modal="true">
         <!-- Close Button -->
         <button onclick="closeLightbox()"
-            class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-[110]"
+            class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-110"
             aria-label="Cerrar galería">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -214,7 +214,7 @@
 
         <!-- Navigation Arrows -->
         <button onclick="prevImage()"
-            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-[110]"
+            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-110"
             aria-label="Imagen anterior">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                 stroke-linecap="round" stroke-linejoin="round">
