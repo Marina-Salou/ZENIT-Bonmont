@@ -73,6 +73,17 @@
             document.documentElement.classList.remove('dark');
         }
     </script>
+    <style>
+        .lifestyle-hero {
+            height: 48vh;
+        }
+
+        @media (min-width: 768px) {
+            .lifestyle-hero {
+                height: 56vh;
+            }
+        }
+    </style>
 </head>
 
 <body
@@ -98,19 +109,19 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
                 <a href="index.html#home"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
+                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
                 <a href="index.html#indoor"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
+                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="index.html#outdoor"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
+                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="index.html#lifestyle"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
+                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="index.html#philosophy"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
+                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
+                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
                 <a href="blog.html"
-                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
+                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
             </nav>
 
             <!-- CTA & Mobile Toggle -->
@@ -122,7 +133,7 @@
                 </button>
 
                 <a href="faqs.html#booking"
-                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
+                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-hero-xs uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
                     Reservar
                 </a>
 
@@ -157,14 +168,14 @@
             <a href="blog.html"
                 class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
             <a href="faqs.html#booking"
-                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-[3px] text-xs font-bold"
+                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-ui-xxwide text-xs font-bold"
                 aria-label="Book your stay">Reservar</a>
         </div>
     </header>
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+        <section class="relative lifestyle-hero flex items-center justify-center overflow-hidden">
             <!-- Background Image -->
             <div class="absolute inset-0 z-0">
                 <img src="images/beach.webp" alt="Mediterranean Beach" class="w-full h-full object-cover">
@@ -187,7 +198,7 @@
         <div class="max-w-350 mx-auto px-6 py-12 md:py-16">
             <!-- Return Button -->
             <a href="index.html#lifestyle"
-                class="inline-flex items-center gap-2 text-secondary hover:text-[#b08e4b] transition-colors mb-16 text-sm font-medium">
+                class="inline-flex items-center gap-2 text-secondary hover:text-secondary-hover transition-colors mb-16 text-sm font-medium">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -217,7 +228,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Kilómetros de arena dorada y aguas cristalinas para desconectar del mundo.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Platja de Rifà
                             </p>
                         </div>
@@ -230,7 +241,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Pequeñas calas rodeadas de pinos donde el tiempo parece detenerse.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Cala Sirenes
                             </p>
                         </div>
@@ -243,7 +254,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Siente la brisa en libertad navegando o practicando deportes náuticos.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Clubs Náuticos de la zona.
                             </p>
                         </div>
@@ -256,7 +267,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Despide cada día con un espectáculo de colores sobre el horizonte marino.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: infinitos puntos cercanos al mar.
                             </p>
                         </div>
@@ -282,7 +293,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Pasea por la historia viva entre ruinas romanas y legados medievales.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Tarragona Romana
                             </p>
                         </div>
@@ -294,7 +305,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Descubre el encanto de callejuelas y plazas que guardan la esencia local.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Siurana
                             </p>
                         </div>
@@ -306,8 +317,8 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Producto de proximidad, lonja y huerta en recetas que hablan del mar y la tierra.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Arroz con "galeres" y alcachofas en Cambrils.
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
+                                Ejemplo: Jornadas de la Galera en Cambrils.
                             </p>
                         </div>
                         <div class="group">
@@ -318,7 +329,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Una copa de vino frente al mar o un vermut al sol en una terraza con historia.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Vinacotecas del Priorat.
                             </p>
                         </div>
@@ -344,7 +355,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 El horizonte de los arrozales y el vuelo de las aves en un paisaje único.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Delta del Ebro
                             </p>
                         </div>
@@ -356,7 +367,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Rutas infinitas para el ciclismo de carretera o montaña en un clima privilegiado.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplos: Ruta BTT Ermita del Peiró.
                             </p>
                         </div>
@@ -368,7 +379,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Senderos que serpentean entre viñedos y olivares bajo el cielo azul.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Ruta Mare de Déu de la Roca, faro de los marineros.
                             </p>
                         </div>
@@ -380,7 +391,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Explora la sierra prelitoral y sus espectaculares vistas sobre el Mediterráneo.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Camí de Ronda de Salou.
                             </p>
                         </div>
@@ -406,7 +417,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Un día de descanso con servicios exclusivos y un ambiente sofisticado junto al mar.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Distintos Beach Club de la zona.
                             </p>
                         </div>
@@ -418,7 +429,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Circuitos de bienestar y paz en entornos históricos para una relajación profunda.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Espacios termales y spas de la zona.
                             </p>
                         </div>
@@ -430,7 +441,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Emoción y adrenalina en parques de referencia mundial a pocos minutos.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: PortAventura / Ferrari Land / Caribe Aquatic Park
                             </p>
                         </div>
@@ -442,7 +453,7 @@
                             <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
                                 Pubs y discotecas para disfrutar del ambiente, la música y la vida social.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="text-ui-sm uppercase tracking-widest text-secondary mt-2">
                                 Ejemplo: Ocio nocturno de Salou
                             </p>
                         </div>
@@ -453,8 +464,8 @@
             <!-- Strategic Locations Strip -->
             <section class="mt-24 pt-16 border-t border-black/5 dark:border-white/5">
                 <div class="text-center mb-16 px-0">
-                    <h3 class="font-sans text-[0.8rem] font-bold uppercase tracking-[4px] text-secondary mb-4">DESCUBRE EL TERRITORIO</h3>
-                    <h2 class="font-serif text-[2.5rem] md:text-[3rem] text-primary dark:text-white leading-tight">El epicentro de tus experiencias</h2>
+                    <h3 class="font-sans text-hero-md font-bold uppercase tracking-ui-max text-secondary mb-4">DESCUBRE EL TERRITORIO</h3>
+                    <h2 class="font-serif text-display-sm md:text-display-lg text-primary dark:text-white leading-tight">El epicentro de tus experiencias</h2>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8 max-w-350 mx-auto text-center">
@@ -465,7 +476,7 @@
                            Mont-roig / Miami
                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Destino local</span>
+                        <span class="font-sans text-ui-sm uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Destino local</span>
                     </div>
                     <!-- Cambrils -->
                     <div class="flex flex-col items-center group">
@@ -474,7 +485,7 @@
                            Cambrils
                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Gastronomía · 15 min</span>
+                        <span class="font-sans text-ui-sm uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Gastronomía · 15 min</span>
                     </div>
                     <!-- Salou -->
                     <div class="flex flex-col items-center group">
@@ -483,7 +494,7 @@
                            Salou
                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Capital Costa Dorada · 20 min</span>
+                        <span class="font-sans text-ui-sm uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Capital Costa Dorada · 20 min</span>
                     </div>
                     <!-- Reus -->
                     <div class="flex flex-col items-center group">
@@ -492,7 +503,7 @@
                            Reus
                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Modernismo · 20 min</span>
+                        <span class="font-sans text-ui-sm uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Modernismo · 20 min</span>
                     </div>
                     <!-- Tarragona -->
                     <div class="flex flex-col items-center group">
@@ -501,7 +512,7 @@
                            Tarragona
                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Patrimonio · 25 min</span>
+                        <span class="font-sans text-ui-sm uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Patrimonio · 25 min</span>
                     </div>
                     <!-- Barcelona -->
                     <div class="flex flex-col items-center group">
@@ -510,7 +521,7 @@
                            Barcelona
                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">World Icon · 75 min</span>
+                        <span class="font-sans text-ui-sm uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">World Icon · 75 min</span>
                     </div>
                 </div>
             </section>
@@ -525,11 +536,11 @@
                 <!-- Logo & Tagline -->
                 <div class="flex flex-col items-center gap-1 min-w-50">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
-                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
+                    <p class="text-ui-xs text-gray-500 uppercase tracking-ui-xxwide">Luxury Mediterranean Serenity</p>
                 </div>
 
                 <!-- Navigation -->
-                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-hero-xs uppercase tracking-ui-xwide font-medium text-gray-400">
                     <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
                     <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
                     <a href="index.html#outdoor" class="hover:text-white transition-colors">Exterior</a>
@@ -551,12 +562,12 @@
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         </a>
                     </div>
-                    <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
+                    <p class="text-ui-sm text-gray-400 tracking-ui-snug lowercase">info@zenitbonmont.com</p>
                 </div>
             </div>
 
             <!-- Bottom Section: Legal & Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-ui-xs text-gray-400 uppercase tracking-ui-xwide">
                 <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
                     <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                     <p class="hidden md:block">|</p>
@@ -674,3 +685,9 @@
 </body>
 
 </html>
+
+
+
+
+
+
