@@ -112,17 +112,17 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
-                <a href="#home"
+                <a href="index.html#home"
                     class="group flex items-center gap-1.5 text-hero-md2 uppercase tracking-ui-xwide font-medium text-secondary relative transition-colors">
                     <span class="border-b border-secondary pb-0.5">INICIO</span>
                 </a>
-                <a href="#indoor"
+                <a href="index.html#indoor"
                     class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
-                <a href="#outdoor"
+                <a href="index.html#outdoor"
                     class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
-                <a href="#lifestyle"
+                <a href="index.html#lifestyle"
                     class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
-                <a href="#philosophy"
+                <a href="index.html#philosophy"
                     class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
                     class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
@@ -143,39 +143,52 @@
                     Reservar
                 </a>
 
-                <!-- Mobile Menu Button -->
-                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group"
-                    aria-label="Open menu" aria-expanded="false">
-                    <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
-                    <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
-                    <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
-                </button>
+                <label for="mobileMenuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 cursor-pointer"
+                    aria-label="Abrir menú" role="button">
+                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:translate-y-2 peer-checked:rotate-45"></span>
+                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 peer-checked:opacity-0"></span>
+                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:-translate-y-2 peer-checked:-rotate-45"></span>
+                </label>
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
-        <div id="mobileMenu"
-            class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 origin-top transition-all duration-300 lg:hidden">
-            <a href="#home"
-                class="block py-3 text-primary dark:text-white font-semibold border-b border-gray-100 dark:border-white/5 text-lg uppercase tracking-widest">Inicio</a>
-            <a href="#indoor"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Interior</a>
-            <a href="#outdoor"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Exterior</a>
-            <a href="#lifestyle"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Epicentro</a>
-            <a href="#philosophy"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Anfitriona</a>
-            <a href="faqs.html"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">FAQS</a>
-            <a href="blog.html"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
-            <a href="faqs.html#booking"
-                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-ui-xxwide text-xs font-bold"
-                aria-label="Book your stay">Reservar</a>
+        <!-- Mobile Menu Panel (CSS-only, controlled by #mobileMenuToggle peer) -->
+        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
+        <div
+            class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 pointer-events-none origin-top transition-all duration-300 lg:hidden peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto">
+            <label for="mobileMenuToggle" class="block">
+                <a href="index.html#home"
+                    class="block py-3 text-primary dark:text-white font-semibold border-b border-gray-100 dark:border-white/5 text-lg uppercase tracking-widest">Inicio</a>
+            </label>
+            <label for="mobileMenuToggle" class="block">
+                <a href="index.html#indoor"
+                    class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Interior</a>
+            </label>
+            <label for="mobileMenuToggle" class="block">
+                <a href="index.html#outdoor"
+                    class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Exterior</a>
+            </label>
+            <label for="mobileMenuToggle" class="block">
+                <a href="index.html#lifestyle"
+                    class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Epicentro</a>
+            </label>
+            <label for="mobileMenuToggle" class="block">
+                <a href="index.html#philosophy"
+                    class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Anfitriona</a>
+            </label>
+            <label for="mobileMenuToggle" class="block">
+                <a href="faqs.html"
+                    class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">FAQS</a>
+            </label>
+            <label for="mobileMenuToggle" class="block">
+                <a href="blog.html"
+                    class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
+            </label>
+            <label for="mobileMenuToggle" class="block mt-6">
+                <a href="faqs.html#booking"
+                    class="block text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-ui-xxwide text-xs font-bold"
+                    aria-label="Book your stay">Reservar</a>
+            </label>
         </div>
     </header> 
 
@@ -383,18 +396,6 @@ Esta variedad permite disfrutar de la bicicleta como una forma natural de explor
         })();
     </script>
     <script>
-            // Mobile Menu Toggle
-            const btn = document.getElementById('menuToggle');
-            const menu = document.getElementById('mobileMenu');
-            if (btn && menu) {
-                btn.addEventListener('click', () => {
-                    const expanded = btn.getAttribute('aria-expanded') === 'true';
-                    btn.setAttribute('aria-expanded', !expanded);
-                    menu.classList.toggle('scale-y-0');
-                    menu.classList.toggle('opacity-0');
-                });
-            }
-
             // Theme Toggle Logic
             const themeToggle = document.getElementById('themeToggle');
             const html = document.documentElement;
