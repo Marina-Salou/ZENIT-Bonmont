@@ -95,6 +95,46 @@ function initCookieConsent() {
   });
 }
 
+// Mobile menu initialization (moved here so it runs after fragments are injected)
+function initMobileMenu() {
+  const btn = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    menu.classList.toggle('scale-y-0');
+    menu.classList.toggle('opacity-0');
+  });
+}
+
+// After fragments are injected we initialize controls that depend on them
+async function initCommon() {
+  applyInitialTheme();
+  // inject fragments first so elements like #themeToggle / #manageCookies exist
+  await Promise.all([
+    includeFragment('#site-nav', 'nav.html'),
+    includeFragment('#site-footer', 'footer.html')
+  ]);
+
+  // Retry injection for footer if it ended up empty (simple resilience)
+  const footerEl = document.querySelector('#site-footer');
+  if (footerEl && !footerEl.innerHTML.trim()) {
+    try {
+      const res = await fetch('footer.html');
+      if (res.ok) footerEl.innerHTML = await res.text();
+    } catch (e) {
+      console.warn('footer injection retry failed', e);
+    }
+  }
+
+  // Initialize UI behaviors
+  initThemeToggle();
+  initCookieConsent();
+  initMobileMenu();
+}
+
 // After fragments are injected we initialize controls that depend on them
 async function initCommon() {
   applyInitialTheme();

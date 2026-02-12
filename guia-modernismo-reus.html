@@ -203,19 +203,6 @@
     </div>
 
     <!-- cookie consent logic moved to assets/js/common.js -->
-    <script>
-            // Mobile Menu Toggle (kept inline for test)
-            const btn = document.getElementById('menuToggle');
-            const menu = document.getElementById('mobileMenu');
-            if (btn && menu) {
-                btn.addEventListener('click', () => {
-                    const expanded = btn.getAttribute('aria-expanded') === 'true';
-                    btn.setAttribute('aria-expanded', !expanded);
-                    menu.classList.toggle('scale-y-0');
-                    menu.classList.toggle('opacity-0');
-                });
-            }
-        </script>
     <script src="assets/js/common.js" defer></script>
 </body>
 </html>
