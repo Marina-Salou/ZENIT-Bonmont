@@ -65,13 +65,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="output.css">
-    <script>
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    </script>
+    <!-- theme initialization moved to assets/js/common.js -->
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
@@ -98,87 +92,7 @@
         Ir al contenido principal
     </a>
 
-    <!-- Header -->
-    <header
-        class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
-                aria-label="ZENIT Bonmont Home">
-                <img src="images/ZENIT.webp" alt="ZENIT Bonmont"
-                    class="h-8 md:h-10 w-auto transition-all duration-300 dark:hidden">
-                <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont"
-                    class="h-8 md:h-10 w-auto transition-all duration-300 hidden dark:block">
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
-                <a href="#home"
-                    class="group flex items-center gap-1.5 text-hero-md2 uppercase tracking-ui-xwide font-medium text-secondary relative transition-colors">
-                    <span class="border-b border-secondary pb-0.5">INICIO</span>
-                </a>
-                <a href="#indoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
-                <a href="#outdoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
-                <a href="#lifestyle"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
-                <a href="#philosophy"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
-                <a href="faqs.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
-                <a href="blog.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
-            </nav>
-
-            <!-- CTA & Mobile Toggle -->
-            <div class="flex items-center gap-4 md:gap-6">
-                <!-- Theme Toggle -->
-                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                    <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-                </button>
-
-                <a href="faqs.html#booking"
-                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-hero-xs uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
-                    Reservar
-                </a>
-
-                <!-- Mobile Menu Button -->
-                <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group"
-                    aria-label="Open menu" aria-expanded="false">
-                    <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
-                    <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
-                    <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Panel -->
-        <div id="mobileMenu"
-            class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 origin-top transition-all duration-300 lg:hidden">
-            <a href="#home"
-                class="block py-3 text-primary dark:text-white font-semibold border-b border-gray-100 dark:border-white/5 text-lg uppercase tracking-widest">Inicio</a>
-            <a href="#indoor"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark;border-white/5 uppercase tracking-widest text-sm">Interior</a>
-            <a href="#outdoor"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark;border-white/5 uppercase tracking-widest text-sm">Exterior</a>
-            <a href="#lifestyle"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark;border-white/5 uppercase tracking-widest text-sm">Epicentro</a>
-            <a href="#philosophy"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark;border-white/5 uppercase tracking-widest text-sm">Anfitriona</a>
-            <a href="faqs.html"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark;border-white/5 uppercase tracking-widest text-sm">FAQS</a>
-            <a href="blog.html"
-                class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark;border-white/5 uppercase tracking-widest text-sm">BLOG</a>
-            <a href="faqs.html#booking"
-                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-ui-xxwide text-xs font-bold"
-                aria-label="Book your stay">Reservar</a>
-        </div>
-    </header>
+    <div id="site-nav"></div>    
 
     <main id="main-content">
 
@@ -266,60 +180,7 @@
     </div>
     </main>
 
-    <!-- Unified Footer -->
-    <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-350 mx-auto">
-            <!-- Main Integrated Section -->
-            <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
-                <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center gap-1 min-w-50">
-                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
-                    <p class="text-ui-xs text-gray-500 uppercase tracking-ui-xxwide">Luxury Mediterranean Serenity</p>
-                </div>
-
-                <!-- Navigation -->
-                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-hero-xs uppercase tracking-ui-xwide font-medium text-gray-400">
-                    <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
-                    <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
-                    <a href="index.html#outdoor" class="hover:text-white transition-colors">Exterior</a>
-                    <a href="index.html#lifestyle" class="hover:text-white transition-colors">Epicentro</a>
-                    <a href="index.html#philosophy" class="hover:text-white transition-colors">Anfitriona</a>
-                    <a href="faqs.html" class="hover:text-white transition-colors">FAQS</a>
-                    <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
-                </nav>
-
-                <!-- Contacts & Social -->
-                <div class="flex flex-col items-center lg:items-end gap-3 min-w-50">
-                    <div class="flex gap-4">
-                        <!-- TODO: Actualizar con URL del perfil real de Instagram -->
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                        <!-- TODO: Actualizar con URL del perfil real de Facebook -->
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                    </div>
-                    <p class="text-ui-sm text-gray-400 tracking-ui-snug lowercase">info@zenitbonmont.com</p>
-                </div>
-            </div>
-
-            <!-- Bottom Section: Legal & Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-ui-xs text-gray-400 uppercase tracking-ui-xwide">
-                <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
-                    <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
-                    <p class="hidden md:block">|</p>
-                    <p>Tourist License: HUTB-248281</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
-                    <a href="legal.html#legal" class="hover:text-white transition-colors">Legal notice</a>
-                    <a href="legal.html#privacy" class="hover:text-white transition-colors">Privacy policy</a>
-                    <a href="legal.html#cookies" class="hover:text-white transition-colors">Cookies</a>
-                    <a href="#" id="manageCookies" class="hover:text-white transition-colors">Gestionar cookies</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
 
     <!-- Cookie Consent Banner -->
     <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
@@ -341,59 +202,9 @@
         </div>
     </div>
 
+    <!-- cookie consent logic moved to assets/js/common.js -->
     <script>
-        // Cookie Consent Logic — con expiración de 6 meses (GDPR/LOPD)
-        (function() {
-            const cookieConsent = document.getElementById('cookieConsent');
-            const cookieAccept = document.getElementById('cookieAccept');
-            const cookieReject = document.getElementById('cookieReject');
-
-            if (!cookieConsent || !cookieAccept || !cookieReject) return;
-
-            function isConsentValid() {
-                const consentDate = localStorage.getItem('cookieConsentDate');
-                if (!consentDate) return false;
-                const sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
-                return (Date.now() - parseInt(consentDate, 10)) < sixMonths;
-            }
-
-            function saveConsent(value) {
-                localStorage.setItem('cookieConsent', value);
-                localStorage.setItem('cookieConsentDate', Date.now().toString());
-            }
-
-            if (!localStorage.getItem('cookieConsent') || !isConsentValid()) {
-                localStorage.removeItem('cookieConsent');
-                localStorage.removeItem('cookieConsentDate');
-                cookieConsent.classList.remove('hidden');
-            }
-
-            cookieAccept.addEventListener('click', () => {
-                saveConsent('accepted');
-                cookieConsent.classList.add('hidden');
-                if (typeof gtag === 'function') {
-                    gtag('consent', 'update', { 'analytics_storage': 'granted' });
-                }
-            });
-
-            cookieReject.addEventListener('click', () => {
-                saveConsent('rejected');
-                cookieConsent.classList.add('hidden');
-                if (typeof gtag === 'function') {
-                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
-                }
-            });
-
-            document.getElementById('manageCookies')?.addEventListener('click', (e) => {
-                e.preventDefault();
-                localStorage.removeItem('cookieConsent');
-                localStorage.removeItem('cookieConsentDate');
-                cookieConsent.classList.remove('hidden');
-            });
-        })();
-    </script>
-    <script>
-            // Mobile Menu Toggle
+            // Mobile Menu Toggle (kept inline for test)
             const btn = document.getElementById('menuToggle');
             const menu = document.getElementById('mobileMenu');
             if (btn && menu) {
@@ -404,22 +215,8 @@
                     menu.classList.toggle('opacity-0');
                 });
             }
-
-            // Theme Toggle Logic
-            const themeToggle = document.getElementById('themeToggle');
-            const html = document.documentElement;
-
-            themeToggle?.addEventListener('click', () => {
-                const isDark = html.classList.contains('dark');
-                if (isDark) {
-                    html.classList.remove('dark');
-                    localStorage.theme = 'light';
-                } else {
-                    html.classList.add('dark');
-                    localStorage.theme = 'dark';
-                }
-            });
         </script>
+    <script src="assets/js/common.js" defer></script>
 </body>
 </html>
 
