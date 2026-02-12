@@ -250,10 +250,11 @@
             </video>
 
             <div
-                class="relative z-30 text-center text-white py-20 md:py-24 px-6 flex flex-col justify-between h-full max-w-350 mx-auto w-full items-center">
+                class="relative z-30 text-center text-white py-20 md:py-24 px-6 flex flex-col justify-between h-full w-full mx-auto items-center">
                 <!-- Top: Title (Grande, but balanced) -->
                 <h1
-                    class="font-bodoni italic font-normal text-hero-3xl sm:text-display-sm2 md:text-display-lg3 lg:text-display-3xl tracking-ui-tight leading-none text-hero-text drop-shadow-deep md:whitespace-nowrap">
+                    class="font-bodoni italic font-normal tracking-ui-tight leading-normal sm:leading-tight md:leading-tight text-hero-text drop-shadow-deep max-w-350 mx-auto"
+                    style="font-size: clamp(1.5rem, 3.6vw + 0.6rem, 3.2rem);">
                     An exclusive refuge designed to be lived
                 </h1>
 
@@ -274,7 +275,8 @@
         </section>
 
         <!-- Villa Identity & Stats -->
-        <section class="pt-16 md:pt-24 pb-0 max-w-350 mx-auto px-6">
+        <section class="pt-16 md:pt-24 pb-0 w-full mx-auto px-6">
+            <div class="max-w-350 mx-auto px-6">
             <!-- Central Title Section -->
             <div class="text-center mb-16 relative">
                 <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
@@ -297,7 +299,7 @@
             </div>
 
             <!-- Stats Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-6 lg:flex lg:justify-between items-start mt-16">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-y-8 md:gap-y-12 gap-x-6 lg:flex lg:justify-between items-start mt-16">
                 <!-- Stat 1 -->
                 <div class="flex items-baseline gap-4">
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -378,6 +380,7 @@
                 <img src="images/identity-villa.webp" alt="General view of the villa and its surroundings"
                     class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
             </figure>
+            </div>
         </section>
 
         <!-- Airbnb Snapshot -->
