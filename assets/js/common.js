@@ -101,11 +101,29 @@ function initMobileMenu() {
   const menu = document.getElementById('mobileMenu');
   if (!btn || !menu) return;
 
+  const setClosed = () => {
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.add('scale-y-0');
+    menu.classList.add('opacity-0');
+  };
+
+  const setOpen = () => {
+    btn.setAttribute('aria-expanded', 'true');
+    menu.classList.remove('scale-y-0');
+    menu.classList.remove('opacity-0');
+  };
+
   btn.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !expanded);
-    menu.classList.toggle('scale-y-0');
-    menu.classList.toggle('opacity-0');
+    if (expanded) setClosed(); else setOpen();
+  });
+
+  // Close menu when any link inside the mobile menu is clicked (common mobile UX)
+  menu.querySelectorAll('a[href]').forEach((link) => {
+    link.addEventListener('click', () => {
+      // short delay to allow navigation to start, then close
+      setClosed();
+    });
   });
 }
 
@@ -133,20 +151,6 @@ async function initCommon() {
   initThemeToggle();
   initCookieConsent();
   initMobileMenu();
-}
-
-// After fragments are injected we initialize controls that depend on them
-async function initCommon() {
-  applyInitialTheme();
-  // inject fragments first so elements like #themeToggle / #manageCookies exist
-  await Promise.all([
-    includeFragment('#site-nav', 'nav.html'),
-    includeFragment('#site-footer', 'footer.html')
-  ]);
-
-  // Initialize UI behaviors
-  initThemeToggle();
-  initCookieConsent();
 }
 
 // Run when parsed (defer script assumed)
