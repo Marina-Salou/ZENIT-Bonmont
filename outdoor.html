@@ -65,7 +65,30 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        secondary: "#c9a866",
+                        "secondary-hover": "#b08e4b",
+                        "surface-dark": "#252525",
+                        text: "#2c2c2c",
+                        "hero-text": "#f8f8f7",
+                        muted: "#666666"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "ui-sans-serif", "system-ui"],
+                        serif: ["Crimson Text", "ui-serif", "Georgia"],
+                        bodoni: ["Libre Bodoni", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -80,14 +103,14 @@
 
     <!-- Skip Link -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60 focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
         Ir al contenido principal
     </a>
 
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
@@ -98,31 +121,31 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
                 <a href="index.html#home"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
                 <a href="index.html#indoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="index.html#outdoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="index.html#lifestyle"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="index.html#philosophy"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
                 <a href="blog.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
             </nav>
 
             <!-- CTA & Mobile Toggle -->
             <div class="flex items-center gap-4 md:gap-6">
                 <!-- Theme Toggle -->
                 <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
 
                 <a href="faqs.html#booking"
-                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-hero-xs uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
+                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
                     Reservar
                 </a>
 
@@ -130,11 +153,11 @@
                 <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group"
                     aria-label="Open menu" aria-expanded="false">
                     <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
+                        class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
                     <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                        class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
                     <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
+                        class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
                 </button>
             </div>
         </div>
@@ -157,13 +180,13 @@
             <a href="blog.html"
                 class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
             <a href="faqs.html#booking"
-                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-ui-xxwide text-xs font-bold"
+                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-[3px] text-xs font-bold"
                 aria-label="Book your stay">Reservar</a>
         </div>
     </header>
 
     <main id="main-content" class="min-h-screen bg-white dark:bg-primary py-16 md:py-24 px-6">
-        <div class="max-w-350 mx-auto">
+        <div class="w-full max-w-[1400px] mx-auto px-6">
             <!-- Back Button -->
             <a href="index.html#outdoor"
                 class="inline-flex items-center gap-2 text-secondary hover:text-secondary-hover transition-colors mb-12 text-sm font-medium">
@@ -180,18 +203,18 @@
             <!-- Category Switcher (Tabs) -->
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
                 <button onclick="changeCategory('pool')" id="tab-pool"
-                    class="gallery-tab active text-hero-sm uppercase tracking-ui-xxwide font-bold py-2 border-b-2 border-secondary text-primary dark:text-white transition-all">Naturaleza y ocio</button>
+                    class="gallery-tab active text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-secondary text-primary dark:text-white transition-all">Naturaleza y ocio</button>
                 <button onclick="changeCategory('moments')" id="tab-moments"
-                    class="gallery-tab text-hero-sm uppercase tracking-ui-xxwide font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-primary dark:hover:text-white transition-all">Momentos inolvidables</button>
+                    class="gallery-tab text-[0.7rem] uppercase tracking-[3px] font-bold py-2 border-b-2 border-transparent text-gray-400 hover:text-primary dark:hover:text-white transition-all">Momentos inolvidables</button>
             </div>
 
             <!-- Gallery Description (visible, below tabs) -->
             <p id="gallery-description"
-                class="text-center font-sans text-hero-rem text-muted dark:text-gray-400 max-w-175 mx-auto leading-relaxed mb-16">
+                class="text-center font-sans text-[1rem] text-muted dark:text-gray-400 max-w-[43.75rem] mx-auto leading-relaxed mb-16">
             </p>
 
             <!-- Dynamic Gallery Grid Container -->
-            <div id="gallery-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 min-h-100">
+            <div id="gallery-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 min-h-[25rem]">
                 <!-- Injected by JavaScript -->
             </div>
         </div>
@@ -199,11 +222,11 @@
 
     <!-- Lightbox Modal -->
     <div id="lightbox"
-        class="fixed inset-0 z-100 bg-black/95 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex flex-col items-center justify-center p-4 md:p-8"
+        class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex flex-col items-center justify-center p-4 md:p-8"
         role="dialog" aria-modal="true">
         <!-- Close Button -->
         <button onclick="closeLightbox()"
-            class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-110"
+            class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-[110]"
             aria-label="Cerrar galería">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -214,7 +237,7 @@
 
         <!-- Navigation Arrows -->
         <button onclick="prevImage()"
-            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-110"
+            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-[110]"
             aria-label="Imagen anterior">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -222,7 +245,7 @@
             </svg>
         </button>
         <button onclick="nextImage()"
-            class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-110"
+            class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-[110]"
             aria-label="Siguiente imagen">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -243,18 +266,18 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-350 mx-auto">
+    <footer class="bg-primary text-white py-3">
+        <div class="w-full max-w-[1400px] mx-auto px-6">
             <!-- Main Integrated Section -->
             <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center gap-1 min-w-50">
+                <div class="flex flex-col items-center gap-1 min-w-[12.5rem]">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
-                    <p class="text-ui-xs text-gray-500 uppercase tracking-ui-xxwide">Luxury Mediterranean Serenity</p>
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
                 <!-- Navigation -->
-                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-hero-xs uppercase tracking-ui-xwide font-medium text-gray-400">
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
                     <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
                     <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
                     <a href="index.html#outdoor" class="text-secondary font-semibold">Exterior</a>
@@ -265,7 +288,7 @@
                 </nav>
 
                 <!-- Contacts & Social -->
-                <div class="flex flex-col items-center lg:items-end gap-3 min-w-50">
+                <div class="flex flex-col items-center lg:items-end gap-3 min-w-[12.5rem]">
                     <div class="flex gap-4">
                         <!-- TODO: Actualizar con URL del perfil real de Instagram -->
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
@@ -276,12 +299,12 @@
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         </a>
                     </div>
-                    <p class="text-ui-sm text-gray-400 tracking-ui-snug lowercase">info@zenitbonmont.com</p>
+                    <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
                 </div>
             </div>
 
             <!-- Bottom Section: Legal & Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-ui-xs text-gray-400 uppercase tracking-ui-xwide">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
                 <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
                     <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                     <p class="hidden md:block">|</p>
@@ -299,7 +322,7 @@
 
     <!-- Cookie Consent Banner -->
     <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
-        <div class="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex-1">
                 <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
                     Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.
@@ -368,7 +391,7 @@
             gridContainer.innerHTML = '';
             galleryData.images.forEach((item, index) => {
                 const itemDiv = document.createElement('div');
-                itemDiv.className = 'group relative aspect-4/3 rounded-2xl overflow-hidden shadow-lg border border-black/5 dark:border-white/5 cursor-pointer opacity-0 translate-y-4 transition-all duration-500';
+                itemDiv.className = 'group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-black/5 dark:border-white/5 cursor-pointer opacity-0 translate-y-4 transition-all duration-500';
                 itemDiv.onclick = () => openLightbox(category, index);
 
                 itemDiv.innerHTML = `
@@ -602,4 +625,5 @@
 </body>
 
 </html>
+
 

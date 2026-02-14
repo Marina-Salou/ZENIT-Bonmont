@@ -2,37 +2,29 @@
 
 ## 1) Stack y enfoque
 - Sitio estatico en HTML.
-- Estilos con Tailwind CSS v4 (via `@tailwindcss/cli`).
+- Estilos con Tailwind CSS via CDN (`https://cdn.tailwindcss.com`).
 - No hay framework JS (React/Vue/etc.). Solo JS inline por pagina para interacciones concretas.
 
 ## 2) Archivos clave
 - `index.html`: home principal.
 - `philosophy.html`, `faqs.html`, `wellness.html`, `indoor.html`, `outdoor.html`, `lifestyle.html`, `legal.html`, `blog.html`: paginas seccionadas.
 - `guia-modernismo-reus.html`, `rutas-btt-mont-roig-del-camp.html`, `tradicion-calcotada-valls-tarragona.html`: articulos del blog.
-- `input.css`: fuente de estilos Tailwind (tokens + utilidades personalizadas).
-- `output.css`: CSS generado (no editar a mano).
 - `images/`: recursos visuales.
 - `docs/`: documentacion interna.
 
-## 3) Build y desarrollo
-Scripts en `package.json`:
-- `npm run build`: compila `input.css` -> `output.css`.
-- `npm run dev`: watch mode para recompilar en cambios.
+## 3) Desarrollo
+No existe pipeline de compilacion CSS.
+Cada pagina carga Tailwind desde CDN y define su `tailwind.config` inline (colores/fuentes).
 
 Flujo recomendado:
-1. Editar HTML y/o `input.css`.
-2. Ejecutar `npm run build`.
-3. Validar visualmente en navegador.
+1. Editar HTML.
+2. Validar visualmente en navegador (desktop + movil).
+3. Recarga dura (`Ctrl+F5`) y comprobacion final.
 
 ## 4) Convenciones de estilos (importante)
-- Proyecto estandarizado para **no usar clases arbitrarias con corchetes** dentro de `class`.
-- En su lugar, usar utilidades semanticas definidas en `input.css`.
-- Referencia completa: `docs/tailwind-no-brackets.md`.
-
-Regla operativa:
-1. Si falta un estilo, crear `@utility` en `input.css`.
-2. Reutilizar el nombre en HTML.
-3. Recompilar (`npm run build`).
+- Proyecto en modo CDN-only.
+- Se permiten clases arbitrarias con corchetes cuando son la forma mas directa y mantenible.
+- Priorizar consistencia de patrones comunes (header/footer/cookie banner y breakpoints).
 
 ## 5) Esquema de navegacion (mapa rapido)
 - Home: `index.html`
@@ -45,15 +37,12 @@ Regla operativa:
 - Legal: `legal.html`
 
 ## 6) Buenas practicas al "meter mano"
-- No editar `output.css` manualmente.
 - Mantener consistencia de header/footer entre paginas.
 - Conservar metadatos SEO/OpenGraph por pagina.
-- Si se toca UI global (tipografias, spacing, color), hacerlo en `input.css`.
 - Si se añade nueva pagina, enlazarla desde navegacion y revisar `sitemap.xml`.
 
 ## 7) Checklist rapido antes de entregar
-1. `npm run build` sin errores.
-2. Sin clases con corchetes en `class` HTML.
-3. Navegacion desktop/movil funcional.
-4. Modo oscuro claro/estable.
-5. Enlaces internos sin roturas.
+1. Navegacion desktop/movil funcional.
+2. Modo oscuro claro/estable.
+3. Enlaces internos sin roturas.
+4. Revision visual desktop + movil.

@@ -64,7 +64,30 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="output.css">
+        <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        secondary: "#c9a866",
+                        "secondary-hover": "#b08e4b",
+                        "surface-dark": "#252525",
+                        text: "#2c2c2c",
+                        "hero-text": "#f8f8f7",
+                        muted: "#666666"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "ui-sans-serif", "system-ui"],
+                        serif: ["Crimson Text", "ui-serif", "Georgia"],
+                        bodoni: ["Libre Bodoni", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -94,14 +117,14 @@
 
     <!-- Skip Link -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60 focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
         Ir al contenido principal
     </a>
 
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
@@ -114,48 +137,48 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
                 <a href="index.html#home"
-                    class="group flex items-center gap-1.5 text-hero-md2 uppercase tracking-ui-xwide font-medium text-secondary relative transition-colors">
+                    class="group flex items-center gap-1.5 text-[0.85rem] uppercase tracking-[2px] font-medium text-secondary relative transition-colors">
                     <span class="border-b border-secondary pb-0.5">INICIO</span>
                 </a>
                 <a href="index.html#indoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="index.html#outdoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="index.html#lifestyle"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="index.html#philosophy"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
                 <a href="blog.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
             </nav>
 
             <!-- CTA & Mobile Toggle -->
             <div class="flex items-center gap-4 md:gap-6">
                 <!-- Theme Toggle -->
                 <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
 
                 <a href="faqs.html#booking"
-                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-hero-xs uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
+                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
                     Reservar
                 </a>
 
-                <label for="mobileMenuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 cursor-pointer"
+                <label id="menuToggle" for="mobileMenuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 cursor-pointer"
                     aria-label="Abrir menú" role="button">
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:translate-y-2 peer-checked:rotate-45"></span>
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 peer-checked:opacity-0"></span>
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:-translate-y-2 peer-checked:-rotate-45"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:translate-y-2 peer-checked:rotate-45"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 peer-checked:opacity-0"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:-translate-y-2 peer-checked:-rotate-45"></span>
                 </label>
             </div>
         </div>
 
         <!-- Mobile Menu Panel (CSS-only, controlled by #mobileMenuToggle peer) -->
         <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
-        <div
+        <div id="mobileMenu"
             class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 pointer-events-none origin-top transition-all duration-300 lg:hidden peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto">
             <label for="mobileMenuToggle" class="block">
                 <a href="index.html#home"
@@ -187,7 +210,7 @@
             </label>
             <label for="mobileMenuToggle" class="block mt-6">
                 <a href="faqs.html#booking"
-                    class="block text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-ui-xxwide text-xs font-bold"
+                    class="block text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-[3px] text-xs font-bold"
                     aria-label="Book your stay">Reservar</a>
             </label>
         </div>
@@ -196,28 +219,28 @@
     <main id="main-content">
 
     <!-- Breadcrumb -->
-    <div class="max-w-350 mx-auto px-6 pt-8">
-        <a href="blog.html" class="text-hero-sm uppercase tracking-widest flex items-center gap-2 group text-muted hover:text-secondary transition-colors">
+    <div class="w-full max-w-[1400px] mx-auto px-6 pt-8">
+        <a href="blog.html" class="text-[0.7rem] uppercase tracking-widest flex items-center gap-2 group text-muted hover:text-secondary transition-colors">
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="group-hover:-translate-x-1 transition-transform"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver al Blog
         </a>
     </div>
 
-    <article class="max-w-350 mx-auto px-6 py-12 font-sans text-lg leading-relaxed text-muted dark:text-gray-300">
+    <article class="w-full max-w-[1400px] mx-auto px-6 py-12 font-sans text-lg leading-relaxed text-muted dark:text-gray-300">
 
         <!-- Título -->
-        <span class="text-secondary text-hero-sm font-sans font-bold uppercase tracking-ui-xxwide block mb-4">Cultura & Belleza</span>
-        <h1 class="font-serif text-display-lg md:text-display-2xl text-primary dark:text-white leading-tight mb-12">El Esplendor de <span class="italic text-secondary">Reus</span></h1>
+        <span class="text-secondary text-[0.7rem] font-sans font-bold uppercase tracking-[3px] block mb-4">Cultura & Belleza</span>
+        <h1 class="font-serif text-[3rem] md:text-[4.5rem] text-primary dark:text-white leading-tight mb-12">El Esplendor de <span class="italic text-secondary">Reus</span></h1>
 
         <!-- Contenido principal -->
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-start mb-0">
             <!-- Izquierda: imagen + cita -->
             <div class="lg:col-span-2 space-y-14">
-                <img src="images/rosa-reus-modernismo.jpg" class="w-full aspect-4/3 object-cover rounded shadow-xl" loading="lazy" decoding="async">
+                <img src="images/rosa-reus-modernismo.jpg" class="w-full aspect-[4/3] object-cover rounded shadow-xl" loading="lazy" decoding="async">
                 <blockquote class="border-l-4 border-secondary pl-6 font-serif italic text-2xl lg:text-3xl leading-snug text-primary dark:text-white">
                     "Caminar por el centro de Reus es hacer un viaje al optimismo y la explosión creativa de finales del siglo XIX."
                 </blockquote>
-                <img src="images/pabellon-distinguidos-modernismo-reus.webp" class="w-full aspect-4/3 object-cover rounded shadow-xl" loading="lazy" decoding="async">
+                <img src="images/pabellon-distinguidos-modernismo-reus.webp" class="w-full aspect-[4/3] object-cover rounded shadow-xl" loading="lazy" decoding="async">
 
                 <div class="mt-8 text-center">
                     <h3 class="font-bodoni text-lg text-secondary mb-3 uppercase tracking-widest leading-none">Experiencia completa</h3>
@@ -231,7 +254,7 @@
                 <p>
                     A tan solo 20 kilómetros de ZENIT Bonmont se encuentra la comercial ciudad de <strong>Reus</strong>, donde el Modernismo se observa en cada rincón. Más allá de los grandes museos y las tiendas, el verdadero espíritu de la ciudad se esconde en los detalles: la <strong>Rosa de Reus</strong> grabada en piedra, forja o vitrales en fachadas anónimas te invita a levantar la vista; es el símbolo que los maestros modernistas utilizaron para convertir un simple paseo en una explosión de belleza. Como cuna de Antoni Gaudí —disputada históricamente con la población vecina de Riudoms—, la ciudad alberga uno de los conjuntos modernistas más importantes de Europa.
                 </p>
-                <h2 class="font-bodoni text-2xl text-primary dark:text-white uppercase tracking-wide mt-10">El rastro del genio: La Ruta Gaudí</h2>
+                <h2 class="font-bodoni text-2xl text-primary dark:text-white uppercase tracking-wide !mt-10">El rastro del genio: La Ruta Gaudí</h2>
                 <p>
                     Aunque Barcelona se llevó la fama de sus obras, Reus es el lugar para entender los orígenes de Gaudí. Te sugiero visitar:
                 </p>
@@ -240,12 +263,12 @@
                     <li><strong>Casa Natal:</strong> La casa donde nació y pasó su infancia, situada en el núcleo antiguo.</li>
                     <li><strong>Església de Sant Pere:</strong> Donde fue bautizado y donde se conserva su partida de nacimiento.</li>
                 </ul>
-                <h2 class="font-bodoni text-2xl text-primary dark:text-white uppercase tracking-wide mt-10">Casa Navàs: la joya intacta</h2>
+                <h2 class="font-bodoni text-2xl text-primary dark:text-white uppercase tracking-wide !mt-10">Casa Navàs: la joya intacta</h2>
                 <p>
                     Si solo tienes tiempo para una visita, que sea la <strong>Casa Navàs</strong>. Proyectada por Lluís Domènech i Montaner, es una de las pocas mansiones modernistas en Europa que conserva su interior prácticamente intacto —mobiliario, tapicerías y vitrales— tras más de un siglo. Es una edificio fascinante repleto de luz y artesanía que permite entender el lujo de la época.
                 </p>
 
-                <h2 class="font-bodoni text-2xl text-primary dark:text-white uppercase tracking-wide mt-10">El Pabellón de los Distinguidos</h2>
+                <h2 class="font-bodoni text-2xl text-primary dark:text-white uppercase tracking-wide !mt-10">El Pabellón de los Distinguidos</h2>
                 <p>
                     A las afueras de la ciudad, el <strong>Institut Pere Mata</strong> nos regala una experiencia única: visitar el <strong>Pabellón de los Distinguidos</strong>. Aunque el recinto sigue siendo hoy un hospital en activo, este pabellón se conserva exclusivamente como espacio museístico para mostrar el esplendor de su diseño original.
                 </p>
@@ -260,8 +283,8 @@
 
     <!-- CTA Section -->
     <div class="pt-6 pb-16 text-center">
-        <div class="max-w-150 mx-auto px-6 flex flex-col items-center gap-6">
-            <div class="w-15 h-px bg-secondary/60"></div>
+        <div class="max-w-[37.5rem] mx-auto px-6 flex flex-col items-center gap-6">
+            <div class="w-[3.75rem] h-px bg-secondary/60"></div>
             <h2 class="font-serif text-2xl md:text-3xl text-primary dark:text-white">¿Planeas tu escapada?</h2>
             <p class="text-muted dark:text-gray-400 text-sm leading-relaxed">
                 Descubre ZENIT Bonmont, nuestra villa de lujo en Costa Dorada. Piscina privada, vistas al golf y todo lo que necesitas para desconectar.
@@ -274,24 +297,24 @@
                     Conocer la villa
                 </a>
             </div>
-            <p class="text-ui-xs uppercase tracking-ui-xwide text-muted opacity-70 mt-2">Licencia turística: HUTB-248281</p>
+            <p class="text-[8px] uppercase tracking-[2px] text-muted opacity-70 mt-2">Licencia turística: HUTB-248281</p>
         </div>
     </div>
     </main>
 
     <!-- Unified Footer -->
-    <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-350 mx-auto">
+    <footer class="bg-primary text-white py-3">
+        <div class="w-full max-w-[1400px] mx-auto px-6">
             <!-- Main Integrated Section -->
             <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center gap-1 min-w-50">
+                <div class="flex flex-col items-center gap-1 min-w-[12.5rem]">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
-                    <p class="text-ui-xs text-gray-500 uppercase tracking-ui-xxwide">Luxury Mediterranean Serenity</p>
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
                 <!-- Navigation -->
-                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-hero-xs uppercase tracking-ui-xwide font-medium text-gray-400">
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
                     <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
                     <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
                     <a href="index.html#outdoor" class="hover:text-white transition-colors">Exterior</a>
@@ -302,7 +325,7 @@
                 </nav>
 
                 <!-- Contacts & Social -->
-                <div class="flex flex-col items-center lg:items-end gap-3 min-w-50">
+                <div class="flex flex-col items-center lg:items-end gap-3 min-w-[12.5rem]">
                     <div class="flex gap-4">
                         <!-- TODO: Actualizar con URL del perfil real de Instagram -->
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
@@ -313,12 +336,12 @@
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         </a>
                     </div>
-                    <p class="text-ui-sm text-gray-400 tracking-ui-snug lowercase">info@zenitbonmont.com</p>
+                    <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
                 </div>
             </div>
 
             <!-- Bottom Section: Legal & Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-ui-xs text-gray-400 uppercase tracking-ui-xwide">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
                 <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
                     <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                     <p class="hidden md:block">|</p>
@@ -336,7 +359,7 @@
 
     <!-- Cookie Consent Banner -->
     <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
-        <div class="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex-1">
                 <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
                     Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.
@@ -423,3 +446,4 @@
         </script>
 </body>
 </html>
+

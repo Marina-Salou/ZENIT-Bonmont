@@ -65,7 +65,30 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        secondary: "#c9a866",
+                        "secondary-hover": "#b08e4b",
+                        "surface-dark": "#252525",
+                        text: "#2c2c2c",
+                        "hero-text": "#f8f8f7",
+                        muted: "#666666"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "ui-sans-serif", "system-ui"],
+                        serif: ["Crimson Text", "ui-serif", "Georgia"],
+                        bodoni: ["Libre Bodoni", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -79,14 +102,14 @@
 
     <!-- Skip Link -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60 focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
         Ir al contenido principal
     </a>
 
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
@@ -97,33 +120,37 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
                 <a href="index.html#home"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
                 <a href="index.html#indoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="index.html#outdoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="index.html#lifestyle"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="index.html#philosophy"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
-                    class="group flex items-center gap-1.5 text-hero-md2 uppercase tracking-ui-xwide font-bold text-secondary relative transition-colors">
+                    class="group flex items-center gap-1.5 text-[0.85rem] uppercase tracking-[2px] font-bold text-secondary relative transition-colors">
                     <span class="border-b-2 border-secondary pb-0.5">FAQS</span>
                 </a>
                 <a href="blog.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
             </nav>
 
             <!-- Theme & Mobile Toggle -->
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 md:gap-6">
                 <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
+                <a href="faqs.html#booking"
+                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
+                    Reservar
+                </a>
                 <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group" aria-label="Open menu" aria-expanded="false">
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
                 </button>
             </div>
         </div>
@@ -137,26 +164,29 @@
             <a href="index.html#philosophy" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">Anfitriona</a>
             <a href="faqs.html" class="block py-3 text-secondary font-medium border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">FAQS</a>
             <a href="blog.html" class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
+            <a href="faqs.html#booking"
+                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-[3px] text-xs font-bold"
+                aria-label="Book your stay">Reservar</a>
         </div>
     </header>
 
     <main id="main-content">
         <!-- Hero Section -->
         <section class="pt-16 md:pt-24 pb-0 bg-white dark:bg-primary">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="max-w-[1400px] mx-auto px-6">
                 <div class="text-center mb-16 relative">
-                    <h1 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                    <h1 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         Planifica tu estancia
                     </h1>
-                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <div class="mb-0">
-                    <h2 class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                    <h2 class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         Disponibilidad
                     </h2>
-                    <div class="h-px bg-divider-soft w-full"></div>
-                    <p class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18 max-w-200">
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <p class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8] max-w-[50rem]">
                         Consulta nuestro calendario.
                     </p>
                 </div>
@@ -165,17 +195,17 @@
 
         <!-- Booking Section -->
         <section id="booking" class="pt-0 pb-16 md:pb-24">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="max-w-[1400px] mx-auto px-6">
                 <div>
                     <div>
-                        <button id="showCalendar" class="inline-flex items-center gap-3 text-secondary font-bold uppercase tracking-widest text-hero-sm hover:opacity-80 transition-opacity">
+                        <button id="showCalendar" class="inline-flex items-center gap-3 text-secondary font-bold uppercase tracking-widest text-[0.7rem] hover:opacity-80 transition-opacity">
                             <span class="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
                             </span>
                             Ver calendario
                         </button>
 
-                        <div id="calendarContainer" class="hidden mt-8 w-full max-w-200 mx-auto aspect-video border border-gray-100 dark:border-white/10 rounded-sm overflow-hidden shadow-lg relative" style="background-color: rgba(0, 0, 0, 0.08);">
+                        <div id="calendarContainer" class="hidden mt-8 w-full max-w-[50rem] mx-auto aspect-video border border-gray-100 dark:border-white/10 rounded-sm overflow-hidden shadow-lg relative" style="background-color: rgba(0, 0, 0, 0.08);">
                             <iframe src="https://calendar.google.com/calendar/embed?height=320&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=ZXMuc3BhaW4jaG9saWRheUBncm91cC52LmNvbQ&color=%23C9A866"
                                 class="w-full h-full border-0" frameborder="0" scrolling="no" style="filter: grayscale(0.3) saturate(0.5) brightness(0.95) contrast(0.95);"></iframe>
                             <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.03) 18%, rgba(0, 0, 0, 0.02) 82%, rgba(0, 0, 0, 0.12) 100%);"></div>
@@ -184,27 +214,27 @@
 
                     <div class="mt-16 md:mt-24">
                         <div class="mb-8">
-                            <h3 class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                            <h3 class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                                 Solicitud de reserva
                             </h3>
-                            <div class="h-px bg-divider-soft w-full"></div>
-                            <p class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18">
+                            <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
+                            <p class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                                 La estancia mínima es de 5 noches.
                             </p>
                         </div>
-                        <div class="bg-white dark:bg-primary border border-gray-100 dark:border-white/10 p-8 md:p-10 shadow-xl rounded-sm max-w-200 mx-auto">
+                        <div class="bg-white dark:bg-primary border border-gray-100 dark:border-white/10 p-8 md:p-10 shadow-xl rounded-sm max-w-[50rem] mx-auto">
                             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
                                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                                     <div>
-                                        <label for="arrival" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Llegada</label>
+                                        <label for="arrival" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Llegada</label>
                                         <input type="text" id="arrival" name="arrival" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                     </div>
                                     <div>
-                                        <label for="departure" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Salida</label>
+                                        <label for="departure" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Salida</label>
                                         <input type="text" id="departure" name="departure" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                     </div>
                                     <div>
-                                        <label for="guests" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Adultos</label>
+                                        <label for="guests" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Adultos</label>
                                         <select id="guests" name="guests" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                                             <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
@@ -212,19 +242,19 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <label for="children" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Niños</label>
+                                        <label for="children" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Niños</label>
                                         <select id="children" name="children" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                                         </select>
                                     </div>
                                     <div>
-                                        <label for="babies" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Bebés</label>
+                                        <label for="babies" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Bebés</label>
                                         <select id="babies" name="babies" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
                                         </select>
                                     </div>
                                     <div>
-                                        <label for="pets" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Mascotas</label>
+                                        <label for="pets" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Mascotas</label>
                                         <select id="pets" name="pets" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
                                         </select>
@@ -233,25 +263,25 @@
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <label for="email" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Email de contacto</label>
+                                        <label for="email" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Email de contacto</label>
                                         <input type="email" id="email" name="email" placeholder="tu@email.com" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                     </div>
                                     <div>
-                                        <label for="phone" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Teléfono móvil (opcional)</label>
+                                        <label for="phone" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Teléfono móvil (opcional)</label>
                                         <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label for="comments" class="block text-hero-sm font-bold uppercase tracking-widest text-muted mb-2">Comentarios / Peticiones especiales</label>
+                                    <label for="comments" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Comentarios / Peticiones especiales</label>
                                     <textarea id="comments" name="comments" rows="3" placeholder="Cuéntanos más sobre tu estancia..." class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
                                 </div>
 
-                                <p class="text-hero-base text-muted dark:text-gray-400 italic text-center leading-relaxed">
+                                <p class="text-[0.9rem] text-muted dark:text-gray-400 italic text-center leading-relaxed">
                                     Gracias por confiar en Zenit Bonmont.<br>
                                     En breve te contactaré personalmente para confirmar disponibilidad y formalizar la reserva.
                                 </p>
-                                <button type="submit" class="w-full bg-secondary text-white font-bold py-4 uppercase tracking-ui-xxwide text-xs hover:bg-opacity-90 transition-all shadow-md">
+                                <button type="submit" class="w-full bg-secondary text-white font-bold py-4 uppercase tracking-[3px] text-xs hover:bg-opacity-90 transition-all shadow-md">
                                     Enviar Solicitud
                                 </button>
                             </form>
@@ -263,20 +293,20 @@
 
         <!-- FAQ Section (Placeholder) -->
         <section class="pt-16 md:pt-24 pb-16 md:pb-24 bg-white dark:bg-primary">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="max-w-[1400px] mx-auto px-6">
                 <div class="text-center mb-16 relative">
-                    <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         Resuelve tus dudas
                     </h2>
-                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <div class="mb-0">
-                    <h3 class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                    <h3 class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         Preguntas frecuentes
                     </h3>
-                    <div class="h-px bg-divider-soft w-full"></div>
-                    <p class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18">
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
+                    <p class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         Por si te queda alguna duda. Si no encuentras lo que buscas, contáctame. Estaré encantada de ayudarte a planificar la mejor experiencia posible.
                     </p>
                 </div>
@@ -320,12 +350,12 @@
 
         <!-- Testimonials Section: Nuestra comunidad -->
         <section class="py-16 md:py-24 bg-white dark:bg-primary border-t border-black/5 dark:border-white/5">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="max-w-[1400px] mx-auto px-6">
                 <div class="text-center mb-16 relative">
-                    <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         Nuestra comunidad
                     </h2>
-                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -342,10 +372,10 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
                             <div class="flex flex-col items-center gap-3">
                                 <div class="flex items-center justify-center gap-4">
                                     <div class="w-4 h-px bg-secondary"></div>
-                                    <p class="font-sans uppercase tracking-ui-xwide text-ui-sm font-semibold text-primary dark:text-white">Idoia, Zenit Bonmont</p>
+                                    <p class="font-sans uppercase tracking-[2px] text-[10px] font-semibold text-primary dark:text-white">Idoia, Zenit Bonmont</p>
                                     <div class="w-4 h-px bg-secondary"></div>
                                 </div>
-                                <p class="text-ui-xs text-secondary uppercase tracking-ui-snug font-medium">Febrero 2026</p>
+                                <p class="text-[8px] text-secondary uppercase tracking-[1px] font-medium">Febrero 2026</p>
                             </div>
                         </div>
                     </article>
@@ -363,18 +393,18 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-350 mx-auto">
+    <footer class="bg-primary text-white py-3">
+        <div class="w-full max-w-[1400px] mx-auto px-6">
             <!-- Main Integrated Section -->
             <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
                 <div class="flex flex-col items-center gap-1 min-w-50">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
-                    <p class="text-ui-xs text-gray-500 uppercase tracking-ui-xxwide">Luxury Mediterranean Serenity</p>
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
                 <!-- Navigation -->
-                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-hero-xs uppercase tracking-ui-xwide font-medium text-gray-400">
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
                     <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
                     <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
                     <a href="index.html#outdoor" class="hover:text-white transition-colors">Exterior</a>
@@ -396,12 +426,12 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         </a>
                     </div>
-                    <p class="text-ui-sm text-gray-400 tracking-ui-snug lowercase">info@zenitbonmont.com</p>
+                    <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
                 </div>
             </div>
 
             <!-- Bottom Section: Legal & Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-ui-xs text-gray-400 uppercase tracking-ui-xwide">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
                 <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
                     <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                     <p class="hidden md:block">|</p>
@@ -419,7 +449,7 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
 
     <!-- Cookie Consent Banner -->
     <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
-        <div class="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex-1">
                 <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
                     Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.
@@ -535,4 +565,6 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
     </script>
 </body>
 </html>
+
+
 

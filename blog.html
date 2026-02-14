@@ -65,7 +65,30 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        secondary: "#c9a866",
+                        "secondary-hover": "#b08e4b",
+                        "surface-dark": "#252525",
+                        text: "#2c2c2c",
+                        "hero-text": "#f8f8f7",
+                        muted: "#666666"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "ui-sans-serif", "system-ui"],
+                        serif: ["Crimson Text", "ui-serif", "Georgia"],
+                        bodoni: ["Libre Bodoni", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -79,14 +102,14 @@
 
     <!-- Skip Link -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60 focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
         Ir al contenido principal
     </a>
 
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
@@ -97,19 +120,19 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
                 <a href="index.html#home"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INICIO</a>
                 <a href="index.html#indoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="index.html#outdoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="index.html#lifestyle"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="index.html#philosophy"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
                 <a href="blog.html"
-                    class="group flex items-center gap-1.5 text-hero-md2 uppercase tracking-ui-xwide font-bold text-secondary relative transition-colors">
+                    class="group flex items-center gap-1.5 text-[0.85rem] uppercase tracking-[2px] font-bold text-secondary relative transition-colors">
                     <span class="border-b-2 border-secondary pb-0.5">BLOG</span>
                 </a>
             </nav>
@@ -117,17 +140,17 @@
             <!-- Theme & Mobile Toggle -->
             <div class="flex items-center gap-4">
                 <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
                 <a href="faqs.html#booking"
-                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-hero-xs uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
+                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
                     Reservar
                 </a>
                 <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group" aria-label="Open menu" aria-expanded="false">
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
-                    <span class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                    <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
                 </button>
             </div>
         </div>
@@ -147,12 +170,12 @@
     <main id="main-content">
         <!-- Blog Hero -->
         <section class="pt-16 md:pt-24 pb-16 md:pb-24 bg-white dark:bg-primary overflow-hidden relative">
-            <div class="max-w-350 mx-auto px-6 text-center relative z-10">
-                <h1 class="font-serif text-display-lg md:text-display-2xl text-primary dark:text-white leading-tight mb-6">
+            <div class="max-w-[1400px] mx-auto px-6 text-center relative z-10">
+                <h1 class="font-serif text-[3rem] md:text-[4.5rem] text-primary dark:text-white leading-tight mb-6">
                     El Blog de <span class="text-secondary italic">Zenit</span>
                 </h1>
                 <div class="w-20 h-px bg-secondary mx-auto mb-8"></div>
-                <p class="font-sans text-hero-base text-muted dark:text-gray-400 max-w-2xl mx-auto italic leading-relaxed">
+                <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 max-w-2xl mx-auto italic leading-relaxed">
                     Inspiración para tus días en nuestro refugio mediterráneo.
                 </p>
             </div>
@@ -160,12 +183,12 @@
 
         <!-- Blog Feed -->
         <section class="py-16 md:py-24">
-            <div class="max-w-300 mx-auto px-6 space-y-32">
+            <div class="max-w-[1400px] mx-auto px-6 space-y-32">
                 
                 <!-- Post 1: Gastronomía -->
                 <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     <div class="order-2 lg:order-1 space-y-6">
-                        <span class="text-secondary text-hero-sm font-bold uppercase tracking-ui-xxwide block mb-4">Gastronomía Local</span>
+                        <span class="text-secondary text-[0.7rem] font-bold uppercase tracking-[3px] block mb-4">Gastronomía Local</span>
                         <h2 class="font-serif text-3xl md:text-4xl text-primary dark:text-white leading-tight">La Tradición de la Calçotada</h2>
                         <div class="w-12 h-px bg-gray-200"></div>
                         <p class="text-muted dark:text-gray-400 leading-relaxed font-sans">
@@ -173,7 +196,7 @@
                         </p>
                         <div class="pt-4">
                             <a href="tradicion-calcotada-valls-tarragona.html" 
-                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-hero-sm group">
+                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-[0.7rem] group">
                                 <span class="w-8 h-8 flex items-center justify-center border border-secondary rounded-full group-hover:bg-secondary group-hover:text-white transition-all">
                                     <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                                 </span>
@@ -196,7 +219,7 @@
                         </div>
                     </div>
                     <div class="space-y-6">
-                        <span class="text-secondary text-hero-sm font-bold uppercase tracking-ui-xxwide block mb-4">Deporte & Naturaleza</span>
+                        <span class="text-secondary text-[0.7rem] font-bold uppercase tracking-[3px] block mb-4">Deporte & Naturaleza</span>
                         <h2 class="font-serif text-3xl md:text-4xl text-primary dark:text-white leading-tight">Rutas BTT en Mont-roig del Camp</h2>
                         <div class="w-12 h-px bg-gray-200"></div>
                         <p class="text-muted dark:text-gray-400 leading-relaxed font-sans">
@@ -204,7 +227,7 @@
                         </p>
                         <div class="pt-4">
                             <a href="rutas-btt-mont-roig-del-camp.html" 
-                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-hero-sm group">
+                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-[0.7rem] group">
                                 <span class="w-8 h-8 flex items-center justify-center border border-secondary rounded-full group-hover:bg-secondary group-hover:text-white transition-all">
                                     <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                                 </span>
@@ -217,14 +240,14 @@
                 <!-- Post 3: Cultura -->
                 <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     <div class="order-2 lg:order-1 space-y-6">
-                        <span class="text-secondary text-hero-sm font-bold uppercase tracking-ui-xxwide block mb-4">Cultura Modernista</span>
+                        <span class="text-secondary text-[0.7rem] font-bold uppercase tracking-[3px] block mb-4">Cultura Modernista</span>
                         <h2 class="font-serif text-3xl md:text-4xl text-primary dark:text-white leading-tight">El Esplendor del Modernismo en Reus</h2>
                         <div class="w-12 h-px bg-gray-200"></div>
                         <p class="text-muted dark:text-gray-400 leading-relaxed font-sans">
 A tan solo 20 minutos de la villa, Reus invita a pasear entre arquitectura modernista. Ciudad natal de Antoni Gaudí, conserva también obras destacadas de Lluís Domènech i Montaner, como la Casa Navàs o el Institut Pere Mata.                        </p>
                         <div class="pt-4">
                             <a href="guia-modernismo-reus.html" 
-                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-hero-sm group">
+                                class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-[0.7rem] group">
                                 <span class="w-8 h-8 flex items-center justify-center border border-secondary rounded-full group-hover:bg-secondary group-hover:text-white transition-all">
                                     <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                                 </span>
@@ -244,27 +267,27 @@ A tan solo 20 minutos de la villa, Reus invita a pasear entre arquitectura moder
 
         <!-- Newsletter / CTA -->
         <section class="py-24 bg-primary text-white text-center">
-            <div class="max-w-200 mx-auto px-6">
+            <div class="max-w-[50rem] mx-auto px-6">
                 <h3 class="font-serif text-3xl mb-6">Próximamente más experiencias</h3>
                 <p class="text-gray-400 italic mb-8">Novedades en la casa, eventos gastronómicos y rincones por descubrir.</p>
-                <a href="index.html#home" class="inline-block border border-white/20 px-8 py-3 text-hero-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all">Volver al refugio</a>
+                <a href="index.html#home" class="inline-block border border-white/20 px-8 py-3 text-[0.7rem] uppercase tracking-widest hover:bg-white hover:text-primary transition-all">Volver al refugio</a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-350 mx-auto">
+    <footer class="bg-primary text-white py-3">
+        <div class="w-full max-w-[1400px] mx-auto px-6">
             <!-- Main Integrated Section -->
             <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
                 <div class="flex flex-col items-center gap-1 min-w-50">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
-                    <p class="text-ui-xs text-gray-500 uppercase tracking-ui-xxwide">Luxury Mediterranean Serenity</p>
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
                 <!-- Navigation -->
-                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-hero-xs uppercase tracking-ui-xwide font-medium text-gray-400">
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
                     <a href="index.html#home" class="hover:text-white transition-colors">Inicio</a>
                     <a href="index.html#indoor" class="hover:text-white transition-colors">Interior</a>
                     <a href="index.html#outdoor" class="hover:text-white transition-colors">Exterior</a>
@@ -286,12 +309,12 @@ A tan solo 20 minutos de la villa, Reus invita a pasear entre arquitectura moder
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         </a>
                     </div>
-                    <p class="text-ui-sm text-gray-400 tracking-ui-snug lowercase">info@zenitbonmont.com</p>
+                    <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
                 </div>
             </div>
 
             <!-- Bottom Section: Legal & Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-ui-xs text-gray-400 uppercase tracking-ui-xwide">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
                 <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
                     <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                     <p class="hidden md:block">|</p>
@@ -309,7 +332,7 @@ A tan solo 20 minutos de la villa, Reus invita a pasear entre arquitectura moder
 
     <!-- Cookie Consent Banner -->
     <div id="cookieConsent" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
-        <div class="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex-1">
                 <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
                     Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.
@@ -409,4 +432,6 @@ A tan solo 20 minutos de la villa, Reus invita a pasear entre arquitectura moder
 </body>
 
 </html>
+
+
 

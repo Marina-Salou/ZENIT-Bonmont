@@ -136,7 +136,40 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="output.css">
+        <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        secondary: "#c9a866",
+                        "secondary-hover": "#b08e4b",
+                        "surface-dark": "#252525",
+                        text: "#2c2c2c",
+                        "hero-text": "#f8f8f7",
+                        muted: "#666666"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "ui-sans-serif", "system-ui"],
+                        serif: ["Crimson Text", "ui-serif", "Georgia"],
+                        bodoni: ["Libre Bodoni", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Per-page design tokens (example - leave commented in production).
+         To change sizes/colors for this single page edit the :root values below.
+    -->
+    <!--
+    <style>
+      :root { --text-[0.8rem]: 0.95rem; --text-body-lg2: 1.35rem; }
+    </style>
+    -->
+
     <script>
         // Inline script to prevent FOUC (Flash of Unstyled Content)
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -152,14 +185,14 @@
 
     <!-- Skip Link (Spanish text) -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60 focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:text-primary focus:shadow-md">
         Ir al contenido principal
     </a>
 
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <div class="max-w-350 mx-auto px-6 flex items-center justify-between">
+        <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
@@ -172,33 +205,33 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
                 <a href="#home"
-                    class="group flex items-center gap-1.5 text-hero-md2 uppercase tracking-ui-xwide font-medium text-secondary relative transition-colors">
+                    class="group flex items-center gap-1.5 text-[0.85rem] uppercase tracking-[2px] font-medium text-secondary relative transition-colors">
                     <span class="border-b border-secondary pb-0.5">INICIO</span>
                 </a>
                 <a href="#indoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">INTERIOR</a>
                 <a href="#outdoor"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EXTERIOR</a>
                 <a href="#lifestyle"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">EPICENTRO</a>
                 <a href="#philosophy"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">ANFITRIONA</a>
                 <a href="faqs.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">FAQS</a>
                 <a href="blog.html"
-                    class="text-hero-md2 uppercase tracking-ui-xwide font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
+                    class="text-[0.85rem] uppercase tracking-[2px] font-normal text-primary dark:text-gray-300 hover:text-secondary transition-all pb-0.5 border-b border-transparent hover:border-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">BLOG</a>
             </nav>
 
             <!-- CTA & Mobile Toggle -->
             <div class="flex items-center gap-4 md:gap-6">
                 <!-- Theme Toggle -->
                 <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
 
                 <a href="faqs.html#booking"
-                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-hero-xs uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
+                    class="hidden sm:inline-block px-4 py-2 bg-primary text-white dark:bg-white dark:text-primary text-[0.65rem] uppercase tracking-widest font-bold rounded-md hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-all">
                     Reservar
                 </a>
 
@@ -206,11 +239,11 @@
                 <button id="menuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group"
                     aria-label="Open menu" aria-expanded="false">
                     <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
+                        class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:translate-y-2 group-aria-expanded:rotate-45"></span>
                     <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
+                        class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 group-aria-expanded:opacity-0"></span>
                     <span
-                        class="block w-6.5 h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
+                        class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center group-aria-expanded:-translate-y-2 group-aria-expanded:-rotate-45"></span>
                 </button>
             </div>
         </div>
@@ -233,14 +266,14 @@
             <a href="blog.html"
                 class="block py-3 text-text dark:text-gray-300 hover:text-secondary border-b border-gray-50 dark:border-white/5 uppercase tracking-widest text-sm">BLOG</a>
             <a href="faqs.html#booking"
-                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-ui-xxwide text-xs font-bold"
+                class="block mt-6 text-center bg-primary dark:bg-white text-white dark:text-primary py-4 rounded-sm uppercase tracking-[3px] text-xs font-bold"
                 aria-label="Book your stay">Reservar</a>
         </div>
     </header>
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section id="home" class="relative h-screen min-h-150 overflow-hidden flex items-center justify-center">
+        <section id="home" class="relative h-screen min-h-[37.5rem] overflow-hidden flex items-center justify-center">
             <div class="absolute inset-0 bg-black/40 z-20"></div>
             <!-- Video background (with filter for contrast) -->
             <video autoplay muted playsinline poster="images/hero-poster.jpg"
@@ -253,47 +286,46 @@
                 class="relative z-30 text-center text-white py-20 md:py-24 px-6 flex flex-col justify-between h-full w-full mx-auto items-center">
                 <!-- Top: Title (Grande, but balanced) -->
                 <h1
-                    class="font-bodoni italic font-normal tracking-ui-tight leading-normal sm:leading-tight md:leading-tight text-hero-text drop-shadow-deep max-w-350 mx-auto"
-                    style="font-size: clamp(1.5rem, 3.6vw + 0.6rem, 3.2rem);">
+                    class="font-bodoni italic font-normal tracking-[0.5px] leading-[1.08] text-[clamp(2rem,5.2vw+0.4rem,4.8rem)] text-[#f8f8f7] [filter:drop-shadow(0_4px_16px_rgba(0,0,0,0.4))] w-full max-w-[1400px] mx-auto">
                     An exclusive refuge designed to be lived
                 </h1>
 
                 <!-- Center: Smaller Transparent Button -->
                 <div class="flex flex-col items-center">
                     <a href="faqs.html#booking" aria-label="Check availability"
-                        class="inline-block uppercase tracking-ui-md text-hero-sm2 px-4 py-2.5 border border-white/50 rounded-md hover:bg-white hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-black">
+                        class="inline-block uppercase tracking-[1.2px] text-[0.75rem] px-4 py-2.5 border border-white/50 rounded-md hover:bg-white hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-black">
                         Crea recuerdos
                     </a>
                 </div>
 
                 <!-- Bottom: Smaller descriptive phrase -->
                 <p
-                    class="font-bodoni uppercase tracking-ui-max text-hero-rem md:text-body-lg2 text-hero-text text-shadow-soft">
+                    class="font-bodoni uppercase tracking-[4px] text-[1rem] md:text-[1.3rem] text-[#f8f8f7] [text-shadow:0_1px_8px_rgba(0,0,0,0.25)]">
                     Haz que tu visita a la Costa Dorada sea inolvidable
                 </p>
             </div>
         </section>
 
         <!-- Villa Identity & Stats -->
-        <section class="pt-16 md:pt-24 pb-0 w-full mx-auto px-6">
-            <div class="max-w-350 mx-auto px-6">
+        <section class="pt-16 md:pt-24 pb-0 w-full mx-auto">
+            <div class="w-full max-w-[1400px] mx-auto px-6">
             <!-- Central Title Section -->
             <div class="text-center mb-16 relative">
-                <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                     Una atmósfera a tu medida
                 </h2>
-                <div class="w-15 h-px bg-secondary mx-auto"></div>
+                <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
             </div>
 
             <!-- Left Aligned Subtitle & Description -->
             <div class="mb-0">
                 <h3
-                    class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                    class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                     EL ESCENARIO DE TU ESTANCIA
                 </h3>
-                <div class="h-px bg-divider-soft w-full"></div>
+                <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                 <p
-                    class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18 max-w-200">
+                    class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8] max-w-[50rem]">
                     Cada detalle está pensado para ofrecerte una experiencia de absoluto confort.
                 </p>
             </div>
@@ -301,7 +333,7 @@
             <!-- Stats Grid -->
             <div class="grid grid-cols-2 md:grid-cols-5 gap-y-8 md:gap-y-12 gap-x-6 lg:flex lg:justify-between items-start mt-16">
                 <!-- Stat 1 -->
-                <div class="flex items-baseline gap-4">
+                <div class="flex items-baseline gap-3 md:gap-4 min-w-0">
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -309,28 +341,28 @@
                     </svg>
                     <div>
                         <span
-                            class="text-display-md md:text-display-lg2 font-bold text-secondary leading-none block mb-1">600</span>
+                            class="text-[2.2rem] sm:text-[2.5rem] md:text-[3.2rem] font-bold text-secondary leading-none block mb-1">600</span>
                         <span
-                            class="font-sans text-hero-sm2 font-medium text-muted dark:text-gray-400 uppercase tracking-ui-snug m-0">M²
+                            class="font-sans text-[0.75rem] font-medium text-muted dark:text-gray-400 uppercase tracking-[1px] m-0">M²
                             INTERIORES</span>
                     </div>
                 </div>
                 <!-- Stat 2 -->
-                <div class="flex items-baseline gap-4">
+                <div class="flex items-baseline gap-3 md:gap-4 min-w-0">
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-6-3V4l6 3m6-3l6 3v13l-6-3m-6 3V7m6 10V4" />
                     </svg>
                     <div>
                         <span
-                            class="text-display-md md:text-display-lg2 font-bold text-secondary leading-none block mb-1">1.600</span>
+                            class="text-[2.2rem] sm:text-[2.5rem] md:text-[3.2rem] font-bold text-secondary leading-none block mb-1">1.600</span>
                         <span
-                            class="font-sans text-hero-sm2 font-medium text-muted dark:text-gray-400 uppercase tracking-ui-snug m-0 whitespace-nowrap">M²
+                            class="font-sans text-[0.75rem] font-medium text-muted dark:text-gray-400 uppercase tracking-[1px] m-0 sm:whitespace-nowrap">M²
                             DE PARCELA PRIVADA</span>
                     </div>
                 </div>
                 <!-- Stat 3 -->
-                <div class="flex items-baseline gap-4">
+                <div class="flex items-baseline gap-3 md:gap-4 min-w-0">
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -338,14 +370,14 @@
                     </svg>
                     <div>
                         <span
-                            class="text-display-md md:text-display-lg2 font-bold text-secondary leading-none block mb-1">6</span>
+                            class="text-[2.2rem] sm:text-[2.5rem] md:text-[3.2rem] font-bold text-secondary leading-none block mb-1">6</span>
                         <span
-                            class="font-sans text-hero-sm2 font-medium text-muted dark:text-gray-400 uppercase tracking-ui-snug m-0 whitespace-nowrap">DORMITORIOS
+                            class="font-sans text-[0.75rem] font-medium text-muted dark:text-gray-400 uppercase tracking-[1px] m-0 sm:whitespace-nowrap">DORMITORIOS
                             DOBLES</span>
                     </div>
                 </div>
                 <!-- Stat 4 -->
-                <div class="flex items-baseline gap-4">
+                <div class="flex items-baseline gap-3 md:gap-4 min-w-0">
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -353,23 +385,23 @@
                     </svg>
                     <div>
                         <span
-                            class="text-display-md md:text-display-lg2 font-bold text-secondary leading-none block mb-1">14</span>
+                            class="text-[2.2rem] sm:text-[2.5rem] md:text-[3.2rem] font-bold text-secondary leading-none block mb-1">14</span>
                         <span
-                            class="font-sans text-hero-sm2 font-medium text-muted dark:text-gray-400 uppercase tracking-ui-snug m-0">HUÉSPEDES</span>
+                            class="font-sans text-[0.75rem] font-medium text-muted dark:text-gray-400 uppercase tracking-[1px] m-0">HUÉSPEDES</span>
                     </div>
                 </div>
                 <!-- Stat 5 -->
-                <div class="flex items-baseline gap-4 lg:text-right">
+                <div class="flex items-baseline gap-3 md:gap-4 lg:text-right min-w-0">
                     <svg class="w-6 h-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 21c-3.866 0-7-3.134-7-7 0-3.866 7-11 7-11s7 7.134 7 11c0 3.866-3.134 7-7 7z" />
                     </svg>
                     <div>
-                        <span class="text-display-md md:text-display-lg2 font-bold text-secondary leading-none block mb-1">5
+                        <span class="text-[2.2rem] sm:text-[2.5rem] md:text-[3.2rem] font-bold text-secondary leading-none block mb-1">5
                             + 1</span>
                         <span
-                            class="font-sans text-hero-sm2 font-medium text-muted dark:text-gray-400 uppercase tracking-ui-snug m-0 whitespace-nowrap">BAÑOS
+                            class="font-sans text-[0.75rem] font-medium text-muted dark:text-gray-400 uppercase tracking-[1px] m-0 sm:whitespace-nowrap">BAÑOS
                             + ASEO</span>
                     </div>
                 </div>
@@ -385,21 +417,21 @@
 
         <!-- Airbnb Snapshot -->
         <section class="bg-white dark:bg-primary border-b border-black/5 dark:border-white/5">
-            <div class="pt-6 pb-16 max-w-350 mx-auto px-6">
+            <div class="pt-6 pb-16 w-full max-w-[1400px] mx-auto px-6">
                 <h3
-                    class="font-sans text-hero-sm2 font-bold uppercase tracking-ui-wide text-primary dark:text-white mb-6">
+                    class="font-sans text-[0.75rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white mb-6">
                     EVALUACIÓN EN AIRBNB
                 </h3>
                 <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3-auto gap-12 justify-between items-start">
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_auto] gap-12 justify-between items-start">
 
                     <!-- Col 1: Main Score -->
                     <div>
-                        <div class="text-display-xl font-bold text-secondary leading-none mb-4">4,87</div>
+                        <div class="text-[3.5rem] font-bold text-secondary leading-none mb-4">4,87</div>
                         <div class="space-y-1">
-                            <p class="text-hero-base text-muted dark:text-gray-400 font-medium tracking-tight">
+                            <p class="text-[0.9rem] text-muted dark:text-gray-400 font-medium tracking-tight">
                                 Puntuación huéspedes</p>
-                            <p class="text-hero-base text-muted dark:text-gray-400">84 evaluaciones</p>
+                            <p class="text-[0.9rem] text-muted dark:text-gray-400">84 evaluaciones</p>
                         </div>
                     </div>
 
@@ -413,8 +445,8 @@
                                     d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
                                 <path d="M5 3v4M19 17v4M3 5h4M17 19h4" />
                             </svg>
-                            <span class="font-bold text-hero-rem text-primary dark:text-white">4,9</span>
-                            <span class="text-hero-base text-muted dark:text-gray-400">Limpieza</span>
+                            <span class="font-bold text-[1rem] text-primary dark:text-white">4,9</span>
+                            <span class="text-[0.9rem] text-muted dark:text-gray-400">Limpieza</span>
                         </div>
                         <!-- Veracidad -->
                         <div class="flex items-center gap-3">
@@ -423,8 +455,8 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                 <path d="m9 12 2 2 4-4" />
                             </svg>
-                            <span class="font-bold text-hero-rem text-primary dark:text-white">4,8</span>
-                            <span class="text-hero-base text-muted dark:text-gray-400">Veracidad</span>
+                            <span class="font-bold text-[1rem] text-primary dark:text-white">4,8</span>
+                            <span class="text-[0.9rem] text-muted dark:text-gray-400">Veracidad</span>
                         </div>
                         <!-- Llegada -->
                         <div class="flex items-center gap-3">
@@ -434,8 +466,8 @@
                                     d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4M21 2l-9.6 9.6" />
                                 <circle cx="7.5" cy="15.5" r="5.5" />
                             </svg>
-                            <span class="font-bold text-hero-rem text-primary dark:text-white">4,9</span>
-                            <span class="text-hero-base text-muted dark:text-gray-400">Llegada</span>
+                            <span class="font-bold text-[1rem] text-primary dark:text-white">4,9</span>
+                            <span class="text-[0.9rem] text-muted dark:text-gray-400">Llegada</span>
                         </div>
                     </div>
 
@@ -448,8 +480,8 @@
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                                 <path d="M8 9h8M8 13h6" />
                             </svg>
-                            <span class="font-bold text-hero-rem text-primary dark:text-white">4,8</span>
-                            <span class="text-hero-base text-muted dark:text-gray-400">Comunicación</span>
+                            <span class="font-bold text-[1rem] text-primary dark:text-white">4,8</span>
+                            <span class="text-[0.9rem] text-muted dark:text-gray-400">Comunicación</span>
                         </div>
                         <!-- Ubicación -->
                         <div class="flex items-center gap-3">
@@ -458,8 +490,8 @@
                                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
-                            <span class="font-bold text-hero-rem text-primary dark:text-white">4,7</span>
-                            <span class="text-hero-base text-muted dark:text-gray-400">Ubicación</span>
+                            <span class="font-bold text-[1rem] text-primary dark:text-white">4,7</span>
+                            <span class="text-[0.9rem] text-muted dark:text-gray-400">Ubicación</span>
                         </div>
                         <!-- Calidad -->
                         <div class="flex items-center gap-3">
@@ -468,8 +500,8 @@
                                 <circle cx="12" cy="8" r="7" />
                                 <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
                             </svg>
-                            <span class="font-bold text-hero-rem text-primary dark:text-white">4,8</span>
-                            <span class="text-hero-base text-muted dark:text-gray-400">Calidad</span>
+                            <span class="font-bold text-[1rem] text-primary dark:text-white">4,8</span>
+                            <span class="text-[0.9rem] text-muted dark:text-gray-400">Calidad</span>
                         </div>
                     </div>
 
@@ -477,29 +509,29 @@
                     <div class="lg:justify-self-end">
                         <div class="space-y-6">
                             <h3
-                                class="font-sans text-hero-sm font-bold uppercase tracking-ui-wide text-primary dark:text-white">
+                                class="font-sans text-[0.7rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white">
                                 RECOMENDACIÓN DEL VIAJERO</h3>
 
                             <div class="space-y-3">
                                 <h3
-                                    class="font-sans text-hero-sm font-bold uppercase tracking-ui-wide text-primary dark:text-white">
+                                    class="font-sans text-[0.7rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white">
                                     COMENTARIOS COMUNES</h3>
                                 <div class="space-y-2">
                                     <div class="flex items-center gap-3">
                                         <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                        <p class="font-sans text-hero-base text-muted dark:text-gray-300">Piscina
+                                        <p class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Piscina
                                             fantástica</p>
                                     </div>
                                     <div class="flex items-center gap-3">
                                         <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                        <p class="font-sans text-hero-base text-muted dark:text-gray-300">Hospitalidad
+                                        <p class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Hospitalidad
                                             excepcional</p>
                                     </div>
                                 </div>
                             </div>
 
                             <button id="commentsToggle" aria-expanded="false" aria-controls="comments-panel"
-                                class="block font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors text-left cursor-pointer">
+                                class="block font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors text-left cursor-pointer">
                                 VER MÁS COMENTARIOS
                             </button>
                         </div>
@@ -510,7 +542,7 @@
 
                 <!-- Hidden Comments Panel -->
                 <div id="comments-panel" aria-hidden="true"
-                    class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out">
+                    class="max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
                     <div class="pt-12 pb-8 flex flex-col items-start lg:items-end">
                         <div class="lg:w-fit">
                             <!-- Review Highlights Grid -->
@@ -518,40 +550,40 @@
 
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Anfitrión
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Anfitrión
                                         amable</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Limpio</span>
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Limpio</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Bien
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Bien
                                         equipado</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Ideal para
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Ideal para
                                         familias</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Zona
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Zona
                                         tranquila</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Apto para
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Apto para
                                         niños</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Espacioso</span>
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Espacioso</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                                    <span class="font-sans text-hero-base text-muted dark:text-gray-300">Decoración muy
+                                    <span class="font-sans text-[0.9rem] text-muted dark:text-gray-300">Decoración muy
                                         bonita</span>
                                 </div>
                             </div>
@@ -559,7 +591,7 @@
                             <!-- Hide Button -->
                             <div class="text-left lg:text-right">
                                 <button id="commentsHide"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors cursor-pointer">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors cursor-pointer">
                                     OCULTAR COMENTARIOS
                                 </button>
                             </div>
@@ -572,14 +604,14 @@
         <!-- Equipment & Wellness Section -->
         <section id="wellness"
             class="py-16 md:py-24 bg-white dark:bg-primary border-b border-black/5 dark:border-white/5">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="w-full max-w-[1400px] mx-auto px-6">
                 <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3-auto gap-12 justify-between items-start">
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_auto] gap-12 justify-between items-start">
 
                     <!-- Col 1: Bienestar y Descanso -->
                     <div class="space-y-4">
                         <h3
-                            class="font-sans text-hero-sm font-bold uppercase tracking-ui-wide text-primary dark:text-white">
+                            class="font-sans text-[0.7rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white">
                             BIENESTAR Y DESCANSO
                         </h3>
                         <ul class="space-y-4">
@@ -594,7 +626,7 @@
                                     <path d="M15 9.5A5.5 5.5 0 0 1 20.5 15" />
                                     <path d="M15 12.5A2.5 2.5 0 0 1 17.5 15" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Aire acondicionado y
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Aire acondicionado y
                                     calefacción</span>
                             </li>
                             <li class="flex items-center gap-4">
@@ -606,7 +638,7 @@
                                     <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
                                     <line x1="12" y1="20" x2="12.01" y2="20" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">WiFi de alta velocidad</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">WiFi de alta velocidad</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -614,7 +646,7 @@
                                     class="text-secondary shrink-0">
                                     <path d="M21 7.5L12 12.75 3 7.5v9l9 5.25 9-5.25v-9zM21 7.5v9M3 7.5v9M12 12.75v9" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Camas king size</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Camas king size</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -623,7 +655,7 @@
                                     <path
                                         d="M10 5.172C10 3.746 8.447 2 7 2c-3 0-5 2.25-5 4.625C2 10.375 10 16 10 16s8-5.625 8-9.375C18 4.25 16 2 13 2c-1.447 0-3 1.746-3 3.172Z" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Se admiten mascotas</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Se admiten mascotas</span>
                             </li>
                         </ul>
                     </div>
@@ -631,7 +663,7 @@
                     <!-- Col 2: Ocio Exterior y Esencia -->
                     <div class="space-y-4">
                         <h3
-                            class="font-sans text-hero-sm font-bold uppercase tracking-ui-wide text-primary dark:text-white">
+                            class="font-sans text-[0.7rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white">
                             OCIO EXTERIOR Y ESENCIA
                         </h3>
                         <ul class="space-y-4">
@@ -646,7 +678,7 @@
                                     <path
                                         d="M2 6c.6.5 1.2 1 2.5 1 3 0 3-2 5.5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Piscina de agua salina</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Piscina de agua salina</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -661,7 +693,7 @@
                                     <path
                                         d="M7 10h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2Z" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Barbacoa</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Barbacoa</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -671,7 +703,7 @@
                                     <circle cx="8.5" cy="8.5" r="1.5" />
                                     <circle cx="15.5" cy="15.5" r="1.5" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Juegos de mesa</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Juegos de mesa</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -682,7 +714,7 @@
                                     <line x1="9" y1="9" x2="9.01" y2="9" />
                                     <line x1="15" y1="9" x2="15.01" y2="9" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Zona de juegos
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Zona de juegos
                                     exterior</span>
                             </li>
                         </ul>
@@ -691,7 +723,7 @@
                     <!-- Col 3: Seguridad y Privacidad -->
                     <div class="space-y-4">
                         <h3
-                            class="font-sans text-hero-sm font-bold uppercase tracking-ui-wide text-primary dark:text-white">
+                            class="font-sans text-[0.7rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white">
                             SEGURIDAD Y PRIVACIDAD
                         </h3>
                         <ul class="space-y-4">
@@ -702,7 +734,7 @@
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
                                     <path d="m9 12 2 2 4-4" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Seguridad 24/7</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Seguridad 24/7</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -713,7 +745,7 @@
                                     <circle cx="7" cy="17" r="2" />
                                     <circle cx="17" cy="17" r="2" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Aparcamiento privado</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Aparcamiento privado</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -724,7 +756,7 @@
                                     <path d="M3 14c0 3.3 2.7 6 6 6h6c3.3 0 6-2.7 6-6" />
                                     <path d="M12 10v4" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Parcela privada</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Parcela privada</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -736,7 +768,7 @@
                                     <path d="M14 15h.01" />
                                     <path d="M9 15v-5h5" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Accesible sillas de
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Accesible sillas de
                                     ruedas</span>
                             </li>
                         </ul>
@@ -745,7 +777,7 @@
                     <!-- Col 4: Servicios de Cortesía -->
                     <div class="flex flex-col h-full space-y-4 lg:justify-self-end">
                         <h3
-                            class="font-sans text-hero-sm font-bold uppercase tracking-ui-wide text-primary dark:text-white">
+                            class="font-sans text-[0.7rem] font-bold uppercase tracking-[1.5px] text-primary dark:text-white">
                             SERVICIOS DE CORTESÍA
                         </h3>
                         <ul class="space-y-4 grow">
@@ -758,7 +790,7 @@
                                     <rect x="2" y="13" width="20" height="3" rx="1" />
                                     <path d="M22 19H2" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Toallas de playa y
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Toallas de playa y
                                     piscina</span>
                             </li>
                             <li class="flex items-center gap-4">
@@ -771,7 +803,7 @@
                                     <path d="M2 20V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1" />
                                     <path d="M22 20V5a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v1" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Cunas</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Cunas</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -783,7 +815,7 @@
                                     <path d="M17 14v8" />
                                     <path d="M2 14h20" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Tronas</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Tronas</span>
                             </li>
                             <li class="flex items-center gap-4">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -792,7 +824,7 @@
                                     <path d="m3 11 18-5v12L3 14v-3z" />
                                     <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
                                 </svg>
-                                <span class="text-hero-base text-muted dark:text-gray-400">Alzadores</span>
+                                <span class="text-[0.9rem] text-muted dark:text-gray-400">Alzadores</span>
                             </li>
                         </ul>
                     </div>
@@ -801,7 +833,7 @@
                 <!-- Link outside the grid -->
                 <div class="mt-6 flex justify-end">
                     <a href="wellness.html"
-                        class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                        class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors inline-flex flex-wrap items-center gap-2 max-w-full whitespace-normal">
                         VER MÁS EQUIPAMIENTO Y BIENESTAR
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -814,29 +846,29 @@
 
         <!-- Interior Portal -->
         <section id="indoor" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="w-full max-w-[1400px] mx-auto px-6">
                 <!-- Main Heading -->
                 <div class="text-center mb-16 relative">
-                    <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         La Experiencia Interior
                     </h2>
-                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line -->
                 <div class="mb-12">
                     <h3
-                        class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         LA VISITA DE BIENVENIDA
                     </h3>
-                    <div class="h-px bg-divider-soft w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-1-2 gap-16 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-center">
                     <!-- Left: Quote -->
                     <div>
                         <p
-                            class="font-sans italic text-hero-lg text-muted dark:text-gray-400 leading-18 tracking-wide">
+                            class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 leading-[1.8] tracking-wide">
                             Te invito a cruzar el umbral y sentir cómo el diseño y la arquitectura te abrazan.
                         </p>
                     </div>
@@ -863,16 +895,16 @@
 
         <!-- Interiors Preview Grid -->
         <section id="interiors-gallery" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="w-full max-w-[1400px] mx-auto px-6">
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         EL CORAZÓN DE LA CASA
                     </h3>
-                    <div class="h-px bg-divider-soft w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         Donde el diseño cobra vida y cada estancia late con un único propósito: tu comodidad y
                         bienestar.
                     </p>
@@ -888,11 +920,11 @@
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white">Salones</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Espacios Versátiles</p>
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Salones</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Espacios Versátiles</p>
                             <div class="pt-2">
                                 <a href="indoor.html?category=salones"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -912,12 +944,12 @@
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white">Cocina</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Capacidad y Funcionalidad
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Cocina</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Capacidad y Funcionalidad
                             </p>
                             <div class="pt-2">
                                 <a href="indoor.html?category=cocina"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -937,14 +969,14 @@
                         class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
                             <img src="images/bedroom.webp" alt="Dormitorios santuarios de descanso" loading="lazy" decoding="async"
-                                class="w-full aspect-4/3 object-cover transition-transform duration-700 group-hover:scale-105">
+                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white">Dormitorios</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Santuarios de Descanso</p>
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Dormitorios</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Santuarios de Descanso</p>
                             <div class="pt-2">
                                 <a href="indoor.html?category=dormitorios"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -961,14 +993,14 @@
                         class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
                             <img src="images/bathroom.webp" alt="Baños rituales de bienestar" loading="lazy" decoding="async"
-                                class="w-full aspect-4/3 object-cover transition-transform duration-700 group-hover:scale-105">
+                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white">Baños</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Rituales de Bienestar</p>
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Baños</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Rituales de Bienestar</p>
                             <div class="pt-2">
                                 <a href="indoor.html?category=banos"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -985,14 +1017,14 @@
                         class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="overflow-hidden">
                             <img src="images/despacho/despacho-1.webp" alt="Ala Privada a otro nivel" loading="lazy" decoding="async"
-                                class="w-full aspect-4/3 object-cover transition-transform duration-700 group-hover:scale-105">
+                                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white">A otro nivel</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Inspiración y retiro</p>
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">A otro nivel</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Inspiración y retiro</p>
                             <div class="pt-2">
                                 <a href="indoor.html?category=ala-privada"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -1009,25 +1041,25 @@
 
         <!-- Exteriores Section (El Oasis) -->
         <section id="outdoor" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="w-full max-w-[1400px] mx-auto px-6">
                 <!-- Main Heading -->
                 <div class="text-center mb-16 relative">
-                    <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         El Oasis
                     </h2>
-                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line -->
                 <div class="mb-12">
                     <h3
-                        class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         NATURALEZA PRIVADA
                     </h3>
-                    <div class="h-px bg-divider-soft w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2-1 gap-16 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-16 items-center">
                     <!-- Left: Video Preview -->
                     <figure class="relative rounded-sm overflow-hidden group shadow-2xl">
                         <img src="images/outdoor-tour.webp" alt="Outdoor garden and pool area view" loading="lazy" decoding="async"
@@ -1048,7 +1080,7 @@
                     <!-- Right: Description -->
                     <div>
                         <p
-                            class="font-sans italic text-hero-lg text-muted dark:text-gray-400 leading-18 tracking-wide text-center lg:text-left">
+                            class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 leading-[1.8] tracking-wide text-center lg:text-left">
                             Un jardín privado diseñado como un oasis donde la piscina y diferentes ambientes invitan a
                             disfrutar del clima mediterráneo.
                         </p>
@@ -1057,16 +1089,16 @@
             </div>
 
             <!-- Espacios Vivos Gallery -->
-            <div class="max-w-350 mx-auto px-6 mt-16 md:mt-24">
+            <div class="w-full max-w-[1400px] mx-auto px-6 mt-16 md:mt-24">
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         ESPACIOS VIVOS
                     </h3>
-                    <div class="h-px bg-divider-soft w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         Siente el exterior a tu manera.
                     </p>
                 </div>
@@ -1080,11 +1112,11 @@
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white">Naturaleza y ocio</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Un oasis íntimo</p>
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Naturaleza y ocio</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Un oasis íntimo</p>
                             <div class="pt-2">
                                 <a href="outdoor.html?category=pool"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -1104,12 +1136,12 @@
                                 class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white">Momentos inolvidables
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Momentos inolvidables
                             </h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Zonas para compartir</p>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Zonas para compartir</p>
                             <div class="pt-2">
                                 <a href="outdoor.html?category=moments"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -1128,24 +1160,24 @@
 
         <!-- Lifestyle Section (Privilegios del entorno) -->
         <section id="lifestyle" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="w-full max-w-[1400px] mx-auto px-6">
                 <!-- Main Heading -->
                 <div class="text-center mb-16 relative">
-                    <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         Privilegios del entorno
                     </h2>
-                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         EXPLORA LA COSTA DORADA
                     </h3>
-                    <div class="h-px bg-divider-soft w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         El exclusivo enclave de ZENIT Bonmont ofrece el equilibrio perfecto entre
                         tranquilidad y proximidad a las mejores atracciones de la Costa Dorada.
                     </p>
@@ -1155,18 +1187,18 @@
                     <!-- Card 1: Mar Mediterráneo -->
                     <div
                         class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-4/3 overflow-hidden">
+                        <div class="aspect-[4/3] overflow-hidden">
                             <img src="images/beach.webp" alt="Mar Mediterráneo" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white leading-tight">Mar
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white leading-tight">Mar
                                 Mediterráneo</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Playas y calas con encanto
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Playas y calas con encanto
                             </p>
                             <div class="pt-2">
                                 <a href="lifestyle.html#mar"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -1181,17 +1213,17 @@
                     <!-- Card 2: Cultura y gastronomía -->
                     <div
                         class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-4/3 overflow-hidden">
+                        <div class="aspect-[4/3] overflow-hidden">
                             <img src="images/culture.webp" alt="Cultura y gastronomía" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white leading-tight">Cultura y
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white leading-tight">Cultura y
                                 gastronomía</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Historia viva y sabores</p>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Historia viva y sabores</p>
                             <div class="pt-2">
                                 <a href="lifestyle.html#cultura"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -1206,17 +1238,17 @@
                     <!-- Card 3: Naturaleza y deporte -->
                     <div
                         class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-4/3 overflow-hidden">
+                        <div class="aspect-[4/3] overflow-hidden">
                             <img src="images/delta.webp" alt="Naturaleza y deporte - Delta del Ebro" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white leading-tight">Naturaleza y
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white leading-tight">Naturaleza y
                                 deporte</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Aire libre y rutas</p>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Aire libre y rutas</p>
                             <div class="pt-2">
                                 <a href="lifestyle.html#naturaleza"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -1231,17 +1263,17 @@
                     <!-- Card 4: Ocio y experiencias -->
                     <div
                         class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-4/3 overflow-hidden">
+                        <div class="aspect-[4/3] overflow-hidden">
                             <img src="images/ferrariland.webp" alt="Ocio y experiencias - Port Aventura" loading="lazy" decoding="async"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8 space-y-4">
-                            <h4 class="font-serif text-hero-2xl text-primary dark:text-white leading-tight">Ocio y
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white leading-tight">Ocio y
                                 experiencias</h4>
-                            <p class="font-sans text-hero-base text-muted dark:text-gray-400">Propuestas para todos</p>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400">Propuestas para todos</p>
                             <div class="pt-2">
                                 <a href="lifestyle.html#ocio"
-                                    class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
+                                    class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2">
                                     EXPLORAR
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
@@ -1258,24 +1290,24 @@
 
         <!-- Location Section (El punto del Zenit) -->
         <section id="location" class="py-16 md:py-24 bg-white dark:bg-primary">
-            <div class="max-w-350 mx-auto px-6">
+            <div class="w-full max-w-[1400px] mx-auto px-6">
                 <!-- Main Heading -->
                 <div class="text-center mb-16 relative">
-                    <h2 class="font-serif text-display-sm font-light text-text dark:text-white pb-6 leading-tight">
+                    <h2 class="font-serif text-[2.5rem] font-light text-text dark:text-white pb-6 leading-tight">
                         El punto del ZENIT
                     </h2>
-                    <div class="w-15 h-px bg-secondary mx-auto"></div>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <!-- Section Subtitle & Line & Description -->
                 <div class="mb-16">
                     <h3
-                        class="font-sans text-hero-lg font-medium uppercase tracking-ui-xwide text-primary dark:text-white pb-6 mb-0">
+                        class="font-sans text-[1.1rem] font-medium uppercase tracking-[2px] text-primary dark:text-white pb-6 mb-0">
                         BONMONT TERRES NOVES
                     </h3>
-                    <div class="h-px bg-divider-soft w-full"></div>
+                    <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                     <p
-                        class="font-sans italic text-hero-lg text-muted dark:text-gray-400 mt-6 mb-16 leading-18">
+                        class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
                         Donde todo converge: mar, montaña y calma.
                     </p>
                 </div>
@@ -1286,42 +1318,42 @@
                         <div class="space-y-8">
                             <!-- Dirección -->
                             <div class="space-y-2">
-                                <h4 class="font-sans text-hero-sm font-bold uppercase tracking-ui-xwide text-secondary">
+                                <h4 class="font-sans text-[0.7rem] font-bold uppercase tracking-[2px] text-secondary">
                                     Dirección</h4>
-                                <p class="font-sans text-hero-rem text-primary dark:text-gray-300 leading-relaxed">
+                                <p class="font-sans text-[1rem] text-primary dark:text-gray-300 leading-relaxed">
                                     Carrer d'en Pere Antoni Torres i Jordi, 7-9<br>
                                     43300 Bonmont Terres Noves<br>
                                     Mont-roig del Camp (Tarragona)
                                 </p>
                                 <p
-                                    class="font-sans text-hero-md text-muted dark:text-gray-500 tracking-ui-snug mt-1 uppercase">
+                                    class="font-sans text-[0.8rem] text-muted dark:text-gray-500 tracking-[1px] mt-1 uppercase">
                                     41°02'35"N 0°55'33"E
                                 </p>
                             </div>
 
                             <!-- Contacto -->
                             <div class="space-y-2">
-                                <h4 class="font-sans text-hero-sm font-bold uppercase tracking-ui-xwide text-secondary">
+                                <h4 class="font-sans text-[0.7rem] font-bold uppercase tracking-[2px] text-secondary">
                                     Contacto</h4>
                                 <a href="mailto:info@zenitbonmont.com"
-                                    class="font-sans text-hero-rem text-primary dark:text-gray-300 hover:text-secondary transition-colors">
+                                    class="font-sans text-[1rem] text-primary dark:text-gray-300 hover:text-secondary transition-colors">
                                     info@zenitbonmont.com
                                 </a>
                             </div>
 
                             <!-- Distancia -->
                             <div class="space-y-2">
-                                <h4 class="font-sans text-hero-sm font-bold uppercase tracking-ui-xwide text-secondary">
+                                <h4 class="font-sans text-[0.7rem] font-bold uppercase tracking-[2px] text-secondary">
                                     Distancia a Barcelona</h4>
                                 <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                                    <p class="font-sans text-hero-rem text-primary dark:text-gray-300 leading-relaxed">
+                                    <p class="font-sans text-[1rem] text-primary dark:text-gray-300 leading-relaxed">
                                         120 km al sur de Barcelona<br>
-                                        <span class="text-hero-base text-muted dark:text-gray-400">~1 hora 15
+                                        <span class="text-[0.9rem] text-muted dark:text-gray-400">~1 hora 15
                                             minutos en coche</span>
                                     </p>
                                     <a href="https://www.google.com/maps/place/41%C2%B002'35.0%22N+0%C2%B055'33.0%22E/@41.0430556,0.9258333,17z/"
                                         target="_blank" rel="noopener noreferrer"
-                                        class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2 mb-1">
+                                        class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors flex items-center gap-2 mb-1">
                                         VER MAPA
                                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                             stroke-width="2">
@@ -1344,7 +1376,7 @@
         </section>
 
         <!-- Host Section -->
-        <section id="philosophy" class="py-16 max-w-250 mx-auto px-6">
+        <section id="philosophy" class="py-16 max-w-[62.5rem] mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <img src="images/idoia.webp" alt="Retrato de Idoia, tu anfitriona" loading="lazy" decoding="async"
                     class="w-48 h-64 rounded-sm object-cover shadow-xl border border-secondary/30">
@@ -1354,7 +1386,7 @@
 
                     <div class="mb-8 lg:pr-12">
                         <p
-                            class="font-sans italic text-hero-lg text-primary dark:text-gray-300 leading-relaxed relative">
+                            class="font-sans italic text-[1.1rem] text-primary dark:text-gray-300 leading-relaxed relative">
                             Para mí, esta casa representa el zénit de mi pasión por la hospitalidad. He diseñado este
                             refugio para que cada detalle —desde la luz de la mañana hasta el silencio de la noche—
                             ofrezca a mis huéspedes el máximo punto de confort y plenitud.
@@ -1372,9 +1404,9 @@
                             </svg>
                             <div>
                                 <p
-                                    class="text-hero-sm font-bold uppercase tracking-wider text-primary dark:text-white">
+                                    class="text-[0.7rem] font-bold uppercase tracking-wider text-primary dark:text-white">
                                     Excelencia Certificada</p>
-                                <p class="text-hero-md text-muted dark:text-gray-400">Superhost en Airbnb</p>
+                                <p class="text-[0.8rem] text-muted dark:text-gray-400">Superhost en Airbnb</p>
                             </div>
                         </div>
 
@@ -1386,16 +1418,16 @@
                             </svg>
                             <div>
                                 <p
-                                    class="text-hero-sm font-bold uppercase tracking-wider text-primary dark:text-white">
+                                    class="text-[0.7rem] font-bold uppercase tracking-wider text-primary dark:text-white">
                                     11 Años de Trayectoria</p>
-                                <p class="text-hero-md text-muted dark:text-gray-400">Creando estancias memorables</p>
+                                <p class="text-[0.8rem] text-muted dark:text-gray-400">Creando estancias memorables</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-8">
                         <a href="philosophy.html"
-                            class="font-sans text-hero-md font-bold uppercase tracking-ui-xwide text-secondary hover:text-secondary-hover transition-colors inline-flex items-center gap-2">
+                            class="font-sans text-[0.8rem] font-bold uppercase tracking-[2px] text-secondary hover:text-secondary-hover transition-colors inline-flex flex-wrap items-center gap-2 max-w-full whitespace-normal">
                             LA FILOSOFÍA DE ZENIT
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -1408,7 +1440,7 @@
         </section>
 
         <!-- Closing CTA -->
-        <section class="relative h-120 md:h-140 flex items-center justify-center overflow-hidden">
+        <section class="relative h-[30rem] md:h-[35rem] flex items-center justify-center overflow-hidden">
             <video autoplay muted playsinline poster="images/closing-poster.jpg"
                 class="absolute inset-0 w-full h-full object-cover brightness-70"
                 aria-label="Closing video of the villa">
@@ -1422,25 +1454,25 @@
                         class="inline-block px-6 py-3 bg-primary text-white uppercase tracking-widest text-xs rounded-md hover:bg-white hover:text-primary transition-colors duration-300 shadow-xl">
                         RESERVAR
                     </a>
-                    <p class="text-ui-xs uppercase tracking-ui-xwide opacity-70">Licencia turística: HUTB-248281</p>
+                    <p class="text-[8px] uppercase tracking-[2px] opacity-70">Licencia turística: HUTB-248281</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-primary text-white py-3 px-6">
-        <div class="max-w-350 mx-auto">
+    <footer class="bg-primary text-white py-3">
+        <div class="w-full max-w-[1400px] mx-auto px-6">
             <!-- Main Integrated Section -->
             <div class="flex flex-col lg:flex-row justify-between items-center gap-x-12 gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
-                <div class="flex flex-col items-center gap-1 min-w-50">
+                <div class="flex flex-col items-center gap-1 min-w-[12.5rem]">
                     <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-6 md:h-7 w-auto">
-                    <p class="text-ui-xs text-gray-500 uppercase tracking-ui-xxwide">Luxury Mediterranean Serenity</p>
+                    <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
                     <!-- Navigation -->
-                    <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-hero-xs uppercase tracking-ui-xwide font-medium text-gray-400">
+                    <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[0.65rem] uppercase tracking-[2px] font-medium text-gray-400">
                         <a href="#home" class="hover:text-white transition-colors">Inicio</a>
                         <a href="#indoor" class="hover:text-white transition-colors">Interior</a>
                         <a href="#outdoor" class="hover:text-white transition-colors">Exterior</a>
@@ -1451,7 +1483,7 @@
                     </nav>
 
                     <!-- Contacts & Social -->
-                    <div class="flex flex-col items-center lg:items-end gap-3 min-w-50">
+                    <div class="flex flex-col items-center lg:items-end gap-3 min-w-[12.5rem]">
                         <div class="flex gap-4">
                             <!-- TODO: Actualizar con URL del perfil real de Instagram -->
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
@@ -1462,12 +1494,12 @@
                                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                             </a>
                         </div>
-                        <p class="text-ui-sm text-gray-400 tracking-ui-snug lowercase">info@zenitbonmont.com</p>
+                        <p class="text-[10px] text-gray-400 tracking-[1px] lowercase">info@zenitbonmont.com</p>
                     </div>
                 </div>
 
                 <!-- Bottom Section: Legal & Copyright -->
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-ui-xs text-gray-400 uppercase tracking-ui-xwide">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-3 text-[8px] text-gray-400 uppercase tracking-[2px]">
                     <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
                         <p>&copy; 2026 Sama Design. Todos los derechos reservados.</p>
                         <p class="hidden md:block">|</p>
@@ -1486,7 +1518,7 @@
         <!-- Video Modal -->
         <div id="videoModal" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/60" role="dialog"
             aria-modal="true" aria-labelledby="modal-title">
-            <div class="relative w-modal max-h-screen-90 bg-black rounded-md overflow-hidden">
+            <div class="relative w-[min(1100px,96%)] max-h-[90vh] bg-black rounded-md overflow-hidden">
                 <button id="modalClose" class="absolute top-3 right-3 z-40 text-white text-2xl leading-none"
                     aria-label="Close video">&times;</button>
                 <h3 id="modal-title" class="sr-only">Video tour</h3>
@@ -1500,7 +1532,7 @@
         <!-- Outdoor Video Modal -->
         <div id="outdoorVideoModal" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/60"
             role="dialog" aria-modal="true" aria-labelledby="outdoor-modal-title">
-            <div class="relative w-modal max-h-screen-90 bg-black rounded-md overflow-hidden">
+            <div class="relative w-[min(1100px,96%)] max-h-[90vh] bg-black rounded-md overflow-hidden">
                 <button id="outdoorModalClose" class="absolute top-3 right-3 z-40 text-white text-2xl leading-none"
                     aria-label="Close video">&times;</button>
                 <h3 id="outdoor-modal-title" class="sr-only">Outdoor video tour</h3>
@@ -1632,12 +1664,12 @@
                 if (show) {
                     commentsBtn.setAttribute('aria-expanded', 'true');
                     commentsPanel.setAttribute('aria-hidden', 'false');
-                    commentsPanel.classList.add('max-h-250');
+                    commentsPanel.classList.add('max-h-[62.5rem]');
                     commentsBtn.classList.add('opacity-0', 'pointer-events-none');
                 } else {
                     commentsBtn.setAttribute('aria-expanded', 'false');
                     commentsPanel.setAttribute('aria-hidden', 'true');
-                    commentsPanel.classList.remove('max-h-250');
+                    commentsPanel.classList.remove('max-h-[62.5rem]');
                     commentsBtn.classList.remove('opacity-0', 'pointer-events-none');
                 }
             }
@@ -1668,7 +1700,7 @@
         <!-- Cookie Consent Banner -->
         <div id="cookieConsent"
             class="hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/10 py-6 px-6 shadow-2xl">
-            <div class="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex-1">
                     <p class="text-sm text-text dark:text-gray-300 leading-relaxed">
                         Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.
@@ -1749,5 +1781,8 @@
 </body>
 
 </html>
+
+
+
 
 
