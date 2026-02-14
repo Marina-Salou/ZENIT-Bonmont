@@ -123,6 +123,7 @@
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
+        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
         <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
@@ -166,8 +167,8 @@
                     Reservar
                 </a>
 
-                <label id="menuToggle" for="mobileMenuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 cursor-pointer"
-                    aria-label="Abrir menú" role="button">
+                <label for="mobileMenuToggle" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 group cursor-pointer"
+                    aria-label="Open menu">
                     <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:translate-y-2 peer-checked:rotate-45"></span>
                     <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 peer-checked:opacity-0"></span>
                     <span class="block w-[1.625rem] h-0.5 bg-primary dark:bg-white transition-all duration-300 origin-center peer-checked:-translate-y-2 peer-checked:-rotate-45"></span>
@@ -175,8 +176,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Panel (CSS-only, controlled by #mobileMenuToggle peer) -->
-        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
+        <!-- Mobile Menu Panel -->
         <div id="mobileMenu"
             class="absolute top-full left-0 right-0 bg-white dark:bg-primary border-b border-black/5 dark:border-white/10 shadow-2xl flex flex-col p-8 space-y-6 transform scale-y-0 opacity-0 pointer-events-none origin-top transition-all duration-300 lg:hidden peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto">
             <label for="mobileMenuToggle" class="block">
