@@ -115,8 +115,8 @@
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
                 aria-label="ZENIT Bonmont Home">
-                <img src="images/ZENIT.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 dark:hidden">
-                <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 hidden dark:block">
+                <img src="images/ZENIT.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 dark:hidden" width="200" height="88" loading="eager" decoding="async">
+                <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 md:h-10 w-auto transition-all duration-300 hidden dark:block" width="200" height="88" loading="eager" decoding="async">
             </a>
 
             <!-- Desktop Nav -->
@@ -274,7 +274,7 @@
         <!-- Image Container -->
         <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
             <img id="lightbox-img" src="" alt=""
-                class="max-w-full max-h-full object-contain shadow-2xl transition-all duration-500 transform scale-95 pointer-events-auto">
+                class="max-w-full max-h-full object-contain shadow-2xl transition-all duration-500 transform scale-95 pointer-events-auto" loading="lazy" decoding="async">
         </div>
 
         <!-- Counter & Info -->
@@ -290,7 +290,7 @@
             <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-x-12 gap-y-4 lg:gap-y-6 pb-2 border-b border-white/20">
                 <!-- Logo & Tagline -->
                 <div class="flex flex-col items-center gap-1 min-w-[12.5rem]">
-                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 md:h-9 lg:h-9 w-auto">
+                    <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-8 md:h-9 lg:h-9 w-auto" width="200" height="88" loading="lazy" decoding="async">
                     <p class="text-[8px] text-gray-500 uppercase tracking-[3px]">Luxury Mediterranean Serenity</p>
                 </div>
 
@@ -418,7 +418,7 @@
                     <img src="${item.src}" 
                          alt="${item.alt}" 
                          loading="lazy"
-                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" decoding="async">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="w-12 h-12 flex items-center justify-center bg-secondary/90 border border-white rounded-full shadow-2xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
@@ -632,5 +632,6 @@
 </body>
 
 </html>
+
 
 
