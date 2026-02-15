@@ -7,12 +7,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         
-        // Default consent: denied unless accepted and not expired (6 months)
+        // Default consent: denied unless accepted and not expired (12 months)
         (function() {
             var consent = localStorage.getItem('cookieConsent');
             var consentDate = localStorage.getItem('cookieConsentDate');
-            var sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
-            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+            var twelveMonths = 365 * 24 * 60 * 60 * 1000;
+            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
             if (!isValid) {
                 gtag('consent', 'default', {
                     'analytics_storage': 'denied',
@@ -52,7 +52,7 @@
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://zenitbonmont.com/images/ZENIT_dorado.webp">
     <meta name="twitter:title" content="Legal Notice - ZENIT Bonmont | Luxury Villa Costa Dorada">
     <meta name="twitter:description" content="Legal information, privacy policy and cookie policy for ZENIT Bonmont luxury villa in Costa Dorada, Spain.">
@@ -199,41 +199,52 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+        <!-- Main Content -->
     <main id="main-content" class="pt-24 pb-16">
         <div class="max-w-[56.25rem] mx-auto px-6">
             
             <!-- Page Title -->
             <div class="text-center mb-16">
-                <h1 class="font-serif text-4xl md:text-5xl font-light text-secondary mb-4">Aviso Legal y Privacidad</h1>
-                <p class="text-gray-600 dark:text-gray-400">Última actualización: Febrero 2026</p>
+                <h1 class="font-serif text-4xl md:text-5xl font-light text-secondary mb-4">Aviso Legal, Privacidad y Cookies</h1>
+                <p class="text-gray-600 dark:text-gray-400">Última actualización: febrero de 2026</p>
             </div>
 
             <!-- Legal Notice -->
             <section id="legal" class="mb-16">
                 <h2 class="font-serif text-3xl font-light text-secondary mb-6 pb-3 border-b border-secondary/30">Aviso Legal</h2>
-                
+
                 <div class="prose dark:prose-invert max-w-none">
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. Identificación / Identification</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. Titular del sitio web</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), le informamos que este sitio web es propiedad de:
+                        En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y comercio electrónico (LSSI-CE), se informa que este sitio web pertenece a:
                     </p>
                     <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 space-y-2">
-                        <li><strong>Razón Social:</strong> ZENIT Bonmont (Idoia)</li>
-                        <li><strong>NIF/CIF:</strong> [Completar con su NIF]</li>
-                        <li><strong>Dirección:</strong> Bonmont Terres Noves, Mont-roig del Camp, Tarragona, España</li>
-                        <li><strong>Email:</strong> info@zenitbonmont.com</li>
-                        <li><strong>Licencia Turística:</strong> HUTB-248281</li>
+                        <li><strong>Titular/Responsable:</strong> [Nombre y apellidos o razón social de la propietaria]</li>
+                        <li><strong>NIF/CIF:</strong> [PENDIENTE DE CONFIRMAR]</li>
+                        <li><strong>Domicilio:</strong> [Dirección fiscal completa]</li>
+                        <li><strong>Email de contacto:</strong> info@zenitbonmont.com</li>
+                        <li><strong>Alojamiento comercial:</strong> ZENIT Bonmont</li>
+                        <li><strong>N.º de licencia turística:</strong> [PENDIENTE DE CONFIRMAR EN REGISTRO OFICIAL]</li>
                     </ul>
 
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Propiedad Intelectual / Intellectual Property</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Condiciones de uso</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        Todo el contenido de este sitio web (textos, imágenes, logotipos, etc.) es propiedad de ZENIT Bonmont o de sus respectivos autores y está protegido por las leyes de propiedad intelectual.
+                        El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de las presentes condiciones. El usuario se compromete a utilizar la web de forma lícita, sin causar daños al sitio, a sus servicios o a terceros.
                     </p>
 
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Veracidad de la Información / Accuracy of Information</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Propiedad intelectual e industrial</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        Las puntuaciones, valoraciones y conceptos destacados mostrados en este sitio web han sido extraídos de evaluaciones reales de huéspedes publicadas en plataformas de reserva externas. ZENIT Bonmont no modifica estas valoraciones para alterar su sentido original.
+                        Todos los contenidos de esta web (textos, imágenes, logotipos, diseño y código) son titularidad del responsable o de terceros con autorización, y están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o transformación sin autorización previa.
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">4. Responsabilidad</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Se adoptan medidas razonables para mantener la información actualizada y el sitio operativo. No obstante, no se garantiza la inexistencia de errores puntuales ni la disponibilidad ininterrumpida del servicio por causas técnicas, de mantenimiento o de terceros.
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">5. Legislación y jurisdicción</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Este sitio se rige por la legislación española y de la Unión Europea aplicable. En caso de conflicto, y salvo norma imperativa en contrario, las partes se someterán a los juzgados y tribunales que correspondan conforme a derecho.
                     </p>
                 </div>
             </section>
@@ -244,13 +255,55 @@
                 
                 <div class="prose dark:prose-invert max-w-none">
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        De acuerdo con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), le informamos que sus datos serán tratados por ZENIT Bonmont con el fin de gestionar sus consultas y reservas.
+                        De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa sobre el tratamiento de datos personales realizado a través de este sitio web.
                     </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. Responsable del tratamiento</h3>
                     <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 list-disc pl-6 space-y-2">
-                        <li><strong>Finalidad:</strong> Gestión de reservas y comunicación directa.</li>
-                        <li><strong>Legitimación:</strong> Consentimiento del interesado o ejecución de un contrato.</li>
-                        <li><strong>Derechos:</strong> Puede acceder, rectificar o suprimir sus datos escribiendo a info@zenitbonmont.com.</li>
+                        <li><strong>Responsable:</strong> [Nombre y apellidos o razón social de la propietaria]</li>
+                        <li><strong>NIF/CIF:</strong> [PENDIENTE DE CONFIRMAR]</li>
+                        <li><strong>Contacto:</strong> info@zenitbonmont.com</li>
                     </ul>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Qué datos tratamos</h3>
+                    <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 list-disc pl-6 space-y-2">
+                        <li>Datos identificativos y de contacto facilitados por el usuario (por ejemplo, nombre, email o teléfono).</li>
+                        <li>Datos necesarios para gestionar consultas, disponibilidad y reservas.</li>
+                        <li>Datos de navegación y uso web, en su caso, mediante cookies analíticas aceptadas por el usuario.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Finalidades y bases jurídicas</h3>
+                    <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 list-disc pl-6 space-y-2">
+                        <li><strong>Gestión de consultas y solicitudes de reserva:</strong> ejecución de medidas precontractuales o contractuales (art. 6.1.b RGPD).</li>
+                        <li><strong>Atención comercial y seguimiento:</strong> interés legítimo en atender solicitudes y prestar servicio (art. 6.1.f RGPD) y, cuando proceda, consentimiento (art. 6.1.a RGPD).</li>
+                        <li><strong>Analítica web (Google Analytics):</strong> consentimiento del usuario (art. 6.1.a RGPD y art. 22.2 LSSI-CE).</li>
+                        <li><strong>Cumplimiento de obligaciones legales:</strong> cumplimiento de obligaciones normativas aplicables (art. 6.1.c RGPD).</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">4. Conservación de los datos</h3>
+                    <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 list-disc pl-6 space-y-2">
+                        <li><strong>Consultas:</strong> hasta 12 meses desde la última interacción.</li>
+                        <li><strong>Reservas y gestión administrativa:</strong> durante la relación contractual y, posteriormente, durante los plazos legales aplicables.</li>
+                        <li><strong>Datos de navegación con cookies analíticas:</strong> según la configuración de cada cookie y hasta la retirada del consentimiento.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">5. Destinatarios y encargados</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        Con carácter general, no se ceden datos a terceros salvo obligación legal. Sí pueden acceder a datos determinados proveedores que prestan servicios al responsable (por ejemplo, alojamiento web, correo, analítica), en calidad de encargados del tratamiento y bajo contrato conforme al art. 28 RGPD.
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">6. Transferencias internacionales</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        En caso de uso de servicios de Google (Google Analytics), pueden producirse transferencias internacionales de datos fuera del Espacio Económico Europeo. Dichas transferencias se realizan con las garantías previstas en la normativa aplicable en cada momento, como decisiones de adecuación de la Comisión Europea y/o cláusulas contractuales tipo, según corresponda.
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">7. Derechos del usuario</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        Puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, así como retirar su consentimiento en cualquier momento, escribiendo a <strong>info@zenitbonmont.com</strong>.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Si considera que sus datos no se han tratado conforme a la normativa, puede presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD): <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.
+                    </p>
                 </div>
             </section>
 
@@ -260,19 +313,41 @@
                 
                 <div class="prose dark:prose-invert max-w-none">
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        Este sitio web utiliza cookies técnicas (necesarias) y analíticas (Google Analytics) para mejorar su experiencia.
+                        Esta web utiliza cookies propias y de terceros para permitir el funcionamiento del sitio y, si el usuario lo acepta, para fines analíticos.
                     </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Google Analytics</h4>
-                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
-                            Utilizamos Google Analytics para entender cómo los visitantes interactúan con la web. Estas cookies solo se activan si usted da su consentimiento expreso.
-                        </p>
-                    </div>
 
-                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">Gestión de Cookies</h3>
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">1. Qué son las cookies</h3>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        Usted puede cambiar su preferencia en cualquier momento a través del banner de configuración o ajustando los parámetros de su navegador.
+                        Las cookies son pequeños archivos que se almacenan en su dispositivo al visitar una web. Permiten recordar preferencias y obtener información sobre la navegación.
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">2. Tipos de cookies que usamos</h3>
+                    <ul class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 list-disc pl-6 space-y-2">
+                        <li><strong>Técnicas o necesarias:</strong> imprescindibles para el funcionamiento de la web (por ejemplo, gestión del consentimiento de cookies y preferencias de tema).</li>
+                        <li><strong>Analíticas (Google Analytics):</strong> se activan solo si el usuario acepta y permiten medir el uso de la web de forma agregada.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">3. Base jurídica</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Las cookies técnicas se usan por necesidad funcional (art. 22.2 LSSI-CE). Las cookies analíticas requieren consentimiento previo del usuario (art. 6.1.a RGPD y art. 22.2 LSSI-CE).
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">4. Conservación del consentimiento</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        La elección del usuario sobre cookies se conserva durante <strong>12 meses</strong>. Transcurrido ese plazo, se volverá a solicitar consentimiento.
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">5. Gestión y retirada del consentimiento</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        Puede aceptar o rechazar las cookies no necesarias desde el banner inicial. También puede reabrir la configuración en cualquier momento mediante el enlace <strong>"Gestionar cookies"</strong> disponible en el pie de página.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Además, puede eliminar o bloquear cookies desde la configuración de su navegador.
+                    </p>
+
+                    <h3 class="text-xl font-medium text-secondary mt-8 mb-4">6. Proveedor analítico</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Servicio utilizado: <strong>Google Analytics (Google Ireland Limited / Google LLC)</strong>. Para más información sobre el tratamiento de datos por Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.
                     </p>
                 </div>
             </section>
@@ -358,7 +433,7 @@
     </div>
 
     <script>
-        // Cookie Consent Logic — con expiración de 6 meses (GDPR/LOPD)
+        // Cookie Consent Logic — con expiración de 12 meses (GDPR/LOPD)
         (function() {
             const cookieConsent = document.getElementById('cookieConsent');
             const cookieAccept = document.getElementById('cookieAccept');
@@ -369,8 +444,8 @@
             function isConsentValid() {
                 const consentDate = localStorage.getItem('cookieConsentDate');
                 if (!consentDate) return false;
-                const sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
-                return (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+                const twelveMonths = 365 * 24 * 60 * 60 * 1000;
+                return (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
             }
 
             function saveConsent(value) {

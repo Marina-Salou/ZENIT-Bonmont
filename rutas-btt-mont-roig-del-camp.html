@@ -7,12 +7,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         
-        // Default consent: denied unless accepted and not expired (6 months)
+        // Default consent: denied unless accepted and not expired (12 months)
         (function() {
             var consent = localStorage.getItem('cookieConsent');
             var consentDate = localStorage.getItem('cookieConsentDate');
-            var sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
-            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+            var twelveMonths = 365 * 24 * 60 * 60 * 1000;
+            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
             if (!isValid) {
                 gtag('consent', 'default', {
                     'analytics_storage': 'denied',
@@ -103,10 +103,24 @@
         "description": "Discover scenic BTT routes in Mont-roig del Camp and Costa Dorada with practical local tips for riders staying at ZENIT Bonmont.",
         "image": "https://zenitbonmont.com/images/vistas-mar.webp",
         "url": "https://zenitbonmont.com/rutas-btt-mont-roig-del-camp.html",
+        "datePublished": "2026-02-10",
+        "dateModified": "2026-02-15",
+        "author": {
+            "@type": "Person",
+            "name": "ZENIT Bonmont Editorial Team"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://zenitbonmont.com/rutas-btt-mont-roig-del-camp.html"
+        },
         "publisher": {
             "@type": "Organization",
             "name": "ZENIT Bonmont",
-            "url": "https://zenitbonmont.com"
+            "url": "https://zenitbonmont.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://zenitbonmont.com/images/ZENIT_dorado.webp"
+            }
         }
     }
     </script>
@@ -370,7 +384,7 @@ Esta variedad permite disfrutar de la bicicleta como una forma natural de explor
     </div>
 
     <script>
-        // Cookie Consent Logic — con expiración de 6 meses (GDPR/LOPD)
+        // Cookie Consent Logic — con expiración de 12 meses (GDPR/LOPD)
         (function() {
             const cookieConsent = document.getElementById('cookieConsent');
             const cookieAccept = document.getElementById('cookieAccept');
@@ -381,8 +395,8 @@ Esta variedad permite disfrutar de la bicicleta como una forma natural de explor
             function isConsentValid() {
                 const consentDate = localStorage.getItem('cookieConsentDate');
                 if (!consentDate) return false;
-                const sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
-                return (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+                const twelveMonths = 365 * 24 * 60 * 60 * 1000;
+                return (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
             }
 
             function saveConsent(value) {

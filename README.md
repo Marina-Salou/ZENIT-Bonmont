@@ -1,34 +1,31 @@
 # BONMONT
 
-Sitio web estatico de Zenit Bonmont construido con HTML + Tailwind CSS via CDN.
+Sitio web estatico de Zenit Bonmont.
 
-## Inicio rapido
-1. Abrir cualquier pagina `*.html` en navegador (o levantar servidor estatico).
-2. Validar visualmente desktop + movil.
-3. Revisar navegacion y enlaces clave.
+## Referencia principal
+- Normas obligatorias del repositorio: `REPO_STANDARDS.md`.
 
 ## Stack
-- HTML estatico
-- Tailwind CSS via `https://cdn.tailwindcss.com`
-- JS inline por pagina para interacciones puntuales
+- HTML estatico.
+- Tailwind CSS via CDN (`https://cdn.tailwindcss.com`).
+- JS inline por pagina para interacciones puntuales.
 
-## Estructura clave
-- `index.html` - Home
-- `*.html` - Paginas de secciones y blog
-- `images/` - Recursos visuales
-- `docs/` - Documentacion tecnica
+## Inicio rapido
+1. Abrir cualquier pagina `*.html` en navegador (o servidor estatico).
+2. Revisar en desktop y movil.
+3. Validar navegacion, menu movil, footer y cookies.
+4. Recarga dura (`Ctrl+F5`) y comprobacion final.
 
-## Documentacion interna
-- Arquitectura y flujo del proyecto: `docs/web-architecture.md`
-- Convencion Tailwind sin corchetes: `docs/tailwind-no-brackets.md`
-- Guia calendario (integraciones): `docs/calendar_setup_guide.md`
+## Estructura
+- `index.html`: Home.
+- `*.html`: secciones, legal y articulos.
+- `images/`: recursos visuales.
+- `docs/`: documentacion activa.
+- `docs/archive/`: historico cerrado.
 
-## Convencion importante de estilos
-- Proyecto CDN-only: no hay pipeline de build CSS.
-- Se permiten utilidades arbitrarias de Tailwind cuando sean necesarias.
-- Mantener consistencia visual de header/footer/cookie banner entre paginas.
-
-## Checklist minimo antes de entregar
-1. Revision visual de la pagina tocada (desktop y movil).
-2. Verificar enlaces y navegacion principal.
-3. Recarga dura (`Ctrl+F5`) y comprobacion final sin regresiones.
+## Documentacion activa
+- `REPO_STANDARDS.md`: reglas de trabajo (fuente unica de verdad).
+- `docs/web-architecture.md`: mapa tecnico del sitio.
+- `docs/tailwind-no-brackets.md`: convenciones Tailwind CDN.
+- `docs/calendar_setup_guide.md`: guia operativa de calendario.
+- `CHECKLIST_DATOS_PROPIETARIA.md`: checklist de datos y cuentas del negocio.

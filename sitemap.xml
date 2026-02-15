@@ -5,7 +5,7 @@
     <!-- Home Page -->
     <url>
         <loc>https://zenitbonmont.com/</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -17,7 +17,7 @@
     <!-- Interior Gallery -->
     <url>
         <loc>https://zenitbonmont.com/indoor.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -25,7 +25,7 @@
     <!-- Outdoor Gallery -->
     <url>
         <loc>https://zenitbonmont.com/outdoor.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -33,7 +33,7 @@
     <!-- Wellness & Equipment -->
     <url>
         <loc>https://zenitbonmont.com/wellness.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -41,7 +41,7 @@
     <!-- Lifestyle -->
     <url>
         <loc>https://zenitbonmont.com/lifestyle.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -49,7 +49,7 @@
     <!-- Philosophy / Host -->
     <url>
         <loc>https://zenitbonmont.com/philosophy.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>quarterly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -57,7 +57,7 @@
     <!-- FAQs & Booking -->
     <url>
         <loc>https://zenitbonmont.com/faqs.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -65,7 +65,7 @@
     <!-- Blog -->
     <url>
         <loc>https://zenitbonmont.com/blog.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -73,19 +73,19 @@
     <!-- Blog Posts -->
     <url>
         <loc>https://zenitbonmont.com/tradicion-calcotada-valls-tarragona.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://zenitbonmont.com/rutas-btt-mont-roig-del-camp.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://zenitbonmont.com/guia-modernismo-reus.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -93,7 +93,7 @@
     <!-- Legal -->
     <url>
         <loc>https://zenitbonmont.com/legal.html</loc>
-        <lastmod>2026-02-10</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>

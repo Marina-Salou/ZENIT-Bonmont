@@ -7,12 +7,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         
-        // Default consent: denied unless accepted and not expired (6 months)
+        // Default consent: denied unless accepted and not expired (12 months)
         (function() {
             var consent = localStorage.getItem('cookieConsent');
             var consentDate = localStorage.getItem('cookieConsentDate');
-            var sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
-            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+            var twelveMonths = 365 * 24 * 60 * 60 * 1000;
+            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
             if (!isValid) {
                 gtag('consent', 'default', {
                     'analytics_storage': 'denied',
@@ -573,7 +573,7 @@
             });
         }
 
-        // Cookie Consent Logic — con expiración de 6 meses (GDPR/LOPD)
+        // Cookie Consent Logic — con expiración de 12 meses (GDPR/LOPD)
         (function() {
             const cookieConsent = document.getElementById('cookieConsent');
             const cookieAccept = document.getElementById('cookieAccept');
@@ -584,8 +584,8 @@
             function isConsentValid() {
                 const consentDate = localStorage.getItem('cookieConsentDate');
                 if (!consentDate) return false;
-                const sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
-                return (Date.now() - parseInt(consentDate, 10)) < sixMonths;
+                const twelveMonths = 365 * 24 * 60 * 60 * 1000;
+                return (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
             }
 
             function saveConsent(value) {
