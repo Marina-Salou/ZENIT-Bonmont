@@ -32,6 +32,8 @@ Si hay conflicto entre documentos, este archivo manda.
   - Banner de cookies.
   - Tema dark/light.
   - Menu movil.
+- Guia visual de referencia para estilo base:
+  - `STYLE_GUIDE.md` (tipografias, colores y reglas de uso tipografico).
 
 ### 4.1 Norma de fin de linea (EOL)
 - Estandar obligatorio del repositorio: `LF` (`\n`) en archivos de texto versionados.
