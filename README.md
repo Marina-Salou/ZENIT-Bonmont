@@ -28,6 +28,7 @@ Sitio web estatico de Zenit Bonmont.
 
 ## Documentacion activa
 - `REPO_STANDARDS.md`: reglas de trabajo (fuente unica de verdad).
+- `CONTENT_MASTER.md`: referencia editorial y de contenido de la web.
 - `docs/web-architecture.md`: mapa tecnico del sitio.
 - `docs/tailwind-no-brackets.md`: convenciones Tailwind CDN.
 - `docs/calendar_setup_guide.md`: guia operativa de calendario.
