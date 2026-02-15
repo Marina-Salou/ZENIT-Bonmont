@@ -88,6 +88,15 @@ Si hay conflicto entre documentos, este archivo manda.
 - Al crear/eliminar URL publica, actualizar `sitemap.xml`.
 - `robots.txt` debe seguir coherente con estrategia de indexacion.
 
+### 10.1 Checklist obligatorio al crear una pagina nueva
+1. Añadir la nueva URL en `sitemap.xml` con `lastmod`, `changefreq` y `priority` coherentes.
+2. Revisar `robots.txt` para confirmar que la URL puede indexarse (o bloquearla si corresponde).
+3. Configurar metadatos completos: `title`, `meta description`, `canonical`, Open Graph y Twitter.
+4. Añadir schema JSON-LD adecuado al tipo de pagina (`WebPage`, `Article`, `FAQPage`, etc.).
+5. Integrar la URL en la navegacion/enlazado interno (header, footer o enlaces contextuales).
+6. Validar coherencia de idioma segun norma del repo (UI espanol, SEO/alt ingles, legal espanol).
+7. Validar visual y funcionalmente en desktop y movil antes de cerrar.
+
 ## 11. Flujo de trabajo obligatorio
 1. Analizar antes de tocar.
 2. Cambios pequenos y acotados por fase.
@@ -104,6 +113,7 @@ Un cambio se considera cerrado si cumple todo esto:
 - Mantiene normas de idioma (UI espanol, SEO/alt ingles, legal espanol).
 - Metadatos y canonical coherentes.
 - Schema valido y alineado con contenido real.
+- Si crea una URL nueva, cumple el checklist obligatorio de `10.1`.
 - Sin restos de arquitectura antigua.
 - Validacion visual completada en desktop y movil.
 
