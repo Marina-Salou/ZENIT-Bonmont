@@ -2,6 +2,9 @@
 
 Sitio web estatico de Zenit Bonmont.
 
+## Antes de editar
+- Leer primero `REPO_STANDARDS.md` (normas obligatorias del repositorio).
+
 ## Referencia principal
 - Normas obligatorias del repositorio: `REPO_STANDARDS.md`.
 
