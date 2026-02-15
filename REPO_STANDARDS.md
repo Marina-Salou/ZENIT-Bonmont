@@ -33,6 +33,12 @@ Si hay conflicto entre documentos, este archivo manda.
   - Tema dark/light.
   - Menu movil.
 
+### 4.1 Norma de fin de linea (EOL)
+- Estandar obligatorio del repositorio: `LF` (`\n`) en archivos de texto versionados.
+- No se aceptan finales `CRLF` (`\r\n`) ni `CR` (`\r`) en commits.
+- `.gitattributes` es la fuente de verdad para normalizacion (`*.html`, `*.css`, `*.json` con `eol=lf`).
+- Antes de cerrar un cambio, verificar que los archivos editados respetan `LF`.
+
 ## 5. Estructura minima obligatoria por pagina
 - `head` con:
   - `title`.
