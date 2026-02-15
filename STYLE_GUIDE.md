@@ -71,8 +71,10 @@ Footer:
 - Usar `images/ZENIT_dorado.webp` sobre fondo `primary` oscuro para mantener contraste.
 
 Favicons:
+- Fallback general (desktop/navegadores sin soporte de media query): `images/favicon.png`
 - Claro: `images/favicon.png` con `prefers-color-scheme: light`
 - Oscuro: `images/favicon_dorado.png` con `prefers-color-scheme: dark`
+- iPhone/Apple (`apple-touch-icon`): `images/favicon.png` con `sizes="192x192"`
 
 Regla:
 - No mezclar versiones de logo fuera de este patron salvo decision de marca explicita.
