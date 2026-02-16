@@ -255,7 +255,7 @@
                             </p>
                         </div>
                         <div class="bg-white dark:bg-primary border border-gray-100 dark:border-white/10 p-8 md:p-10 shadow-xl rounded-sm max-w-[50rem] mx-auto">
-                            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                            <form id="bookingForm" action="https://formspree.io/f/xwvnbpzp" method="POST" class="space-y-6">
                                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                                     <div>
                                         <label for="arrival" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Llegada</label>
@@ -313,9 +313,10 @@
                                     Gracias por confiar en Zenit Bonmont.<br>
                                     En breve te contactaré personalmente para confirmar disponibilidad y formalizar la reserva.
                                 </p>
-                                <button type="submit" class="w-full bg-secondary text-white font-bold py-4 uppercase tracking-[3px] text-xs hover:bg-opacity-90 transition-all shadow-md">
+                                <button id="bookingSubmit" type="submit" class="w-full bg-secondary text-white font-bold py-4 uppercase tracking-[3px] text-xs hover:bg-opacity-90 transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed">
                                     Enviar Solicitud
                                 </button>
+                                <p id="bookingError" class="hidden text-sm text-red-600 dark:text-red-400 text-center"></p>
                             </form>
                         </div>
                     </div>
@@ -501,6 +502,20 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
         </div>
     </div>
 
+    <!-- Booking Success Overlay -->
+    <div id="bookingSuccessOverlay" class="hidden fixed inset-0 z-[70] items-center justify-center px-6">
+        <div id="bookingSuccessBackdrop" class="absolute inset-0 bg-primary/75 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+        <div id="bookingSuccessCard" class="relative w-full max-w-[680px] bg-white dark:bg-primary border border-black/10 dark:border-white/10 rounded-sm shadow-2xl p-8 md:p-12 text-center opacity-0 translate-y-2 transition-all duration-500">
+            <img src="images/ZENIT.webp" alt="ZENIT Bonmont" class="h-10 md:h-11 w-auto mx-auto dark:hidden" width="200" height="88" loading="eager" decoding="async">
+            <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-10 md:h-11 w-auto mx-auto hidden dark:block" width="200" height="88" loading="eager" decoding="async">
+            <h3 class="mt-8 font-serif text-3xl md:text-4xl text-primary dark:text-white">Iniciando su experiencia ZENIT Bonmont</h3>
+            <div class="w-[3.75rem] h-px bg-secondary mx-auto mt-5"></div>
+            <p class="mt-8 text-[1.05rem] md:text-[1.15rem] italic text-muted dark:text-gray-400 leading-relaxed">
+                Gracias por su interés. En breve le contactaré para empezar a dar forma a su estancia.
+            </p>
+        </div>
+    </div>
+
     <script>
         // Cookie Consent Logic — con expiración de 12 meses (GDPR/LOPD)
         (function() {
@@ -583,9 +598,82 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
                 }
             });
         }
+
+        // Booking form AJAX submission + success overlay
+        const bookingForm = document.getElementById('bookingForm');
+        const bookingSubmit = document.getElementById('bookingSubmit');
+        const bookingError = document.getElementById('bookingError');
+        const bookingSuccessOverlay = document.getElementById('bookingSuccessOverlay');
+        const bookingSuccessBackdrop = document.getElementById('bookingSuccessBackdrop');
+        const bookingSuccessCard = document.getElementById('bookingSuccessCard');
+
+        function showBookingSuccessOverlay() {
+            if (!bookingSuccessOverlay || !bookingSuccessBackdrop || !bookingSuccessCard) return;
+            bookingSuccessOverlay.classList.remove('hidden');
+            bookingSuccessOverlay.classList.add('flex');
+            requestAnimationFrame(() => {
+                bookingSuccessBackdrop.classList.remove('opacity-0');
+                bookingSuccessCard.classList.remove('opacity-0', 'translate-y-2');
+            });
+
+            setTimeout(() => {
+                bookingSuccessBackdrop.classList.add('opacity-0');
+                bookingSuccessCard.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => {
+                    bookingSuccessOverlay.classList.remove('flex');
+                    bookingSuccessOverlay.classList.add('hidden');
+                }, 500);
+            }, 4200);
+        }
+
+        if (bookingForm && bookingSubmit) {
+            bookingForm.addEventListener('submit', async (e) => {
+                if (!window.fetch) return;
+
+                e.preventDefault();
+                bookingError?.classList.add('hidden');
+                bookingError.textContent = '';
+
+                bookingSubmit.disabled = true;
+                const originalSubmitText = bookingSubmit.textContent;
+                bookingSubmit.textContent = 'Enviando...';
+
+                try {
+                    const response = await fetch(bookingForm.action, {
+                        method: 'POST',
+                        body: new FormData(bookingForm),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    const contentType = response.headers.get('content-type') || '';
+                    const isJson = contentType.includes('application/json');
+
+                    if (response.ok && isJson) {
+                        bookingForm.reset();
+                        showBookingSuccessOverlay();
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'generate_lead', {
+                                form_name: 'booking_request'
+                            });
+                        }
+                    } else {
+                        // Fallback: if Formspree requires captcha/verification, use native submit flow.
+                        bookingSubmit.disabled = false;
+                        bookingSubmit.textContent = originalSubmitText;
+                        bookingForm.submit();
+                        return;
+                    }
+                } catch (err) {
+                    bookingError.textContent = 'No se pudo enviar la solicitud. Revise su conexión e inténtelo de nuevo.';
+                    bookingError.classList.remove('hidden');
+                } finally {
+                    bookingSubmit.disabled = false;
+                    bookingSubmit.textContent = originalSubmitText;
+                }
+            });
+        }
     </script>
 </body>
 </html>
-
-
-
