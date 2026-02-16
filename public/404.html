@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+
+<head>
+    <!-- Google tag (gtag.js) - Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        // Default consent: denied unless accepted and not expired (12 months)
+        (function () {
+            var consent = localStorage.getItem("cookieConsent");
+            var consentDate = localStorage.getItem("cookieConsentDate");
+            var twelveMonths = 365 * 24 * 60 * 60 * 1000;
+            var isValid = consent === "accepted" && consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
+            if (!isValid) {
+                gtag("consent", "default", {
+                    "analytics_storage": "denied",
+                    "ad_storage": "denied",
+                    "personalization_storage": "denied",
+                    "functionality_storage": "denied",
+                    "security_storage": "granted"
+                });
+            }
+        })();
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WNCNXHN7X"></script>
+    <script>
+        gtag("js", new Date());
+        gtag("config", "G-9WNCNXHN7X");
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found (404) - ZENIT Bonmont</title>
+    <meta name="description" content="The page you requested does not exist. Return to ZENIT Bonmont homepage or continue browsing key sections.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="canonical" href="https://zenitbonmont.com/404.html">
+
+    <meta property="og:title" content="Page Not Found (404) - ZENIT Bonmont">
+    <meta property="og:description" content="The page you requested does not exist. Return to ZENIT Bonmont homepage or continue browsing key sections.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://zenitbonmont.com/images/hero-poster.jpg">
+    <meta property="og:url" content="https://zenitbonmont.com/404.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Page Not Found (404) - ZENIT Bonmont">
+    <meta name="twitter:description" content="The page you requested does not exist. Return to ZENIT Bonmont homepage or continue browsing key sections.">
+    <meta name="twitter:image" content="https://zenitbonmont.com/images/hero-poster.jpg">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="images/favicon_dorado.png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/favicon.png">
+    <meta name="theme-color" content="#1a1a1a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Bodoni:ital,wght@0,500;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        secondary: "#c9a866",
+                        "secondary-hover": "#b08e4b",
+                        text: "#2c2c2c",
+                        muted: "#666666"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "ui-sans-serif", "system-ui"],
+                        serif: ["Crimson Text", "ui-serif", "Georgia"],
+                        bodoni: ["Libre Bodoni", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <script>
+        if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body class="h-full bg-white dark:bg-primary text-text dark:text-gray-200 antialiased selection:bg-secondary selection:text-white">
+    <main class="min-h-full flex items-center justify-center px-6 py-16">
+        <section class="w-full max-w-[860px] border border-black/10 dark:border-white/10 bg-white dark:bg-primary/80 backdrop-blur-sm p-8 md:p-12 shadow-2xl">
+            <div class="flex flex-col items-center text-center">
+                <img src="images/ZENIT.webp" alt="ZENIT Bonmont" class="h-10 w-auto dark:hidden" width="200" height="88" loading="eager" decoding="async">
+                <img src="images/ZENIT_dorado.webp" alt="ZENIT Bonmont" class="h-10 w-auto hidden dark:block" width="200" height="88" loading="eager" decoding="async">
+
+                <p class="mt-8 text-[0.78rem] tracking-[3px] uppercase text-secondary font-semibold">Error 404</p>
+                <h1 class="mt-3 font-serif text-4xl md:text-5xl leading-tight text-primary dark:text-white">No encontramos esta página</h1>
+                <div class="w-[3.75rem] h-px bg-secondary mt-6"></div>
+
+                <p class="mt-8 text-lg md:text-xl italic text-muted dark:text-gray-400 leading-relaxed max-w-[42rem]">
+                    La ruta que has abierto no existe o se ha movido.
+                    Te llevamos de vuelta a las secciones principales.
+                </p>
+
+                <p class="mt-6 text-sm text-muted dark:text-gray-500 break-all">
+                    URL solicitada: <span id="requestedPath" class="text-primary dark:text-gray-300"></span>
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="index.html" class="inline-flex justify-center items-center px-7 py-3 bg-primary text-white dark:bg-white dark:text-primary text-[0.7rem] uppercase tracking-[2.5px] font-semibold hover:bg-secondary dark:hover:bg-secondary dark:hover:text-white transition-colors">
+                        Volver al inicio
+                    </a>
+                    <a href="faqs.html#booking" class="inline-flex justify-center items-center px-7 py-3 border border-secondary text-secondary text-[0.7rem] uppercase tracking-[2.5px] font-semibold hover:bg-secondary hover:text-white transition-colors">
+                        Ir a reservas
+                    </a>
+                    <a href="blog.html" class="inline-flex justify-center items-center px-7 py-3 border border-black/20 dark:border-white/20 text-text dark:text-gray-200 text-[0.7rem] uppercase tracking-[2.5px] font-semibold hover:border-secondary hover:text-secondary transition-colors">
+                        Ver blog
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const path = window.location.pathname || "/";
+        document.getElementById("requestedPath").textContent = path;
+    </script>
+</body>
+
+</html>

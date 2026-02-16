@@ -12,17 +12,23 @@ Sitio web estatico de Zenit Bonmont.
 - HTML estatico.
 - Tailwind CSS via CDN (`https://cdn.tailwindcss.com`).
 - JS inline por pagina para interacciones puntuales.
+- Hosting: Firebase Hosting (`firebase.json` apunta a `public/`).
+- Dominio de produccion: `https://zenitbonmont.com`.
 
 ## Inicio rapido
-1. Abrir cualquier pagina `*.html` en navegador (o servidor estatico).
-2. Revisar en desktop y movil.
-3. Validar navegacion, menu movil, footer y cookies.
-4. Recarga dura (`Ctrl+F5`) y comprobacion final.
+1. Trabajar siempre sobre archivos dentro de `public/`.
+2. Abrir cualquier pagina `public/*.html` en navegador (o servidor estatico).
+3. Opcional local: `firebase emulators:start --only hosting` o servidor estatico sobre `public/`.
+4. Revisar en desktop y movil.
+5. Validar navegacion, menu movil, footer y cookies.
+6. Recarga dura (`Ctrl+F5`) y comprobacion final.
 
 ## Estructura
-- `index.html`: Home.
-- `*.html`: secciones, legal y articulos.
-- `images/`: recursos visuales.
+- `public/index.html`: Home.
+- `public/*.html`: secciones, legal y articulos.
+- `public/images/`: recursos visuales.
+- `firebase.json`: config de hosting.
+- `.firebaserc`: proyecto Firebase por defecto.
 - `docs/`: documentacion activa.
 - `docs/archive/`: historico cerrado.
 

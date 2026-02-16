@@ -2,6 +2,7 @@
 
 Guia visual base de BONMONT.
 Objetivo: mantener consistencia de estilo entre paginas, bloques nuevos y futuras evoluciones.
+Nota de rutas: todas las paginas HTML activas del sitio estan en `public/`.
 
 Si hay conflicto con normas tecnicas, manda `REPO_STANDARDS.md`.
 

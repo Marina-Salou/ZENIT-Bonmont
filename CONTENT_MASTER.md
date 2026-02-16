@@ -8,6 +8,7 @@ Este documento resume el contenido actual de la web de ZENIT Bonmont para usarlo
 - revisiones de consistencia editorial
 
 Alcance: solo informacion publicada en el sitio actual (HTML/JSON del repo).
+Nota de rutas: en el repositorio actual, los archivos web viven en `public/`. Cuando este documento menciona `index.html`, `faqs.html`, etc., se refiere a `public/index.html`, `public/faqs.html`, etc.
 
 ## 2. Ficha maestra (datos clave)
 - Nombre comercial: ZENIT Bonmont

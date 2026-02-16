@@ -8,8 +8,14 @@ Si hay conflicto entre documentos, este archivo manda.
 - Sitio estatico en HTML.
 - Tailwind CSS via CDN (`https://cdn.tailwindcss.com`).
 - JavaScript inline por pagina para interacciones puntuales.
+- Hosting en Firebase (`firebase.json`, carpeta de publicacion: `public/`).
 - No se usa pipeline de compilacion CSS local.
 - No se deben introducir `input.css`, `output.css`, `postcss`, `webpack`, `vite` ni equivalentes.
+
+### 2.1 Regla de ubicacion de archivos (obligatoria)
+- El runtime productivo vive en `public/`.
+- Cualquier cambio de web (HTML, JSON, imágenes, robots, sitemap) se realiza en `public/`.
+- Archivos homonimos en raiz (si existen) se consideran legacy o residuales, no fuente de verdad.
 
 ## 3. Idioma y contenido (regla editorial)
 - Contenido visible de la web (UI): espanol.

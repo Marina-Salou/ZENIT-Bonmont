@@ -43,10 +43,10 @@ Esta guía te explica paso a paso cómo conectar tu calendario de Airbnb con tu 
 
 ## Paso 4: Ponerlo en tu web
 
-1.  Abre el archivo `index.html` de tu web.
+1.  Abre el archivo `public/faqs.html` de tu web.
 2.  Busca el comentario que dice:
     `<!-- INSTRUCCIONES PARA EL USUARIO: ... -->`
-    (Está aproximadamente por la línea 1430, en la sección de Disponibilidad).
+    (En la sección de Disponibilidad).
 3.  Verás un bloque de código como este:
     ```html
     <iframe 

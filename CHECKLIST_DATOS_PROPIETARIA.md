@@ -33,7 +33,7 @@ Notas:
 - [ ] Nombre comercial exacto a publicar.
 - [ ] Dirección exacta que se mostrará en Maps.
 - [ ] Teléfono público para el perfil.
-- [ ] URL web oficial (dominio final).
+- [x] URL web oficial: `https://zenitbonmont.com`.
 - [ ] Categoría principal del negocio (ej. alquiler vacacional / villa turística).
 - [ ] Evidencias para verificación (si Google las pide): documentación del negocio, fotos, etc.
 
