@@ -15,6 +15,10 @@ Sitio web estatico de Zenit Bonmont.
 - Hosting: Firebase Hosting (`firebase.json` apunta a `public/`).
 - Dominio de produccion: `https://zenitbonmont.com`.
 
+## GitHub Pages (preview)
+- El repositorio despliega GitHub Pages mediante GitHub Actions usando `.github/workflows/deploy-pages.yml`.
+- El artefacto publicado es la carpeta `public/`.
+
 ## Inicio rapido
 1. Trabajar siempre sobre archivos dentro de `public/`.
 2. Abrir cualquier pagina `public/*.html` en navegador (o servidor estatico).
