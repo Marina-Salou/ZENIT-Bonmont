@@ -4,51 +4,51 @@
         "description": "Un oasis de tranquilidad con piscina de agua salina y zona de solárium.",
         "images": [
             {
-                "src": "images/exteriors/pool/pool-1.webp",
+                "src": "images/outdoor/pool/pool-1.webp",
                 "alt": "ZENIT Bonmont - Private Swimming Pool"
             },
             {
-                "src": "images/exteriors/pool/pool-2.webp",
+                "src": "images/outdoor/pool/pool-2.webp",
                 "alt": "ZENIT Bonmont - Pool Area Views"
             },
             {
-                "src": "images/exteriors/pool/pool-3.webp",
+                "src": "images/outdoor/pool/pool-3.webp",
                 "alt": "ZENIT Bonmont - Poolside Relaxation"
             },
             {
-                "src": "images/exteriors/pool/pool-4.webp",
+                "src": "images/outdoor/pool/pool-4.webp",
                 "alt": "ZENIT Bonmont - Pool Deck and Surroundings"
             },
             {
-                "src": "images/exteriors/pool/pool-5.webp",
+                "src": "images/outdoor/pool/pool-5.webp",
                 "alt": "ZENIT Bonmont - Evening Pool Ambiance"
             },
             {
-                "src": "images/exteriors/pool/pool-6.webp",
+                "src": "images/outdoor/pool/pool-6.webp",
                 "alt": "ZENIT Bonmont - Pool and Garden Integration"
             },
             {
-                "src": "images/exteriors/pool/pool-7.webp",
+                "src": "images/outdoor/pool/pool-7.webp",
                 "alt": "ZENIT Bonmont - Luxury Pool Experience"
             },
             {
-                "src": "images/exteriors/pool/pool-8.webp",
+                "src": "images/outdoor/pool/pool-8.webp",
                 "alt": "ZENIT Bonmont - Pool Lounge Area"
             },
             {
-                "src": "images/exteriors/pool/pool-9.webp",
+                "src": "images/outdoor/pool/pool-9.webp",
                 "alt": "ZENIT Bonmont - Pool at Sunset"
             },
             {
-                "src": "images/exteriors/pool/pool-10.webp",
+                "src": "images/outdoor/pool/pool-10.webp",
                 "alt": "ZENIT Bonmont - Pool and Terrace"
             },
             {
-                "src": "images/exteriors/pool/pool-11.webp",
+                "src": "images/outdoor/pool/pool-11.webp",
                 "alt": "ZENIT Bonmont - Pool View from Above"
             },
             {
-                "src": "images/exteriors/pool/pool-12.webp",
+                "src": "images/outdoor/pool/pool-12.webp",
                 "alt": "ZENIT Bonmont - Pool at Night"
             }
         ]
@@ -58,35 +58,35 @@
         "description": "Espacios diseñados para disfrutar de momentos mágicos y largas sobremesas.",
         "images": [
             {
-                "src": "images/exteriors/moments/moments-1.webp",
+                "src": "images/outdoor/moments/moments-1.webp",
                 "alt": "ZENIT Bonmont - Outdoor Mediterranean Lifestyle"
             },
             {
-                "src": "images/exteriors/moments/moments-2.webp",
+                "src": "images/outdoor/moments/moments-2.webp",
                 "alt": "ZENIT Bonmont - Terrace Dining Experience"
             },
             {
-                "src": "images/exteriors/moments/moments-3.webp",
+                "src": "images/outdoor/moments/moments-3.webp",
                 "alt": "ZENIT Bonmont - Sunset Views"
             },
             {
-                "src": "images/exteriors/moments/moments-4.webp",
+                "src": "images/outdoor/moments/moments-4.webp",
                 "alt": "ZENIT Bonmont - Outdoor Relaxation"
             },
             {
-                "src": "images/exteriors/moments/moments-5.webp",
+                "src": "images/outdoor/moments/moments-5.webp",
                 "alt": "ZENIT Bonmont - Garden Atmosphere"
             },
             {
-                "src": "images/exteriors/moments/moments-6.webp",
+                "src": "images/outdoor/moments/moments-6.webp",
                 "alt": "ZENIT Bonmont - Mediterranean Evenings"
             },
             {
-                "src": "images/exteriors/moments/moments-7.webp",
+                "src": "images/outdoor/moments/moments-7.webp",
                 "alt": "ZENIT Bonmont - Outdoor Living Spaces"
             },
             {
-                "src": "images/exteriors/moments/moments-8.webp",
+                "src": "images/outdoor/moments/moments-8.webp",
                 "alt": "ZENIT Bonmont - Costa Dorada Lifestyle"
             }
         ]
