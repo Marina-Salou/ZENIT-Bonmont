@@ -90,6 +90,20 @@ Si hay conflicto entre documentos, este archivo manda.
 - Evitar cambios de tamano que rompan composicion responsive.
 - Priorizar formatos optimizados (`.webp`) salvo necesidad tecnica concreta.
 
+### 8.1 Estructura de carpetas obligatoria
+- `public/images/global/` para recursos compartidos entre paginas.
+- `public/images/<bloque>/` para recursos especificos de una pagina/seccion.
+- `public/images/posts/<slug>/` para imagenes exclusivas de articulos.
+- No volver a dejar imagenes sueltas en `public/images/` raiz.
+
+### 8.2 Checklist obligatorio al tocar imagenes
+1. Guardar en carpeta correcta (`global`, `home`, `indoor`, `outdoor`, etc.).
+2. Nombre en ingles, `kebab-case`, sin espacios/tildes/mayusculas.
+3. Actualizar rutas en HTML y JSON de galerias cuando aplique.
+4. Validar que no haya rutas rotas ni huerfanas.
+5. Validar visual desktop + movil.
+6. Mantener actualizado `docs/IMAGES_MAINTENANCE.md` si cambia inventario/estructura.
+
 ## 9. Cookies y privacidad (tecnico)
 - Consentimiento previo para analitica.
 - Botones de aceptar/rechazar visibles y equivalentes en primer nivel.
@@ -141,3 +155,4 @@ Un cambio se considera cerrado si cumple todo esto:
 - Documentos cerrados no se eliminan directamente.
 - Primero se extrae lo util a `REPO_STANDARDS.md` o `README.md`.
 - Luego se mueven a `docs/archive/`.
+
