@@ -43,6 +43,5 @@ Sitio web estatico de Zenit Bonmont.
 - `docs/web-architecture.md`: mapa tecnico del sitio.
 - `docs/tailwind-no-brackets.md`: convenciones Tailwind CDN.
 - `docs/calendar_setup_guide.md`: guia operativa de calendario.
-- `docs/IMAGES_MAINTENANCE.md`: estado e checklist operativo de imagenes.
 - `CHECKLIST_DATOS_PROPIETARIA.md`: checklist de datos y cuentas del negocio.
 

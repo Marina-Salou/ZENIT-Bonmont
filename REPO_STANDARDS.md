@@ -102,7 +102,7 @@ Si hay conflicto entre documentos, este archivo manda.
 3. Actualizar rutas en HTML y JSON de galerias cuando aplique.
 4. Validar que no haya rutas rotas ni huerfanas.
 5. Validar visual desktop + movil.
-6. Mantener actualizado `docs/IMAGES_MAINTENANCE.md` si cambia inventario/estructura.
+6. Mantener coherencia de inventario y estructura de carpetas al añadir, mover o eliminar imagenes.
 
 ## 9. Cookies y privacidad (tecnico)
 - Consentimiento previo para analitica.
