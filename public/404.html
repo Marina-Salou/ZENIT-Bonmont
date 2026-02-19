@@ -2,33 +2,48 @@
 <html lang="en" class="h-full scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Consent Mode -->
+        <!-- Google tag (gtag.js) - Consent Mode (strict preload block) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
 
+        const GA_MEASUREMENT_ID = 'G-9WNCNXHN7X';
+        let gaLoaded = false;
+
+        function loadAnalytics() {
+            if (gaLoaded) return;
+            gaLoaded = true;
+
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+            document.head.appendChild(script);
+
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID);
+        }
+
         // Default consent: denied unless accepted and not expired (12 months)
         (function () {
-            var consent = localStorage.getItem("cookieConsent");
-            var consentDate = localStorage.getItem("cookieConsentDate");
+            var consent = localStorage.getItem('cookieConsent');
+            var consentDate = localStorage.getItem('cookieConsentDate');
             var twelveMonths = 365 * 24 * 60 * 60 * 1000;
-            var isValid = consent === "accepted" && consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
-            if (!isValid) {
-                gtag("consent", "default", {
-                    "analytics_storage": "denied",
-                    "ad_storage": "denied",
-                    "personalization_storage": "denied",
-                    "functionality_storage": "denied",
-                    "security_storage": "granted"
-                });
+            var isValid = consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
+            var accepted = consent === 'accepted' && isValid;
+            window['ga-disable-' + GA_MEASUREMENT_ID] = !accepted;
+
+            gtag('consent', 'default', {
+                'analytics_storage': accepted ? 'granted' : 'denied',
+                'ad_storage': 'denied',
+                'personalization_storage': 'denied',
+                'functionality_storage': 'denied',
+                'security_storage': 'granted'
+            });
+
+            if (accepted) {
+                loadAnalytics();
             }
         })();
-    </script>
-    <!-- Google tag (gtag.js) - GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WNCNXHN7X"></script>
-    <script>
-        gtag("js", new Date());
-        gtag("config", "G-9WNCNXHN7X");
     </script>
 
     <meta charset="UTF-8">

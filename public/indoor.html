@@ -2,33 +2,48 @@
 <html lang="en" class="scroll-smooth scroll-pt-20">
 
 <head>
-    <!-- Google tag (gtag.js) - Consent Mode -->
+        <!-- Google tag (gtag.js) - Consent Mode (strict preload block) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        
+
+        const GA_MEASUREMENT_ID = 'G-9WNCNXHN7X';
+        let gaLoaded = false;
+
+        function loadAnalytics() {
+            if (gaLoaded) return;
+            gaLoaded = true;
+
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+            document.head.appendChild(script);
+
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID);
+        }
+
         // Default consent: denied unless accepted and not expired (12 months)
-        (function() {
+        (function () {
             var consent = localStorage.getItem('cookieConsent');
             var consentDate = localStorage.getItem('cookieConsentDate');
             var twelveMonths = 365 * 24 * 60 * 60 * 1000;
-            var isValid = consent === 'accepted' && consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
-            if (!isValid) {
-                gtag('consent', 'default', {
-                    'analytics_storage': 'denied',
-                    'ad_storage': 'denied',
-                    'personalization_storage': 'denied',
-                    'functionality_storage': 'denied',
-                    'security_storage': 'granted'
-                });
+            var isValid = consentDate && (Date.now() - parseInt(consentDate, 10)) < twelveMonths;
+            var accepted = consent === 'accepted' && isValid;
+            window['ga-disable-' + GA_MEASUREMENT_ID] = !accepted;
+
+            gtag('consent', 'default', {
+                'analytics_storage': accepted ? 'granted' : 'denied',
+                'ad_storage': 'denied',
+                'personalization_storage': 'denied',
+                'functionality_storage': 'denied',
+                'security_storage': 'granted'
+            });
+
+            if (accepted) {
+                loadAnalytics();
             }
         })();
-    </script>
-    <!-- Google tag (gtag.js) - GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WNCNXHN7X"></script>
-    <script>
-        gtag('js', new Date());
-        gtag('config', 'G-9WNCNXHN7X');
     </script>
 
     <meta charset="UTF-8">
@@ -331,9 +346,6 @@
                     <p class="order-1 lg:hidden text-[7px] text-gray-400 uppercase tracking-[1px] whitespace-nowrap">Licencia turística: HUTB-248281</p>
                     <p class="order-1 hidden lg:block text-[8px] text-gray-400 uppercase tracking-[1px] whitespace-nowrap">Licencia turística: HUTB-248281</p>
                     <div class="order-2 lg:order-2 flex gap-4">
-                        <a href="mailto:info@zenitbonmont.com" class="text-white hover:text-secondary transition-colors" aria-label="Enviar email" title="info@zenitbonmont.com">
-                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg>
-                        </a>
                         <!-- TODO: Actualizar con URL del perfil real de Instagram -->
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-secondary transition-colors" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -616,7 +628,7 @@
     </div>
 
     <script>
-        // Cookie Consent Logic — con expiración de 12 meses (GDPR/LOPD)
+                // Cookie Consent Logic — con expiración de 12 meses (GDPR/LOPD)
         (function () {
             const cookieConsent = document.getElementById('cookieConsent');
             const cookieAccept = document.getElementById('cookieAccept');
@@ -636,6 +648,33 @@
                 localStorage.setItem('cookieConsentDate', Date.now().toString());
             }
 
+            function clearAnalyticsCookies() {
+                const gaCookieNames = ['_ga', '_gid', '_gat', '_ga_' + GA_MEASUREMENT_ID.replace(/-/g, '')];
+                const hostname = location.hostname;
+                const domains = [''];
+                const parts = hostname.split('.');
+                if (parts.length >= 2) {
+                    domains.push('.' + parts.slice(-2).join('.'));
+                }
+
+                gaCookieNames.forEach((name) => {
+                    document.cookie = `${name}=; Max-Age=0; path=/`;
+                    domains.forEach((domain) => {
+                        if (domain) {
+                            document.cookie = `${name}=; Max-Age=0; path=/; domain=${domain}`;
+                        }
+                    });
+                });
+            }
+
+            function revokeAnalytics() {
+                window['ga-disable-' + GA_MEASUREMENT_ID] = true;
+                clearAnalyticsCookies();
+                if (typeof gtag === 'function') {
+                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+                }
+            }
+
             if (!localStorage.getItem('cookieConsent') || !isConsentValid()) {
                 localStorage.removeItem('cookieConsent');
                 localStorage.removeItem('cookieConsentDate');
@@ -643,8 +682,12 @@
             }
 
             cookieAccept.addEventListener('click', () => {
+                window['ga-disable-' + GA_MEASUREMENT_ID] = false;
                 saveConsent('accepted');
                 cookieConsent.classList.add('hidden');
+                if (typeof loadAnalytics === 'function') {
+                    loadAnalytics();
+                }
                 if (typeof gtag === 'function') {
                     gtag('consent', 'update', { 'analytics_storage': 'granted' });
                 }
@@ -653,13 +696,12 @@
             cookieReject.addEventListener('click', () => {
                 saveConsent('rejected');
                 cookieConsent.classList.add('hidden');
-                if (typeof gtag === 'function') {
-                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
-                }
+                revokeAnalytics();
             });
 
             document.getElementById('manageCookies')?.addEventListener('click', (e) => {
                 e.preventDefault();
+                revokeAnalytics();
                 localStorage.removeItem('cookieConsent');
                 localStorage.removeItem('cookieConsentDate');
                 cookieConsent.classList.remove('hidden');
