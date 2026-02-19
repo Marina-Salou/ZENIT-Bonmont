@@ -98,6 +98,17 @@
         rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <style>
+        /* Keep native select dropdown options readable on desktop dark mode */
+        .dark select option {
+            color: #1f2937;
+            background-color: #ffffff;
+        }
+        /* Match closed select text color with other dark form fields */
+        .dark #bookingForm select {
+            color: #9ca3af;
+        }
+    </style>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -141,7 +152,7 @@
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
+        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" />
         <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
@@ -172,7 +183,7 @@
 
             <!-- Theme & Mobile Toggle -->
             <div class="flex items-center gap-4 md:gap-6">
-                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                <button id="themeToggle" aria-label="Toggle color theme" title="Toggle color theme" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
                     <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
@@ -282,7 +293,7 @@
                                     </div>
                                     <div>
                                         <label for="guests" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Adultos</label>
-                                        <select id="guests" name="guests" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <select id="guests" name="guests" class="w-full bg-gray-50 dark:bg-white/5 text-muted dark:text-gray-400 dark:[color-scheme:light] border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                                             <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
                                             <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option>
@@ -290,19 +301,19 @@
                                     </div>
                                     <div>
                                         <label for="children" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Niños</label>
-                                        <select id="children" name="children" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <select id="children" name="children" class="w-full bg-gray-50 dark:bg-white/5 text-muted dark:text-gray-400 dark:[color-scheme:light] border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                                         </select>
                                     </div>
                                     <div>
                                         <label for="babies" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Bebés</label>
-                                        <select id="babies" name="babies" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <select id="babies" name="babies" class="w-full bg-gray-50 dark:bg-white/5 text-muted dark:text-gray-400 dark:[color-scheme:light] border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
                                         </select>
                                     </div>
                                     <div>
                                         <label for="pets" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Mascotas</label>
-                                        <select id="pets" name="pets" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <select id="pets" name="pets" class="w-full bg-gray-50 dark:bg-white/5 text-muted dark:text-gray-400 dark:[color-scheme:light] border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                             <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
                                         </select>
                                     </div>
@@ -736,3 +747,4 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
     </script>
 </body>
 </html>
+

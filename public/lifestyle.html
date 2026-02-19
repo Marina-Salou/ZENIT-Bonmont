@@ -153,7 +153,7 @@
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
+        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" />
         <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
@@ -183,7 +183,7 @@
             <!-- CTA & Mobile Toggle -->
             <div class="flex items-center gap-4 md:gap-6">
                 <!-- Theme Toggle -->
-                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                <button id="themeToggle" aria-label="Toggle color theme" title="Toggle color theme" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
                     <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
@@ -259,9 +259,9 @@
                 <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-lg">
                     Privilegios del entorno
                 </h1>
-                <p class="font-sans italic text-lg md:text-xl text-white/90">
+                <h2 class="font-sans italic text-lg md:text-xl text-white/90 font-normal">
                     Siente la esencia mediterránea
-                </p>
+                </h2>
             </div>
         </section>
 
@@ -282,7 +282,7 @@
                 <!-- 1. Mar Mediterráneo -->
                 <section id="mar" class="scroll-mt-32">
                     <div class="mb-16 px-0">
-                        <h2 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Mar Mediterráneo</h2>
+                        <h3 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Mar Mediterráneo</h3>
                         <div class="w-[3.75rem] h-px bg-secondary mb-8"></div>
                         <p class="text-xl text-muted dark:text-gray-400 leading-relaxed italic">
                             La proximidad al mar define el carácter: playas amplias, calas tranquilas y una costa para disfrutar con calma o de forma activa.
@@ -291,56 +291,64 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- Propuesta 1 -->
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-calm-beach-costa-dorada.webp" alt="Endless calm" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-calm-beach-costa-dorada.webp" alt="Endless calm" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Calma infinita</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Calma infinita</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Kilómetros de arena dorada y aguas cristalinas para desconectar del mundo.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
                                 Ejemplo: Platja de Rifà
                             </p>
                         </div>
+                        </div>
                         <!-- Propuesta 2 -->
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-hidden-cove-costa-dorada.webp" alt="Hidden refuges" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-hidden-cove-costa-dorada.webp" alt="Hidden refuges" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Refugios secretos</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Refugios secretos</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Pequeñas calas rodeadas de pinos donde el tiempo parece detenerse.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
                                 Ejemplo: Cala Sirenes
                             </p>
                         </div>
+                        </div>
                         <!-- Propuesta 3 -->
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-sailing-blue-adventure.webp" alt="Blue adventure" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-sailing-blue-adventure.webp" alt="Blue adventure" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Aventura azul</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Aventura azul</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Siente la brisa en libertad navegando o practicando deportes náuticos.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Clubs Náuticos de la zona.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: Clubs Náuticos de la zona
                             </p>
                         </div>
+                        </div>
                         <!-- Propuesta 4 -->
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-sunset-ritual.webp" alt="The ritual of the sun" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-sunset-ritual.webp" alt="The ritual of the sun" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">El ritual del sol</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">El ritual del sol</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Despide cada día con un espectáculo de colores sobre el horizonte marino.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: infinitos puntos cercanos al mar.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: atardeceres frente al mar
                             </p>
+                        </div>
                         </div>
                     </div>
                 </section>
@@ -348,7 +356,7 @@
                 <!-- 2. Cultura y gastronomía -->
                 <section id="cultura" class="scroll-mt-32">
                     <div class="mb-16 text-right flex flex-col items-end px-0">
-                        <h2 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Cultura y gastronomía</h2>
+                        <h3 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Cultura y gastronomía</h3>
                         <div class="w-[3.75rem] h-px bg-secondary mb-8"></div>
                         <p class="text-xl text-muted dark:text-gray-400 leading-relaxed italic">
                             Un territorio con historia, fuerte identidad cultural y patrimonio milenario, pueblos con identidad y cocina mediterránea de referencia.
@@ -356,53 +364,61 @@
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/global/culture.webp" alt="Echoes of the past" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/global/culture.webp" alt="Echoes of the past" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Eco del pasado</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Eco del pasado</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Pasea por la historia viva entre ruinas romanas y legados medievales.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
                                 Ejemplo: Tarragona Romana
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-siurana-village-soul.webp" alt="Village soul" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-siurana-village-soul.webp" alt="Village soul" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Alma de pueblo</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Alma de pueblo</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Descubre el encanto de callejuelas y plazas que guardan la esencia local.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
                                 Ejemplo: Siurana
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-rice-heritage-flavor.webp" alt="Heritage of flavor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-rice-heritage-flavor.webp" alt="Heritage of flavor" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Herencia del sabor</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Herencia del sabor</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Producto de proximidad, lonja y huerta en recetas que hablan del mar y la tierra.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Jornadas de la Galera en Cambrils.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: Jornadas de la Galera en Cambrils
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-wine-pause-pleasure.webp" alt="The pleasure of pausing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-wine-pause-pleasure.webp" alt="The pleasure of pausing" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Placer de la pausa</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Placer de la pausa</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Una copa de vino frente al mar o un vermut al sol en una terraza con historia.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Vinacotecas del Priorat.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: Vinacotecas del Priorat
                             </p>
+                        </div>
                         </div>
                     </div>
                 </section>
@@ -410,7 +426,7 @@
                 <!-- 3. Naturaleza y deporte -->
                 <section id="naturaleza" class="scroll-mt-32">
                     <div class="mb-16 px-0">
-                        <h2 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Naturaleza y deporte</h2>
+                        <h3 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Naturaleza y deporte</h3>
                         <div class="w-[3.75rem] h-px bg-secondary mb-8"></div>
                         <p class="text-xl text-muted dark:text-gray-400 leading-relaxed italic">
                             Espacios abiertos y paisajes singulares. Múltiples posibilidades para disfrutar del aire libre en un entorno que invita a la vitalidad.
@@ -418,53 +434,61 @@
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/global/delta.webp" alt="Serene vastness" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/global/delta.webp" alt="Serene vastness" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Inmensidad serena</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Inmensidad serena</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 El horizonte de los arrozales y el vuelo de las aves en un paisaje único.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
                                 Ejemplo: Delta del Ebro
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-bike-routes-costa-dorada.webp" alt="Your own rhythm" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-bike-routes-costa-dorada.webp" alt="Your own rhythm" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Ritmo propio</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Ritmo propio</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Rutas infinitas para el ciclismo de carretera o montaña en un clima privilegiado.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplos: Ruta BTT Ermita del Peiró.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplos: Ruta BTT Ermita del Peiró
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-coastal-walk-connection.webp" alt="Elemental connection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-coastal-walk-connection.webp" alt="Elemental connection" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Conexión elemental</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Conexión elemental</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Senderos que serpentean entre viñedos y olivares bajo el cielo azul.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Ruta Mare de Déu de la Roca, faro de los marineros.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: Ruta Mare de Déu de la Roca
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-lighthouse-views.webp" alt="Vertigo and peace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-lighthouse-views.webp" alt="Vertigo and peace" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Vértigo y paz</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Vértigo y paz</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Explora la sierra prelitoral y sus espectaculares vistas sobre el Mediterráneo.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Camí de Ronda de Salou.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: Camí de Ronda de Salou
                             </p>
+                        </div>
                         </div>
                     </div>
                 </section>
@@ -472,7 +496,7 @@
                 <!-- 4. Ocio y experiencias -->
                 <section id="ocio" class="scroll-mt-32">
                     <div class="mb-16 text-right flex flex-col items-end px-0">
-                        <h2 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Ocio y experiencias</h2>
+                        <h3 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">Ocio y experiencias</h3>
                         <div class="w-[3.75rem] h-px bg-secondary mb-8"></div>
                         <p class="text-xl text-muted dark:text-gray-400 leading-relaxed italic">
                             Un entorno diverso que reúne ocio activo, calma y espacios para compartir, adaptados a distintas edades y formas de disfrutar.
@@ -480,53 +504,61 @@
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-lumine-golf-sun.webp" alt="Distinction under the sun" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-lumine-golf-sun.webp" alt="Distinction under the sun" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Distinción al sol</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Distinción al sol</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Un día de descanso con servicios exclusivos y un ambiente sofisticado junto al mar.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Distintos Beach Club de la zona.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: Beach Clubs de la zona
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-aquatonic-thermal-renewal.webp" alt="Thermal renewal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-aquatonic-thermal-renewal.webp" alt="Thermal renewal" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Renacer termal</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Renacer termal</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Circuitos de bienestar y paz en entornos históricos para una relajación profunda.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: Espacios termales y spas de la zona.
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: Espacios termales de la zona
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/global/ferrariland.webp" alt="Shared energy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="900">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/global/ferrariland.webp" alt="Shared energy" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="900">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">Energía compartida</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">Energía compartida</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Emoción y adrenalina en parques de referencia mundial a pocos minutos.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
-                                Ejemplo: PortAventura / Ferrari Land / Caribe Aquatic Park
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
+                                Ejemplo: PortAventura / Ferrari Land
                             </p>
                         </div>
-                        <div class="group">
-                            <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-all group-hover:shadow-xl">
-                                <img src="images/lifestyle/zenit-bonmont-night-rhythm.webp" alt="The rhythm of the night" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
+                        </div>
+                        <div class="group bg-white dark:bg-surface-dark shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="overflow-hidden">
+                                <img src="images/lifestyle/zenit-bonmont-night-rhythm.webp" alt="The rhythm of the night" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1600" height="1200">
                             </div>
-                            <h4 class="font-serif text-xl text-primary dark:text-white mb-2">El ritmo de la noche</h4>
-                            <p class="text-sm text-muted dark:text-gray-400 leading-relaxed">
+                            <div class="p-8 space-y-4">
+                            <h4 class="font-serif text-[1.5rem] text-primary dark:text-white">El ritmo de la noche</h4>
+                            <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                                 Pubs y discotecas para disfrutar del ambiente, la música y la vida social.
                             </p>
-                            <p class="text-[10px] uppercase tracking-widest text-secondary mt-2">
+                            <p class="font-sans text-[10px] uppercase tracking-[1.2px] text-secondary">
                                 Ejemplo: Ocio nocturno de Salou
                             </p>
+                        </div>
                         </div>
                     </div>
                 </section>
@@ -535,64 +567,65 @@
             <!-- Strategic Locations Strip -->
             <section class="mt-24 pt-16 border-t border-black/5 dark:border-white/5">
                 <div class="text-center mb-16 px-0">
-                    <h3 class="font-sans text-[0.8rem] font-bold uppercase tracking-[4px] text-secondary mb-4">DESCUBRE EL TERRITORIO</h3>
-                    <h2 class="font-serif text-[2.5rem] md:text-[3rem] text-primary dark:text-white leading-tight">El epicentro de tus experiencias</h2>
+                    <p class="font-sans text-[0.8rem] font-bold uppercase tracking-[4px] text-secondary mb-4">DESCUBRE EL TERRITORIO</p>
+                    <h3 class="font-serif text-4xl md:text-5xl text-primary dark:text-white mb-4">El epicentro de tus experiencias</h3>
+                    <div class="w-[3.75rem] h-px bg-secondary mx-auto"></div>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8 max-w-[1400px] mx-auto text-center">
                     <!-- Mont-roig -->
                     <div class="flex flex-col items-center group">
                         <a href="https://mont-roigmiami.cat/es/" target="_blank" rel="noopener noreferrer" 
-                           class="font-serif text-2xl text-primary dark:text-white mb-1 relative transition-colors hover:text-secondary whitespace-nowrap">
+                           class="font-serif text-[1.5rem] text-primary dark:text-white mb-2 relative transition-colors hover:text-secondary dark:hover:text-secondary whitespace-nowrap">
                            Mont-roig / Miami
-                           <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                           <span class="absolute -bottom-[2px] left-0 w-full h-px bg-gray-500/40 dark:bg-white/20"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Destino local</span>
+                        <span class="font-sans text-[0.9rem] tracking-[0.5px] text-muted dark:text-gray-400 italic whitespace-nowrap">Destino local</span>
                     </div>
                     <!-- Cambrils -->
                     <div class="flex flex-col items-center group">
                         <a href="https://www.cambrils-turisme.com/" target="_blank" rel="noopener noreferrer" 
-                           class="font-serif text-2xl text-primary dark:text-white mb-1 relative transition-colors hover:text-secondary">
+                           class="font-serif text-[1.5rem] text-primary dark:text-white mb-2 relative transition-colors hover:text-secondary dark:hover:text-secondary">
                            Cambrils
-                           <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                           <span class="absolute -bottom-[2px] left-0 w-full h-px bg-gray-500/40 dark:bg-white/20"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Gastronomía · 15 min</span>
+                        <span class="font-sans text-[0.9rem] tracking-[0.5px] text-muted dark:text-gray-400 italic whitespace-nowrap">Gastronomía · 15 min</span>
                     </div>
                     <!-- Salou -->
                     <div class="flex flex-col items-center group">
                         <a href="https://www.visitsalou.eu/" target="_blank" rel="noopener noreferrer" 
-                           class="font-serif text-2xl text-primary dark:text-white mb-1 relative transition-colors hover:text-secondary">
+                           class="font-serif text-[1.5rem] text-primary dark:text-white mb-2 relative transition-colors hover:text-secondary dark:hover:text-secondary">
                            Salou
-                           <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                           <span class="absolute -bottom-[2px] left-0 w-full h-px bg-gray-500/40 dark:bg-white/20"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Capital Costa Dorada · 20 min</span>
+                        <span class="font-sans text-[0.9rem] tracking-[0.5px] text-muted dark:text-gray-400 italic whitespace-nowrap">Capital Costa Dorada · 20 min</span>
                     </div>
                     <!-- Reus -->
                     <div class="flex flex-col items-center group">
                         <a href="https://www.reusturisme.cat/" target="_blank" rel="noopener noreferrer" 
-                           class="font-serif text-2xl text-primary dark:text-white mb-1 relative transition-colors hover:text-secondary">
+                           class="font-serif text-[1.5rem] text-primary dark:text-white mb-2 relative transition-colors hover:text-secondary dark:hover:text-secondary">
                            Reus
-                           <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                           <span class="absolute -bottom-[2px] left-0 w-full h-px bg-gray-500/40 dark:bg-white/20"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Modernismo · 20 min</span>
+                        <span class="font-sans text-[0.9rem] tracking-[0.5px] text-muted dark:text-gray-400 italic whitespace-nowrap">Modernismo · 20 min</span>
                     </div>
                     <!-- Tarragona -->
                     <div class="flex flex-col items-center group">
                         <a href="https://www.tarragonaturisme.cat/es" target="_blank" rel="noopener noreferrer" 
-                           class="font-serif text-2xl text-primary dark:text-white mb-1 relative transition-colors hover:text-secondary">
+                           class="font-serif text-[1.5rem] text-primary dark:text-white mb-2 relative transition-colors hover:text-secondary dark:hover:text-secondary">
                            Tarragona
-                           <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                           <span class="absolute -bottom-[2px] left-0 w-full h-px bg-gray-500/40 dark:bg-white/20"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">Patrimonio · 25 min</span>
+                        <span class="font-sans text-[0.9rem] tracking-[0.5px] text-muted dark:text-gray-400 italic whitespace-nowrap">Patrimonio · 25 min</span>
                     </div>
                     <!-- Barcelona -->
                     <div class="flex flex-col items-center group">
                         <a href="https://www.barcelonaturisme.com/" target="_blank" rel="noopener noreferrer" 
-                           class="font-serif text-2xl text-primary dark:text-white mb-1 relative transition-colors hover:text-secondary">
+                           class="font-serif text-[1.5rem] text-primary dark:text-white mb-2 relative transition-colors hover:text-secondary dark:hover:text-secondary">
                            Barcelona
-                           <span class="absolute -bottom-1 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                           <span class="absolute -bottom-[2px] left-0 w-full h-px bg-gray-500/40 dark:bg-white/20"></span>
                         </a>
-                        <span class="font-sans text-[10px] uppercase tracking-widest text-muted dark:text-gray-500 italic whitespace-nowrap">World Icon · 75 min</span>
+                        <span class="font-sans text-[0.9rem] tracking-[0.5px] text-muted dark:text-gray-400 italic whitespace-nowrap">World Icon · 75 min</span>
                     </div>
                 </div>
             </section>
@@ -772,3 +805,11 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+

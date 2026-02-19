@@ -154,7 +154,7 @@
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
+        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" />
         <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
@@ -188,7 +188,7 @@
             <!-- CTA & Mobile Toggle -->
             <div class="flex items-center gap-4 md:gap-6">
                 <!-- Theme Toggle -->
-                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                <button id="themeToggle" aria-label="Toggle color theme" title="Toggle color theme" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
                     <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
@@ -271,7 +271,7 @@
                 <img src="images/posts/reus-modernism/zenit-bonmont-reus-distinguished-pavilion.webp" alt="Pavilion of the Distinguished in Reus" class="w-full aspect-[4/3] object-cover rounded shadow-xl" loading="lazy" decoding="async" width="1600" height="1200">
 
                 <div class="mt-8 text-center">
-                    <h3 class="font-bodoni text-lg text-secondary mb-3 uppercase tracking-widest leading-none">Experiencia completa</h3>
+                    <p class="font-bodoni text-lg text-secondary mb-3 uppercase tracking-widest leading-none">Experiencia completa</p>
                     <a href="https://www.reusturisme.cat/joia-modernista/ruta-del-modernisme" target="_blank" rel="noopener noreferrer" class="inline-block border border-primary/20 dark:border-white/20 text-primary dark:text-white px-4 py-2 text-sm font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all rounded-md">
                         Los detalles del Reus modernista
                     </a>
@@ -502,3 +502,5 @@
         </script>
 </body>
 </html>
+
+

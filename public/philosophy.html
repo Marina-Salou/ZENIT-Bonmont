@@ -142,7 +142,7 @@
     <!-- Header -->
     <header
         class="sticky top-0 z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-black/5 dark:border-white/10 py-4 transition-all duration-300">
-        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
+        <input id="mobileMenuToggle" type="checkbox" class="peer sr-only" />
         <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html#home" class="flex items-center group transition-opacity hover:opacity-90"
@@ -171,7 +171,7 @@
 
             <!-- Theme & Mobile Toggle -->
             <div class="flex items-center gap-4">
-                <button id="themeToggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                <button id="themeToggle" aria-label="Toggle color theme" title="Toggle color theme" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
                     <svg class="hidden dark:block w-5 h-5 text-secondary animate-[spin_3s_linear_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="block dark:hidden w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
@@ -270,7 +270,7 @@
                         <img src="images/philosophy/zenit-bonmont-silence-rest.webp" alt="Silence and rest" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1200" height="1600">
                     </div>
                     <div class="p-8 space-y-4">
-                        <h3 class="font-serif text-[1.5rem] text-primary dark:text-white">El Silencio</h3>
+                        <h2 class="font-serif text-[1.5rem] text-primary dark:text-white">El Silencio</h2>
                         <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                             Rincones de lectura, la luz de la mañana filtrándose por las persianas, y el sonido sutil de la naturaleza de Bonmont. Espacios pensados para el recogimiento, el yoga o simplemente para desconectar del ruido exterior.
                         </p>
@@ -283,7 +283,7 @@
                         <img src="images/philosophy/zenit-bonmont-celebration-joy.webp" alt="Celebration and joy" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="387" height="480">
                     </div>
                     <div class="p-8 space-y-4">
-                        <h3 class="font-serif text-[1.5rem] text-primary dark:text-white">La Celebración</h3>
+                        <h2 class="font-serif text-[1.5rem] text-primary dark:text-white">La Celebración</h2>
                         <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                             La alegría de una barbacoa al atardecer, las risas en la piscina y las cenas que se alargan bajo las estrellas. Zenit es un lugar donde los amigos se reúnen y crean recuerdos que perduran.
                         </p>
@@ -296,7 +296,7 @@
                         <img src="images/philosophy/zenit-bonmont-shared-living.webp" alt="Shared living" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1200" height="1200">
                     </div>
                     <div class="p-8 space-y-4">
-                        <h3 class="font-serif text-[1.5rem] text-primary dark:text-white">Vida Compartida</h3>
+                        <h2 class="font-serif text-[1.5rem] text-primary dark:text-white">Vida Compartida</h2>
                         <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 leading-relaxed">
                             Desde equipos deportivos hasta familias numerosas o grupos de amigos. La amplitud de Zenit permite que cada uno encuentre su lugar sin interferir en el del otro, facilitando la convivencia y la armonía.
                         </p>
@@ -491,3 +491,5 @@
     </script>
 </body>
 </html>
+
+
