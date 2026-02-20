@@ -277,7 +277,7 @@
                             </h3>
                             <div class="h-px bg-[rgba(153,153,153,0.3)] w-full"></div>
                             <p class="font-sans italic text-[1.1rem] text-muted dark:text-gray-400 mt-6 mb-16 leading-[1.8]">
-                                La estancia mínima es de 5 noches.
+                                Estancia mínima de 5 noches · Reservas disponibles con 7 días de antelación
                             </p>
                         </div>
                         <div class="bg-white dark:bg-primary border border-gray-100 dark:border-white/10 p-8 md:p-10 shadow-xl rounded-sm max-w-[50rem] mx-auto">
@@ -285,11 +285,11 @@
                                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                                     <div>
                                         <label for="arrival" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Llegada</label>
-                                        <input type="text" id="arrival" name="arrival" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                        <input type="date" id="arrival" name="arrival" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                     </div>
                                     <div>
                                         <label for="departure" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Salida</label>
-                                        <input type="text" id="departure" name="departure" placeholder="dd/mm/aaaa" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
+                                        <input type="date" id="departure" name="departure" required class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors">
                                     </div>
                                     <div>
                                         <label for="guests" class="block text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-2">Adultos</label>
@@ -673,9 +673,18 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
         const bookingForm = document.getElementById('bookingForm');
         const bookingSubmit = document.getElementById('bookingSubmit');
         const bookingError = document.getElementById('bookingError');
+        const arrivalInput = document.getElementById('arrival');
+        const departureInput = document.getElementById('departure');
         const bookingSuccessOverlay = document.getElementById('bookingSuccessOverlay');
         const bookingSuccessBackdrop = document.getElementById('bookingSuccessBackdrop');
         const bookingSuccessCard = document.getElementById('bookingSuccessCard');
+
+        function formatDateLocal(date) {
+            const y = date.getFullYear();
+            const m = String(date.getMonth() + 1).padStart(2, '0');
+            const d = String(date.getDate()).padStart(2, '0');
+            return `${y}-${m}-${d}`;
+        }
 
         function showBookingSuccessOverlay() {
             if (!bookingSuccessOverlay || !bookingSuccessBackdrop || !bookingSuccessCard) return;
@@ -696,6 +705,28 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
             }, 4200);
         }
 
+        if (arrivalInput && departureInput) {
+            const minArrivalDate = new Date();
+            minArrivalDate.setHours(0, 0, 0, 0);
+            minArrivalDate.setDate(minArrivalDate.getDate() + 7);
+            const minArrivalValue = formatDateLocal(minArrivalDate);
+            arrivalInput.min = minArrivalValue;
+
+            arrivalInput.addEventListener('change', () => {
+                if (arrivalInput.value) {
+                    const minDepartureDate = new Date(arrivalInput.value);
+                    minDepartureDate.setDate(minDepartureDate.getDate() + 5);
+                    const minDepartureValue = formatDateLocal(minDepartureDate);
+                    departureInput.min = minDepartureValue;
+                    if (departureInput.value && departureInput.value < minDepartureValue) {
+                        departureInput.value = '';
+                    }
+                } else {
+                    departureInput.removeAttribute('min');
+                }
+            });
+        }
+
         if (bookingForm && bookingSubmit) {
             bookingForm.addEventListener('submit', async (e) => {
                 if (!window.fetch) return;
@@ -703,6 +734,27 @@ Este espacio nace para recoger las historias de quienes han elegido este lugar p
                 e.preventDefault();
                 bookingError?.classList.add('hidden');
                 bookingError.textContent = '';
+
+                if (arrivalInput && departureInput && arrivalInput.value && departureInput.value) {
+                    const arrivalDate = new Date(arrivalInput.value);
+                    const departureDate = new Date(departureInput.value);
+                    const msPerDay = 1000 * 60 * 60 * 24;
+                    const nights = Math.round((departureDate - arrivalDate) / msPerDay);
+                    const minArrivalDate = new Date();
+                    minArrivalDate.setHours(0, 0, 0, 0);
+                    minArrivalDate.setDate(minArrivalDate.getDate() + 7);
+
+                    if (arrivalDate < minArrivalDate) {
+                        bookingError.textContent = 'La llegada debe solicitarse con al menos 7 días de antelación.';
+                        bookingError.classList.remove('hidden');
+                        return;
+                    }
+                    if (nights < 5) {
+                        bookingError.textContent = 'La solicitud de reserva debe ser de mínimo 5 noches.';
+                        bookingError.classList.remove('hidden');
+                        return;
+                    }
+                }
 
                 bookingSubmit.disabled = true;
                 const originalSubmitText = bookingSubmit.textContent;
