@@ -59,14 +59,17 @@
 
         <section id="topHighlights" class="space-y-24 mb-12"></section>
 
-        <section class="mb-6 border-t border-black/10 dark:border-white/10 pt-6">
-          <p class="uppercase tracking-[3px] text-[0.7rem] font-semibold text-secondary mb-1">Archivo</p>
-          <p class="text-sm text-muted dark:text-gray-400">Todos los artículos organizados para consulta rápida.</p>
+        <section class="mt-14 mb-10 border-t border-black/10 dark:border-white/10 pt-10">
+          <h2 class="font-serif text-[2.1rem] md:text-[2.3rem] leading-tight text-primary dark:text-white mb-3">Bitácora ZENIT</h2>
+          <div class="w-12 h-px bg-secondary mb-5"></div>
+          <p class="text-[0.95rem] text-muted dark:text-gray-400 max-w-3xl">Tu cuaderno de a bordo para planificar tu visita y consultarla durante la estancia</p>
         </section>
 
         <section class="mb-8">
-          <div id="categoryFilters" class="flex flex-wrap gap-x-8 gap-y-2 mb-4"></div>
-          <div class="flex flex-wrap items-center gap-2">
+          <div id="categoryFilters" class="flex flex-wrap xl:flex-nowrap xl:justify-between gap-x-6 gap-y-3 mb-4"></div>
+          <div class="mt-8 flex flex-wrap items-center gap-2">
+            <label for="searchInput" class="sr-only">Buscar artículos</label>
+            <label for="sortSelect" class="sr-only">Ordenar artículos</label>
             <input id="searchInput" type="search" placeholder="Buscar por título o resumen..."
               class="h-9 w-full sm:w-[320px] md:w-[380px] rounded-md border border-black/10 dark:border-white/15 bg-white dark:bg-white/5 px-3 text-[0.88rem] text-primary dark:text-white placeholder:text-muted dark:placeholder:text-gray-400 focus:outline-none focus:border-secondary transition-colors">
             <select id="sortSelect"
@@ -78,10 +81,10 @@
           </div>
         </section>
 
-        <section id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"></section>
+        <section id="postsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-0"></section>
 
         <section class="mt-10 flex items-center justify-between gap-4">
-          <p id="resultsCount" class="text-sm text-muted dark:text-gray-400"></p>
+          <p id="resultsCount" aria-live="polite" class="text-sm text-muted dark:text-gray-400"></p>
           <div class="flex items-center gap-2">
             <button id="prevPage" class="h-9 px-4 rounded border border-black/15 dark:border-white/15 text-sm hover:border-secondary hover:text-secondary transition-colors">Anterior</button>
             <button id="nextPage" class="h-9 px-4 rounded border border-black/15 dark:border-white/15 text-sm hover:border-secondary hover:text-secondary transition-colors">Siguiente</button>
@@ -92,7 +95,7 @@
   </main>
 
   <script>
-    const POSTS_PER_PAGE = 6;
+    const POSTS_PER_PAGE = 4;
     let currentPage = 1;
     let currentCategory = "Todos";
 
@@ -133,7 +136,7 @@
 
     function renderCategories() {
       categoryFilters.innerHTML = categories.map((c) => `
-        <button data-category="${c}" class="category-chip text-left transition-colors ${c === currentCategory ? "text-primary dark:text-white" : "text-muted dark:text-gray-400 hover:text-primary dark:hover:text-white"}">
+        <button data-category="${c}" aria-pressed="${c === currentCategory ? "true" : "false"}" class="category-chip text-left whitespace-nowrap transition-colors ${c === currentCategory ? "text-primary dark:text-white" : "text-muted dark:text-gray-400 hover:text-primary dark:hover:text-white"}">
           <span class="block text-[0.78rem] uppercase tracking-[1px] font-normal">${c}</span>
           <span class="block mt-1 h-px w-10 transition-colors ${c === currentCategory ? "bg-secondary" : "bg-black/10 dark:bg-white/10"}"></span>
         </button>
@@ -206,21 +209,38 @@
       const start = (currentPage - 1) * POSTS_PER_PAGE;
       const pageItems = archiveSource.slice(start, start + POSTS_PER_PAGE);
 
-      postsGrid.innerHTML = pageItems.map((p) => `
-        <article class="py-4 border-b border-black/10 dark:border-white/10 last:border-b-0">
-          <p class="text-[0.65rem] tracking-[2px] font-semibold mb-3">
-            <span class="uppercase text-secondary">${p.category}</span>
-            <span class="mx-1.5 text-muted dark:text-gray-500">·</span>
-            <span class="text-muted dark:text-gray-400">${categoryMeta.find(m => m.name === p.category)?.subtitle || ""}</span>
-          </p>
-          <h3 class="font-serif text-2xl leading-tight mb-3 text-primary dark:text-white">${p.title}</h3>
-          <p class="text-sm text-muted dark:text-gray-300 mb-4">${p.summary}</p>
-          <div class="flex items-center justify-between gap-3">
-            <span class="text-xs text-muted dark:text-gray-500">${new Date(p.date).toLocaleDateString("es-ES")}</span>
-            <a href="${p.url}" class="text-[0.7rem] uppercase tracking-[2px] text-secondary font-semibold hover:opacity-80 transition-opacity">Leer más</a>
-          </div>
-        </article>
-      `).join("");
+                        postsGrid.innerHTML = pageItems.map((p, idx) => {
+        const reverseRow = Math.floor(idx / 2) % 2 === 0;
+        const gridClass = reverseRow ? "grid-cols-[256px_1fr]" : "grid-cols-[1fr_256px]";
+        const textColClass = reverseRow ? "order-2" : "order-1";
+        const mediaColClass = reverseRow ? "order-1 items-start" : "order-2 items-end";
+        return `
+          <article class="py-6 border-b border-black/10 dark:border-white/10">
+            <p class="text-[0.65rem] tracking-[2px] font-semibold mb-4">
+              <span class="uppercase text-secondary">${p.category}</span>
+              <span class="mx-1.5 text-muted dark:text-gray-500">·</span>
+              <span class="text-muted dark:text-gray-400">${categoryMeta.find(m => m.name === p.category)?.subtitle || ""}</span>
+            </p>
+            <div class="grid ${gridClass} gap-6 items-stretch">
+              <div class="${textColClass} flex h-full flex-col">
+                <div>
+                  <h3 class="font-serif text-[1.6rem] font-normal leading-[1.2] mb-2 text-primary dark:text-white">${p.title}</h3>
+                  <p class="text-sm text-muted dark:text-gray-400">${p.summary}</p>
+                </div>
+                <div class="mt-auto pt-2 flex items-center justify-between gap-3">
+                  <span class="text-xs text-muted dark:text-gray-500">${new Date(p.date).toLocaleDateString("es-ES")}</span>
+                  <a href="${p.url}" class="text-[0.7rem] uppercase tracking-[2px] text-secondary font-semibold hover:opacity-80 transition-opacity text-right">Leer más</a>
+                </div>
+              </div>
+              <div class="${mediaColClass} flex flex-col gap-2 h-full">
+                <a href="${p.url}" class="block mt-1 w-64 aspect-video overflow-hidden rounded-sm shadow-md">
+                  <img src="${p.image || "public/images/global/beach.webp"}" alt="${p.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
 
       resultsCount.textContent = `${filtered.length} artículo(s) totales · Página ${currentPage} de ${totalPages} en archivo`;
       prevPage.disabled = currentPage === 1;
@@ -270,3 +290,4 @@
   </script>
 </body>
 </html>
+

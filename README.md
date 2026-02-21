@@ -3,10 +3,10 @@
 Sitio web estatico de Zenit Bonmont.
 
 ## Antes de editar
-- Leer primero `REPO_STANDARDS.md` (normas obligatorias del repositorio).
+- Leer primero `docs/01-estandares/REPO_STANDARDS.md` (normas obligatorias del repositorio).
 
 ## Referencia principal
-- Normas obligatorias del repositorio: `REPO_STANDARDS.md`.
+- Normas obligatorias del repositorio: `docs/01-estandares/REPO_STANDARDS.md`.
 
 ## Stack
 - HTML estatico.
@@ -33,16 +33,25 @@ Sitio web estatico de Zenit Bonmont.
 - `public/images/`: recursos visuales.
 - `firebase.json`: config de hosting.
 - `.firebaserc`: proyecto Firebase por defecto.
-- `docs/`: documentacion activa.
-- `docs/archive/`: historico cerrado.
+- `docs/`: documentacion del proyecto organizada por bloques.
+- `docs/01-estandares/`: reglas editoriales y de repositorio.
+- `docs/02-contenido/`: operativa y propuestas de contenido.
+- `docs/03-legal/`: cumplimiento legal y datos pendientes.
+- `docs/04-infra/`: infraestructura, despliegue y configuracion tecnica.
+- `docs/05-archivo/`: historico cerrado.
 
 ## Documentacion activa
-- `REPO_STANDARDS.md`: reglas de trabajo (fuente unica de verdad).
-- `CONTENT_MASTER.md`: referencia editorial y de contenido de la web.
-- `STYLE_GUIDE.md`: guia visual basica (tipografias, colores y uso de mayusculas).
-- `docs/web-architecture.md`: mapa tecnico del sitio.
-- `docs/tailwind-no-brackets.md`: convenciones Tailwind CDN.
-- `docs/calendar_setup_guide.md`: guia operativa de calendario.
-- `docs/CHECKLIST_POST_PUBLICACION.md`: checklist de ajustes y validaciones tras publicacion estable.
-- `CHECKLIST_DATOS_PROPIETARIA.md`: checklist de datos y cuentas del negocio.
-
+- `docs/01-estandares/REPO_STANDARDS.md`: reglas de trabajo (fuente unica de verdad).
+- `docs/01-estandares/CONTENT_MASTER.md`: referencia editorial y de contenido.
+- `docs/01-estandares/STYLE_GUIDE.md`: guia visual base.
+- `docs/02-contenido/BLOG_OPERATIVA.md`: operativa para migrar/gestionar el blog.
+- `docs/02-contenido/PROPUESTA_FORMULARIO_FAQS.md`: propuesta funcional del formulario.
+- `docs/02-contenido/PROPUESTA_GALERIAS_WELLNESS.md`: propuesta de crecimiento de galerias.
+- `docs/03-legal/PLAN_CUMPLIMIENTO_LEGAL_DATOS_2026.md`: hoja de ruta legal.
+- `docs/03-legal/CHECKLIST_DATOS_PROPIETARIA.md`: datos pendientes de propietaria.
+- `docs/03-legal/CHECKLIST_EVIDENCIAS_CONSENTIMIENTO.md`: control de evidencias de consentimiento.
+- `docs/04-infra/web-architecture.md`: mapa tecnico del sitio.
+- `docs/04-infra/tailwind-no-brackets.md`: convenciones Tailwind CDN.
+- `docs/04-infra/calendar_setup_guide.md`: guia operativa de calendario.
+- `docs/04-infra/CHECKLIST_POST_PUBLICACION.md`: checklist tras publicacion estable.
+- `docs/04-infra/PLAN_GOOGLE_BUSINESS_WEB_SEO.md`: tareas Google Business + SEO.
