@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Growth Template - ZENIT Bonmont</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1a1a1a",
+            secondary: "#c9a866",
+            muted: "#666666"
+          },
+          fontFamily: {
+            sans: ["Poppins", "ui-sans-serif", "system-ui"],
+            serif: ["Crimson Text", "ui-serif", "Georgia"]
+          }
+        }
+      }
+    };
+  </script>
+  <script>
+    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+<body class="bg-white text-primary dark:bg-primary dark:text-gray-200 font-sans antialiased">
+  <main id="main-content">
+    <section class="pt-16 md:pt-24 pb-16 md:pb-24 bg-white dark:bg-primary overflow-hidden relative">
+      <div class="max-w-[1400px] mx-auto px-6 text-center relative z-10">
+        <h1 class="font-serif text-[3rem] md:text-[4.5rem] text-primary dark:text-white leading-tight mb-6">
+          El Blog de <span class="text-secondary italic">Zenit</span>
+        </h1>
+        <div class="w-[3.75rem] h-px bg-secondary mx-auto mb-8"></div>
+        <p class="font-sans text-[0.9rem] text-muted dark:text-gray-400 max-w-2xl mx-auto italic leading-relaxed">
+          Inspiración para tus días en nuestro refugio mediterráneo.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-8 md:py-12">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="flex justify-end mb-6">
+          <button id="themeToggle" aria-label="Toggle color theme"
+            class="h-9 px-3 rounded-md border border-black/10 dark:border-white/15 text-sm hover:border-secondary hover:text-secondary transition-colors">
+            Modo claro/oscuro
+          </button>
+        </div>
+
+        <section id="topHighlights" class="space-y-24 mb-12"></section>
+
+        <section class="mb-6 border-t border-black/10 dark:border-white/10 pt-6">
+          <p class="uppercase tracking-[3px] text-[0.7rem] font-semibold text-secondary mb-1">Archivo</p>
+          <p class="text-sm text-muted dark:text-gray-400">Todos los artículos organizados para consulta rápida.</p>
+        </section>
+
+        <section class="mb-8">
+          <div id="categoryFilters" class="flex flex-wrap gap-x-8 gap-y-2 mb-4"></div>
+          <div class="flex flex-wrap items-center gap-2">
+            <input id="searchInput" type="search" placeholder="Buscar por título o resumen..."
+              class="h-9 w-full sm:w-[320px] md:w-[380px] rounded-md border border-black/10 dark:border-white/15 bg-white dark:bg-white/5 px-3 text-[0.88rem] text-primary dark:text-white placeholder:text-muted dark:placeholder:text-gray-400 focus:outline-none focus:border-secondary transition-colors">
+            <select id="sortSelect"
+              class="h-9 w-full sm:w-[200px] rounded-md border border-black/10 dark:border-white/15 bg-white dark:bg-white/5 px-3 text-[0.88rem] text-primary dark:text-white focus:outline-none focus:border-secondary transition-colors">
+              <option value="newest">Más recientes</option>
+              <option value="oldest">Más antiguos</option>
+              <option value="title">Título (A-Z)</option>
+            </select>
+          </div>
+        </section>
+
+        <section id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"></section>
+
+        <section class="mt-10 flex items-center justify-between gap-4">
+          <p id="resultsCount" class="text-sm text-muted dark:text-gray-400"></p>
+          <div class="flex items-center gap-2">
+            <button id="prevPage" class="h-9 px-4 rounded border border-black/15 dark:border-white/15 text-sm hover:border-secondary hover:text-secondary transition-colors">Anterior</button>
+            <button id="nextPage" class="h-9 px-4 rounded border border-black/15 dark:border-white/15 text-sm hover:border-secondary hover:text-secondary transition-colors">Siguiente</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const POSTS_PER_PAGE = 6;
+    let currentPage = 1;
+    let currentCategory = "Todos";
+
+    const posts = [
+      { title: "Novedades de ZENIT: salón principal", category: "Novedades Zenit", date: "2026-02-18", summary: "Actualización de mobiliario y textil para mayor confort.", url: "#", image: "public/images/global/salon.webp" },
+      { title: "Calçotada en Valls", category: "Gastronomía", date: "2026-02-10", summary: "Guía práctica para disfrutar la tradición sin prisas.", url: "tradicion-calcotada-valls-tarragona.html", image: "public/images/blog/zenit-bonmont-blog-calcotada-cover.webp" },
+      { title: "Paseo de tarde por Cambrils", category: "Poblaciones cercanas", date: "2026-02-04", summary: "Paseo marítimo, zona portuaria y recomendaciones para tomar algo.", url: "#", image: "public/images/lifestyle/zenit-bonmont-wine-pause-pleasure.webp" },
+      { title: "Ruta BTT en Ermita del Peiró", category: "Naturaleza y Deporte", date: "2026-01-22", summary: "Nivel, trazado y recomendaciones reales para grupos.", url: "rutas-btt-ermita-mare-de-deu-roca.html", image: "public/images/blog/zenit-bonmont-blog-btt-mont-roig-cover.webp" },
+      { title: "Mercados y producto local", category: "Gastronomía", date: "2026-01-14", summary: "Dónde comprar calidad para cocinar en la villa.", url: "#", image: "public/images/indoor/cocina/cocina-1.webp" },
+      { title: "Modernismo en Reus", category: "Cultura e Historia", date: "2026-01-05", summary: "Recorrido con paradas clave y tiempos reales.", url: "guia-modernismo-reus.html", image: "public/images/blog/zenit-bonmont-blog-reus-modernism-cover.webp" },
+      { title: "Playas tranquilas cerca de Bonmont", category: "Mar Mediterráneo", date: "2025-12-28", summary: "Opciones cómodas para familias y grupos amplios.", url: "#", image: "public/images/lifestyle/zenit-bonmont-coastal-walk-connection.webp" },
+      { title: "Plan familiar de verano en Costa Dorada", category: "Ocio y Experiencias", date: "2026-02-01", summary: "Propuesta de día completo para distintas edades.", url: "#", image: "public/images/lifestyle/zenit-bonmont-ferrariland.webp" },
+      { title: "Escapada cultural en Tarragona", category: "Cultura e Historia", date: "2025-11-20", summary: "Propuesta de día completo con ritmo equilibrado.", url: "#", image: "public/images/lifestyle/zenit-bonmont-lighthouse-views.webp" },
+      { title: "Reus en medio día", category: "Poblaciones cercanas", date: "2026-01-31", summary: "Ruta breve para visitar centro histórico y volver con calma a ZENIT.", url: "#", image: "public/images/blog/zenit-bonmont-blog-reus-modernism-cover.webp" }
+    ];
+
+    const categoryMeta = [
+      { name: "Todos", subtitle: "Selección completa" },
+      { name: "Novedades Zenit", subtitle: "Mejoras y evolución de la casa" },
+      { name: "Mar Mediterráneo", subtitle: "Playas y calas con encanto" },
+      { name: "Cultura e Historia", subtitle: "Historia viva" },
+      { name: "Gastronomía", subtitle: "Sabor Mediterráneo" },
+      { name: "Naturaleza y Deporte", subtitle: "Aire libre y rutas" },
+      { name: "Ocio y Experiencias", subtitle: "Propuestas para todos" },
+      { name: "Poblaciones cercanas", subtitle: "Ideas a pocos kilómetros" }
+    ];
+    const categories = categoryMeta.map(c => c.name);
+
+    const topHighlights = document.getElementById("topHighlights");
+    const categoryFilters = document.getElementById("categoryFilters");
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+    const postsGrid = document.getElementById("postsGrid");
+    const resultsCount = document.getElementById("resultsCount");
+    const prevPage = document.getElementById("prevPage");
+    const nextPage = document.getElementById("nextPage");
+    const themeToggle = document.getElementById("themeToggle");
+
+    function renderCategories() {
+      categoryFilters.innerHTML = categories.map((c) => `
+        <button data-category="${c}" class="category-chip text-left transition-colors ${c === currentCategory ? "text-primary dark:text-white" : "text-muted dark:text-gray-400 hover:text-primary dark:hover:text-white"}">
+          <span class="block text-[0.78rem] uppercase tracking-[1px] font-normal">${c}</span>
+          <span class="block mt-1 h-px w-10 transition-colors ${c === currentCategory ? "bg-secondary" : "bg-black/10 dark:bg-white/10"}"></span>
+        </button>
+      `).join("");
+    }
+
+    function getFilteredPosts() {
+      const query = searchInput.value.trim().toLowerCase();
+      let filtered = [...posts];
+
+      if (currentCategory !== "Todos") {
+        filtered = filtered.filter(p => p.category === currentCategory);
+      }
+
+      if (query) {
+        filtered = filtered.filter(p =>
+          p.title.toLowerCase().includes(query) || p.summary.toLowerCase().includes(query)
+        );
+      }
+
+      const sort = sortSelect.value;
+      if (sort === "newest") filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+      if (sort === "oldest") filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+      if (sort === "title") filtered.sort((a, b) => a.title.localeCompare(b.title));
+      return filtered;
+    }
+
+    function renderTopHighlights(allFiltered) {
+      const top = allFiltered.slice(0, 3);
+      if (!top.length) {
+        topHighlights.innerHTML = "";
+        return;
+      }
+      topHighlights.innerHTML = top.map((p, i) => {
+        const textOrder = i % 2 === 1 ? "order-2 lg:order-2" : "order-2 lg:order-1";
+        const imageOrder = i % 2 === 1 ? "order-1 lg:order-1" : "order-1 lg:order-2";
+        return `
+          <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+            <div class="${textOrder} space-y-6">
+              <span class="text-secondary text-[0.7rem] font-bold uppercase tracking-[3px] block mb-4">${p.category}</span>
+              <h2 class="font-serif text-3xl md:text-4xl text-primary dark:text-white leading-tight">${p.title}</h2>
+              <div class="w-10 h-px bg-secondary"></div>
+              <p class="text-muted dark:text-gray-400 leading-relaxed font-sans">${p.summary}</p>
+              <div class="pt-4">
+                <a href="${p.url}" class="inline-flex items-center gap-3 text-primary dark:text-white font-bold uppercase tracking-widest text-[0.7rem] group">
+                  <span class="w-8 h-8 flex items-center justify-center border border-secondary rounded-full group-hover:bg-secondary group-hover:text-white transition-all">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
+                  Leer más
+                </a>
+              </div>
+            </div>
+            <div class="${imageOrder}">
+              <div class="aspect-video overflow-hidden rounded-sm shadow-2xl">
+                <img src="${p.image || "public/images/global/beach.webp"}" alt="${p.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderPosts() {
+      const filtered = getFilteredPosts();
+      renderTopHighlights(filtered);
+
+      const archiveSource = filtered.length > 3 ? filtered.slice(3) : filtered;
+      const totalPages = Math.max(1, Math.ceil(archiveSource.length / POSTS_PER_PAGE));
+      currentPage = Math.min(currentPage, totalPages);
+      const start = (currentPage - 1) * POSTS_PER_PAGE;
+      const pageItems = archiveSource.slice(start, start + POSTS_PER_PAGE);
+
+      postsGrid.innerHTML = pageItems.map((p) => `
+        <article class="py-4 border-b border-black/10 dark:border-white/10 last:border-b-0">
+          <p class="text-[0.65rem] tracking-[2px] font-semibold mb-3">
+            <span class="uppercase text-secondary">${p.category}</span>
+            <span class="mx-1.5 text-muted dark:text-gray-500">·</span>
+            <span class="text-muted dark:text-gray-400">${categoryMeta.find(m => m.name === p.category)?.subtitle || ""}</span>
+          </p>
+          <h3 class="font-serif text-2xl leading-tight mb-3 text-primary dark:text-white">${p.title}</h3>
+          <p class="text-sm text-muted dark:text-gray-300 mb-4">${p.summary}</p>
+          <div class="flex items-center justify-between gap-3">
+            <span class="text-xs text-muted dark:text-gray-500">${new Date(p.date).toLocaleDateString("es-ES")}</span>
+            <a href="${p.url}" class="text-[0.7rem] uppercase tracking-[2px] text-secondary font-semibold hover:opacity-80 transition-opacity">Leer más</a>
+          </div>
+        </article>
+      `).join("");
+
+      resultsCount.textContent = `${filtered.length} artículo(s) totales · Página ${currentPage} de ${totalPages} en archivo`;
+      prevPage.disabled = currentPage === 1;
+      nextPage.disabled = currentPage >= totalPages;
+      prevPage.classList.toggle("opacity-50", prevPage.disabled);
+      nextPage.classList.toggle("opacity-50", nextPage.disabled);
+    }
+
+    categoryFilters.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-category]");
+      if (!btn) return;
+      currentCategory = btn.dataset.category;
+      currentPage = 1;
+      renderCategories();
+      renderPosts();
+    });
+
+    searchInput.addEventListener("input", () => {
+      currentPage = 1;
+      renderPosts();
+    });
+
+    sortSelect.addEventListener("change", () => {
+      currentPage = 1;
+      renderPosts();
+    });
+
+    prevPage.addEventListener("click", () => {
+      currentPage = Math.max(1, currentPage - 1);
+      renderPosts();
+    });
+
+    nextPage.addEventListener("click", () => {
+      currentPage += 1;
+      renderPosts();
+    });
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.theme = isDark ? "dark" : "light";
+      });
+    }
+
+    renderCategories();
+    renderPosts();
+  </script>
+</body>
+</html>
