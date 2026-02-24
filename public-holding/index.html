@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZENIT Bonmont | Luxury Tourist Rental in Costa Dorada</title>
+  <meta name="description" content="ZENIT Bonmont is a luxury tourist rental in Costa Dorada. We are finalizing the details to welcome your next premium stay.">
+  <link rel="icon" type="image/png" href="images/global/favicon.png">
+  <style>
+    :root {
+      --bg: #161616;
+      --text: #f4f4f2;
+      --muted: #ddd8cd;
+      --gold: #c9a866;
+      --overlay: rgba(0, 0, 0, 0.48);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 32px 20px;
+      background-image: linear-gradient(var(--overlay), var(--overlay)), url("images/global/hero-poster.webp");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card {
+      width: min(780px, 92vw);
+      padding: 28px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(10, 10, 10, 0.32);
+      backdrop-filter: blur(1px);
+    }
+
+    .logo {
+      width: min(270px, 70vw);
+      height: auto;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.38rem, 2.7vw, 2.05rem);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .actions {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: var(--text);
+      font-size: 0.92rem;
+      letter-spacing: 0.3px;
+      transition: all 160ms ease;
+    }
+
+    .btn:hover {
+      border-color: var(--gold);
+      color: #fff;
+      background: rgba(201, 168, 102, 0.2);
+    }
+
+    .btn-primary {
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .small {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .legal {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 18px;
+    }
+
+    .legal a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    .legal a:hover {
+      color: #fff;
+      border-color: var(--gold);
+    }
+
+    .cookie-banner {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      background: rgba(12, 12, 12, 0.97);
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 14px 16px;
+      display: none;
+    }
+
+    .cookie-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px;
+      justify-content: space-between;
+    }
+
+    .cookie-text {
+      margin: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-btn {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: transparent;
+      color: var(--text);
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+    }
+
+    .cookie-btn:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 102, 0.2);
+    }
+
+    .cookie-btn.primary {
+      border-color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <section class="card" aria-label="Mensaje temporal de ZENIT Bonmont">
+      <img class="logo" src="images/global/ZENIT_dorado.webp" alt="ZENIT Bonmont">
+      <h1>Estamos ultimando los detalles de tu visita a ZENIT Bonmont.</h1>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:info@zenitbonmont.com">info@zenitbonmont.com</a>
+        <a class="btn" href="https://www.google.com/maps/place/ZENIT+Bonmont/@41.0431984,0.9234454,17z/data=!3m1!4b1!4m6!3m5!1s0x12a147e5526c5199:0x369eda2f27f18f5c!8m2!3d41.0431984!4d0.9260203!16s%2Fg%2F11n44y8yb7?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Descubre dónde empieza Zenit</a>
+      </div>
+      <nav class="legal" aria-label="Enlaces legales">
+        <a href="legal.html#legal">Aviso legal</a>
+        <a href="legal.html#privacy">Privacidad</a>
+        <a href="legal.html#cookies">Cookies</a>
+        <a href="#" id="manageCookies">Gestionar cookies</a>
+      </nav>
+    </section>
+  </main>
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Preferencias de cookies">
+    <div class="cookie-inner">
+      <p class="cookie-text">
+        Utilizamos cookies para mejorar la experiencia. Puedes aceptar o rechazar cookies no esenciales.
+        <a href="legal.html#cookies" style="color: var(--gold);">Más información</a>.
+      </p>
+      <div class="cookie-actions">
+        <button id="cookieReject" class="cookie-btn" type="button">Rechazar</button>
+        <button id="cookieAccept" class="cookie-btn primary" type="button">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const banner = document.getElementById("cookieBanner");
+      const accept = document.getElementById("cookieAccept");
+      const reject = document.getElementById("cookieReject");
+      const manage = document.getElementById("manageCookies");
+      if (!banner || !accept || !reject || !manage) return;
+
+      const KEY = "cookieConsent";
+      const DATE_KEY = "cookieConsentDate";
+      const TTL = 365 * 24 * 60 * 60 * 1000;
+
+      function hasValidConsent() {
+        const value = localStorage.getItem(KEY);
+        const date = localStorage.getItem(DATE_KEY);
+        if (!value || !date) return false;
+        return (Date.now() - parseInt(date, 10)) < TTL;
+      }
+
+      function saveConsent(value) {
+        localStorage.setItem(KEY, value);
+        localStorage.setItem(DATE_KEY, Date.now().toString());
+      }
+
+      function showBanner() {
+        banner.style.display = "block";
+      }
+
+      function hideBanner() {
+        banner.style.display = "none";
+      }
+
+      if (!hasValidConsent()) showBanner();
+
+      accept.addEventListener("click", function () {
+        saveConsent("accepted");
+        hideBanner();
+      });
+
+      reject.addEventListener("click", function () {
+        saveConsent("rejected");
+        hideBanner();
+      });
+
+      manage.addEventListener("click", function (e) {
+        e.preventDefault();
+        showBanner();
+      });
+    })();
+  </script>
+</body>
+</html>

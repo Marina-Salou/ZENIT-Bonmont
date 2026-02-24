@@ -15,7 +15,7 @@ Nota de rutas: en el repositorio actual, los archivos web viven en `public/`. Cu
 - Tipo: villa de lujo para alquiler vacacional
 - Ubicacion: Bonmont Terres Noves, Mont-roig del Camp (Tarragona)
 - Direccion mostrada: Carrer d'en Pere Antoni Torres i Jordi, 7-9, 43300 Bonmont Terres Noves
-- Coordenadas mostradas: 41 deg 02'35"N 0 deg 55'33"E
+- Coordenada canónica única: 41.043319, 0.925879 (Plus Code 2WVG+79)
 - Distancia a Barcelona: 120 km (~1 h 15 min en coche)
 - Superficie interior: 600 m2
 - Parcela privada: 1.600 m2
